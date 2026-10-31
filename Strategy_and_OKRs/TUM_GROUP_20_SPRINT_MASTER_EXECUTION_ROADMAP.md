@@ -38,12 +38,14 @@ flowchart LR
 - **Holdings:** สไลด์นำเสนอ Working Group Sprint 1, ผังองค์กรใหม่, 125/125 Tests Passing
 
 #### Sprint 2 (⚡ กำลังดำเนินการ): Kiosk Smart Card HAL & Live Kernel Telemetry
+- **Branch ยุทธศาสตร์:** `feature/SCRUM-24-working-group-sprint-2-execution` (Base Ref: `develop` ตามมาตรฐาน [GIT_FLOW.md](../GIT_FLOW.md))
+- **สถานะ:** 🚀 **Kickoff และกำลังดำเนินการเชิงรุก (Active Sprint Execution)**
 - **Trust (`SCRUM-15`):** ไดรเวอร์ฮาร์ดแวร์ตู้คีออส PC/SC Smart Card Driver Hardware Abstraction Layer
 - **Trust (`SCRUM-16`):** ตัวถอดรหัสพาสปอร์ตสากล ICAO 9303 MRZ Parser & NFC Data Groups Inspection
 - **Socs (`SCRUM-17`):** ระบบดักจับแพ็กเก็ตเครือข่ายระดับเคอร์เนล Live eBPF Kernel Network Packet Sniffing
 - **Quantum (`SCRUM-18`):** ตัวแปลงระบบเดิมสู่ควอนตัม Hybrid Permissive Migration Adapter for Classical PKI
 - **Director (`SCRUM-19`):** ระบบแจ้งเตือนผู้บริหาร Multi-Tenant Executive Alerting & One-Click Audit Export
-- **Holdings:** สไลด์ Working Group Sprint 2 และการสัมภาษณ์รอบ Simulation ของผู้สมัคร Scrum Master
+- **Holdings (`SCRUM-24`):** คิกออฟ Governance & Working Group Sprint 2 Execution, จัดระเบียบข้อกำหนด [TUM_GIT_FLOW_ENGINEERING_STANDARD.md](../Frameworks/TUM_GIT_FLOW_ENGINEERING_STANDARD.md), สไลด์นำเสนอ Working Group Sprint 2 และการคัดเลือกผู้สมัคร Scrum Master รอบ Shortlist (3 ราย) เข้าสู่การทดสอบ Simulation Test ตาม [RECRUITMENT_PROGRESS_REPORT_SCRUM_MASTER.md](../People_and_Culture/RECRUITMENT_PROGRESS_REPORT_SCRUM_MASTER.md)
 
 #### Sprint 3: Biometric Liveness Level 2 & Distributed Merkle Chaining
 - **Trust:** ระบบ Face Liveness Detection ป้องกันการหลอกด้วยหน้ากากซิลิโคนและจอ 4K (ISO/IEC 30107 Level 2)
