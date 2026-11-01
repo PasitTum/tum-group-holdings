@@ -112,6 +112,37 @@
       font-weight: 600;
       transition: all 0.2s ease;
     }
+        .nav-discord-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(88, 101, 242, 0.12);
+      border: 1px solid rgba(88, 101, 242, 0.35);
+      color: #818cf8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .nav-discord-link:hover {
+      background: rgba(88, 101, 242, 0.25);
+      border-color: #818cf8;
+      color: #fff;
+      box-shadow: 0 0 14px rgba(88, 101, 242, 0.35);
+    }
+    .btn-discord {
+      background: linear-gradient(135deg, #4f46e5, #5865f2);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(88, 101, 242, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .btn-discord:hover {
+      box-shadow: 0 6px 28px rgba(88, 101, 242, 0.55);
+      transform: translateY(-2px);
+    }
+
     .nav-git-link:hover {
       background: rgba(56, 189, 248, 0.15);
       border-color: var(--primary);
@@ -413,6 +444,9 @@
           <span class="lang-th">ระบบพร้อมปฏิบัติการ — 439 TESTS GREEN</span>
           <span class="lang-en">FLEET OPERATIONAL — 439 TESTS GREEN</span>
         </div>
+        <a href="https://discord.gg/RCXqnaqtM" target="_blank" rel="noopener noreferrer" class="nav-discord-link">
+          <span>💬 Discord ↗</span>
+        </a>
         <a href="https://github.com/PasitTum" target="_blank" rel="noopener noreferrer" class="nav-git-link">
           <span>GitHub Fleet ↗</span>
         </a>
@@ -447,6 +481,10 @@
       <a href="https://github.com/PasitTum" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
         <span class="lang-th">💻 คลังซอร์สโค้ด GitHub Fleet ↗</span>
         <span class="lang-en">💻 GitHub Fleet Repositories ↗</span>
+      </a>
+      <a href="https://discord.gg/RCXqnaqtM" target="_blank" rel="noopener noreferrer" class="btn btn-discord">
+        <span class="lang-th">💬 ชุมชน Discord ทางการ ↗</span>
+        <span class="lang-en">💬 Official Discord Community ↗</span>
       </a>
       <a href="#flagships" class="btn btn-secondary">
         <span class="lang-th">สำรวจ 8 โครงสร้างเทคโนโลยี ↓</span>
@@ -815,6 +853,19 @@
           Built on Clean Architecture, Post-Quantum Cryptography, and Zero-Mockup Guarantee.
         </span>
       </p>
+      <div style="margin-top: 20px; display: flex; justify-content: center; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem;">
+        <a href="https://discord.gg/RCXqnaqtM" target="_blank" rel="noopener noreferrer" style="color: #818cf8; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <span>💬 Discord Server: https://discord.gg/RCXqnaqtM</span>
+        </a>
+        <span style="opacity: 0.3;">•</span>
+        <a href="https://github.com/PasitTum" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none;">
+          <span>GitHub Fleet</span>
+        </a>
+        <span style="opacity: 0.3;">•</span>
+        <a href="mailto:pasit.boonpanase@gmail.com" style="color: var(--text-muted); text-decoration: none;">
+          <span>pasit.boonpanase@gmail.com</span>
+        </a>
+      </div>
     </div>
   </footer>
 
