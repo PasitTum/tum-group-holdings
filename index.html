@@ -11,7 +11,9 @@
     :root {
       --bg: #090d16;
       --card-bg: rgba(15, 23, 42, 0.75);
+      --card-hover-bg: rgba(22, 33, 62, 0.85);
       --border: rgba(56, 189, 248, 0.15);
+      --border-hover: rgba(56, 189, 248, 0.6);
       --primary: #38bdf8;
       --primary-glow: rgba(56, 189, 248, 0.25);
       --accent: #818cf8;
@@ -66,6 +68,11 @@
       font-weight: 700;
       letter-spacing: 0.05em;
     }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
     .status-pill {
       display: inline-flex;
       align-items: center;
@@ -85,6 +92,25 @@
       background: #10b981;
       border-radius: 50%;
       box-shadow: 0 0 10px #10b981;
+    }
+    .nav-git-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .nav-git-link:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--primary);
+      color: var(--primary);
     }
 
     /* HERO */
@@ -203,27 +229,31 @@
       margin: 0 auto 48px;
     }
 
-    /* GRID */
+    /* INTERACTIVE FLEET GRID */
     .fleet-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-bottom: 96px;
     }
-    .card {
+    a.card {
+      text-decoration: none;
+      color: inherit;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 28px;
-      transition: all 0.25s ease;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
       position: relative;
+      cursor: pointer;
     }
-    .card:hover {
-      border-color: rgba(56, 189, 248, 0.5);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    a.card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(2, 132, 199, 0.25), 0 0 20px rgba(56, 189, 248, 0.15);
+      background: var(--card-hover-bg);
     }
     .card-tag {
       font-size: 0.7rem;
@@ -239,6 +269,23 @@
       font-weight: 700;
       margin-bottom: 10px;
       color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color 0.2s ease;
+    }
+    a.card:hover .card-title {
+      color: var(--primary);
+    }
+    .card-title .arrow {
+      font-size: 1.15rem;
+      opacity: 0.4;
+      transition: all 0.2s ease;
+    }
+    a.card:hover .card-title .arrow {
+      opacity: 1;
+      transform: translate(3px, -3px);
+      color: var(--primary);
     }
     .card-body {
       font-size: 0.9rem;
@@ -274,6 +321,26 @@
       color: var(--text-muted);
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       padding-top: 14px;
+      gap: 8px;
+    }
+    .card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 6px;
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    a.card:hover .card-action {
+      background: rgba(56, 189, 248, 0.25);
+      border-color: var(--primary);
+      color: #fff;
     }
 
     /* FOOTER */
@@ -303,9 +370,14 @@
         <span>🏛️ TUM GROUP</span>
         <span class="brand-badge">SOVEREIGN TECH</span>
       </a>
-      <div class="status-pill">
-        <span class="status-dot"></span>
-        FLEET OPERATIONAL — 439 TESTS GREEN
+      <div class="nav-actions">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          FLEET OPERATIONAL — 439 TESTS GREEN
+        </div>
+        <a href="https://github.com/PasitTum" target="_blank" rel="noopener noreferrer" class="nav-git-link">
+          <span>GitHub Fleet ↗</span>
+        </a>
       </div>
     </div>
   </nav>
@@ -320,11 +392,11 @@
       มุ่งสู่การตรวจประเมินอิสระตามมาตรฐานสากล
     </p>
     <div class="btn-group">
-      <a href="https://github.com/PasitTum" target="_blank" class="btn btn-primary">
-        <span>💻 GitHub Organization</span>
+      <a href="https://github.com/PasitTum" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <span>💻 GitHub Fleet Repositories ↗</span>
       </a>
       <a href="#flagships" class="btn btn-secondary">
-        <span>สำรวจ 8 โครงสร้างเทคโนโลยี</span>
+        <span>สำรวจ 8 โครงสร้างเทคโนโลยี ↓</span>
       </a>
     </div>
 
@@ -349,17 +421,20 @@
     </div>
   </header>
 
-  <!-- FLAGSHIP PRODUCTS -->
+  <!-- FLAGSHIP PRODUCTS (ALL CARDS INTERACTIVE & CLICKABLE) -->
   <main class="container" id="flagships">
     <h2 class="section-title">สถาปัตยกรรม 8 แพลตฟอร์มหลักในระบบนิเวศ</h2>
-    <p class="section-desc">เชื่อมโยงการทำงานแบบ Cross-Fleet Event Mesh ไร้รอยต่อ ปราศจาก Mockup ทุกบรรทัดทำงานบนตรรกะจริงระดับ Enterprise</p>
+    <p class="section-desc">คลิกที่แต่ละ Repository เพื่อเข้าชมซอร์สโค้ด สถาปัตยกรรม Clean Architecture และรายงานผลทดสอบอัตโนมัติบน GitHub</p>
 
     <div class="fleet-grid">
       
       <!-- CARD 1: WorkOS -->
-      <article class="card">
+      <a href="https://github.com/PasitTum/tum-agentic-workos" target="_blank" rel="noopener noreferrer" class="card">
         <div class="card-tag">ENTERPRISE WORKFORCE &amp; ERP</div>
-        <h3 class="card-title">tum-agentic-workos</h3>
+        <h3 class="card-title">
+          <span>tum-agentic-workos</span>
+          <span class="arrow">↗</span>
+        </h3>
         <p class="card-body">ระบบปฏิบัติการบริหารจัดการแรงงาน AI อัจฉริยะผสานงานจัดซื้อ ERP จับคู่ 3-Way Match และเชื่อมต่อ SAP S/4HANA</p>
         <ul class="card-features">
           <li>Kahn's Topological DAG &amp; Human-in-the-Loop Gate</li>
@@ -368,15 +443,18 @@
           <li>NIST FIPS 204 ML-DSA-65 Quantum Sealed Vouchers</li>
         </ul>
         <div class="card-footer">
-          <span>Branch: sprint-1-foundation</span>
           <span>47 Tests Passing</span>
+          <span class="card-action">Inspect Code ↗</span>
         </div>
-      </article>
+      </a>
 
       <!-- CARD 2: CyberMesh -->
-      <article class="card">
+      <a href="https://github.com/PasitTum/tum-cybermesh" target="_blank" rel="noopener noreferrer" class="card">
         <div class="card-tag">DEFENSE CLOUD &amp; XSIAM</div>
-        <h3 class="card-title">tum-cybermesh</h3>
+        <h3 class="card-title">
+          <span>tum-cybermesh</span>
+          <span class="arrow">↗</span>
+        </h3>
         <p class="card-body">ระบบคลาวด์ความมั่นคงปลอดภัยไซเบอร์ ตรวจจับภัยคุกคามด้วย Sigma Rules และระบบตอบโต้อัตโนมัติ SOAR ภายใต้ 30s SLA</p>
         <ul class="card-features">
           <li>Partitioned In-Memory Lakehouse RingBuffer</li>
@@ -385,15 +463,18 @@
           <li>Post-Quantum Signed Forensic Audit Receipts</li>
         </ul>
         <div class="card-footer">
-          <span>Branch: sprint-1-foundation</span>
           <span>34 Tests Passing</span>
+          <span class="card-action">Inspect Code ↗</span>
         </div>
-      </article>
+      </a>
 
       <!-- CARD 3: Trust Fabric -->
-      <article class="card">
+      <a href="https://github.com/PasitTum/tum-trust-fabric" target="_blank" rel="noopener noreferrer" class="card">
         <div class="card-tag">NATIONAL IDENTITY &amp; NOTARY</div>
-        <h3 class="card-title">tum-trust-fabric</h3>
+        <h3 class="card-title">
+          <span>tum-trust-fabric</span>
+          <span class="arrow">↗</span>
+        </h3>
         <p class="card-body">โครงสร้างพื้นฐานอัตลักษณ์ดิจิทัลแห่งชาติ ช่องทางตรวจคนเข้าเมืองอัจฉริยะ Walk-Through และระบบรับรองเอกสารทางกฎหมาย</p>
         <ul class="card-features">
           <li>W3C DID:TUM &amp; ZK Pedersen Proof of Age/Solvency</li>
@@ -402,15 +483,18 @@
           <li>RFC 3161 Sovereign Time-Stamp Authority (TSA)</li>
         </ul>
         <div class="card-footer">
-          <span>Branch: sprint-1-foundation</span>
           <span>53 Tests Passing</span>
+          <span class="card-action">Inspect Code ↗</span>
         </div>
-      </article>
+      </a>
 
       <!-- CARD 4: Director -->
-      <article class="card">
+      <a href="https://github.com/PasitTum/tum-central-director" target="_blank" rel="noopener noreferrer" class="card">
         <div class="card-tag">SOVEREIGN AGENTOS &amp; CONTROL</div>
-        <h3 class="card-title">tum-central-director</h3>
+        <h3 class="card-title">
+          <span>tum-central-director</span>
+          <span class="arrow">↗</span>
+        </h3>
         <p class="card-body">ศูนย์บัญชาการควบคุมระบบนิเวศ ระบบ Monaco ADE, Sentinel Interceptor สกัดกั้นคำสั่งอันตราย และ Sovereign Event Mesh</p>
         <ul class="card-features">
           <li>Real-time Cross-Fleet Event Mesh Bus</li>
@@ -419,15 +503,18 @@
           <li>Delegated Agent Credential (DAC) Issuer</li>
         </ul>
         <div class="card-footer">
-          <span>Branch: main</span>
           <span>38 Tests Passing</span>
+          <span class="card-action">Inspect Code ↗</span>
         </div>
-      </article>
+      </a>
 
       <!-- CARD 5: Socs -->
-      <article class="card">
+      <a href="https://github.com/PasitTum/tum-socs" target="_blank" rel="noopener noreferrer" class="card">
         <div class="card-tag">OPENSIEM &amp; SECURITY HUD</div>
-        <h3 class="card-title">tum-socs</h3>
+        <h3 class="card-title">
+          <span>tum-socs</span>
+          <span class="arrow">↗</span>
+        </h3>
         <p class="card-body">แพลตฟอร์ม OpenSIEM กลาง พัฒนาบน ASP.NET Core 8 Clean Architecture รองรับ Ingestion ความเร็วสูงพร้อม Web Console React 18</p>
         <ul class="card-features">
           <li>ASP.NET Core 8 High-Throughput Pipeline</li>
@@ -436,15 +523,18 @@
           <li>Enterprise SecurityHeaders Middleware</li>
         </ul>
         <div class="card-footer">
-          <span>Branch: open-siem-core</span>
           <span>58 Tests Passing</span>
+          <span class="card-action">Inspect Code ↗</span>
         </div>
-      </article>
+      </a>
 
       <!-- CARD 6: Quantum -->
-      <article class="card">
+      <a href="https://github.com/PasitTum/tum-quantum" target="_blank" rel="noopener noreferrer" class="card">
         <div class="card-tag">POST-QUANTUM CORE LAB</div>
-        <h3 class="card-title">tum-quantum</h3>
+        <h3 class="card-title">
+          <span>tum-quantum</span>
+          <span class="arrow">↗</span>
+        </h3>
         <p class="card-body">แกนกลางคำนวณคณิตศาสตร์โครงตาข่ายระดับชาติ (Lattice Math) ตามมาตรฐานสากล NIST FIPS 203 และ FIPS 204 Native .NET 8</p>
         <ul class="card-features">
           <li>NIST FIPS 203 ML-KEM-768 Key Encapsulation</li>
@@ -453,15 +543,18 @@
           <li>High-Speed Microservice with Zero External Deps</li>
         </ul>
         <div class="card-footer">
-          <span>Branch: pqc-assertion-token</span>
           <span>42 Tests Passing</span>
+          <span class="card-action">Inspect Code ↗</span>
         </div>
-      </article>
+      </a>
 
       <!-- CARD 7: Trust Security -->
-      <article class="card">
+      <a href="https://github.com/PasitTum/tum-trust-security" target="_blank" rel="noopener noreferrer" class="card">
         <div class="card-tag">HARDWARE HAL &amp; TRUST CORE</div>
-        <h3 class="card-title">tum-trust-security</h3>
+        <h3 class="card-title">
+          <span>tum-trust-security</span>
+          <span class="arrow">↗</span>
+        </h3>
         <p class="card-body">ไลบรารีเชื่อมต่ออุปกรณ์ความปลอดภัยระดับฮาร์ดแวร์ ชิปบัตรประชาชนไทย DOPA, ตัวอ่านพาสปอร์ต ICAO 9303 และ PKCS#11 HSM</p>
         <ul class="card-features">
           <li>DOPA Thai Smart Card APDU Protocol</li>
@@ -470,15 +563,18 @@
           <li>Sovereign Identity Assertion Primitives</li>
         </ul>
         <div class="card-footer">
-          <span>Branch: icao9303-mrz-parser</span>
           <span>159 Tests Passing</span>
+          <span class="card-action">Inspect Code ↗</span>
         </div>
-      </article>
+      </a>
 
       <!-- CARD 8: Group Holdings -->
-      <article class="card">
+      <a href="https://github.com/PasitTum/tum-group-holdings" target="_blank" rel="noopener noreferrer" class="card">
         <div class="card-tag">GOVERNANCE &amp; AUDIT ENGINE</div>
-        <h3 class="card-title">tum-group-holdings</h3>
+        <h3 class="card-title">
+          <span>tum-group-holdings</span>
+          <span class="arrow">↗</span>
+        </h3>
         <p class="card-body">ศูนย์กลางธรรมาภิบาลและการกำกับดูแลสถาปัตยกรรม EWG Charter, รายงาน Sprint 1-8, และชุดทดสอบ E2E ข้าม 8 แพลตฟอร์ม</p>
         <ul class="card-features">
           <li>Continuous SDLC Governance Engine</li>
@@ -487,10 +583,10 @@
           <li>Fleet Root Docker Compose &amp; CI/CD Pipelines</li>
         </ul>
         <div class="card-footer">
-          <span>Branch: feature/SCRUM-24...</span>
           <span>8 E2E Steps Green</span>
+          <span class="card-action">Inspect Code ↗</span>
         </div>
-      </article>
+      </a>
 
     </div>
   </main>
