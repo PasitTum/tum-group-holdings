@@ -35,6 +35,10 @@
     }
     .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
     
+    /* BILINGUAL VISIBILITY RULES */
+    html[lang="th"] .lang-en { display: none !important; }
+    html[lang="en"] .lang-th { display: none !important; }
+
     /* NAV */
     nav {
       border-bottom: 1px solid var(--border);
@@ -49,6 +53,7 @@
       justify-content: space-between;
       align-items: center;
       height: 72px;
+      gap: 16px;
     }
     .brand {
       display: flex;
@@ -71,7 +76,7 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
     }
     .status-pill {
       display: inline-flex;
@@ -113,6 +118,36 @@
       color: var(--primary);
     }
 
+    /* LANGUAGE SWITCHER */
+    .lang-switch {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .lang-btn.active {
+      background: var(--primary);
+      color: #090d16;
+      box-shadow: 0 0 14px var(--primary-glow);
+    }
+    .lang-btn:hover:not(.active) {
+      color: #fff;
+    }
+
     /* HERO */
     .hero {
       padding: 96px 0 64px;
@@ -144,7 +179,7 @@
     .hero-sub {
       font-size: 1.25rem;
       color: var(--text-muted);
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 auto 40px;
     }
     .btn-group {
@@ -225,7 +260,7 @@
     .section-desc {
       text-align: center;
       color: var(--text-muted);
-      max-width: 650px;
+      max-width: 720px;
       margin: 0 auto 48px;
     }
 
@@ -292,6 +327,7 @@
       color: var(--text-muted);
       margin-bottom: 20px;
       flex-grow: 1;
+      line-height: 1.55;
     }
     .card-features {
       list-style: none;
@@ -358,6 +394,7 @@
       h1 { font-size: 2.4rem; }
       .metrics-bar { grid-template-columns: repeat(2, 1fr); }
       .fleet-grid { grid-template-columns: 1fr; }
+      .nav-inner { flex-direction: column; height: auto; padding: 16px 0; gap: 12px; }
     }
   </style>
 </head>
@@ -373,30 +410,47 @@
       <div class="nav-actions">
         <div class="status-pill">
           <span class="status-dot"></span>
-          FLEET OPERATIONAL — 439 TESTS GREEN
+          <span class="lang-th">ระบบพร้อมปฏิบัติการ — 439 TESTS GREEN</span>
+          <span class="lang-en">FLEET OPERATIONAL — 439 TESTS GREEN</span>
         </div>
         <a href="https://github.com/PasitTum" target="_blank" rel="noopener noreferrer" class="nav-git-link">
           <span>GitHub Fleet ↗</span>
         </a>
+        <div class="lang-switch">
+          <button id="lang-th-btn" class="lang-btn active" onclick="setLanguage('th')">🇹🇭 TH</button>
+          <button id="lang-en-btn" class="lang-btn" onclick="setLanguage('en')">🇬🇧 EN</button>
+        </div>
       </div>
     </div>
   </nav>
 
   <!-- HERO SECTION -->
   <header class="hero container">
-    <div class="hero-badge">National Sovereign Enterprise Infrastructure</div>
+    <div class="hero-badge">
+      <span class="lang-th">โครงสร้างพื้นฐานเทคโนโลยีระดับอธิปไตยแห่งชาติ</span>
+      <span class="lang-en">National Sovereign Enterprise Infrastructure</span>
+    </div>
     <h1>The Sovereign AI &amp; Post-Quantum<br>Enterprise Operating Ecosystem</h1>
     <p class="hero-sub">
-      แพลตฟอร์มเทคโนโลยีระดับอธิปไตย ขับเคลื่อนด้วย Clean Architecture 100%, 
-      มาตรฐานการเข้ารหัสลับยุคควอนตัม NIST FIPS 203/204, และระบบบริหารจัดการแรงงาน AI เต็มรูปแบบ 
-      มุ่งสู่การตรวจประเมินอิสระตามมาตรฐานสากล
+      <span class="lang-th">
+        แพลตฟอร์มเทคโนโลยีระดับอธิปไตย ขับเคลื่อนด้วย Clean Architecture 100%, 
+        มาตรฐานการเข้ารหัสลับยุคควอนตัม NIST FIPS 203/204, และระบบบริหารจัดการแรงงาน AI เต็มรูปแบบ 
+        มุ่งสู่การตรวจประเมินอิสระตามมาตรฐานสากล
+      </span>
+      <span class="lang-en">
+        National sovereign technology infrastructure powered by 100% Clean Architecture, 
+        NIST FIPS 203/204 Post-Quantum Cryptography, and full-scale autonomous AI workforce orchestration — 
+        certified via continuous independent third-party audit models.
+      </span>
     </p>
     <div class="btn-group">
       <a href="https://github.com/PasitTum" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        <span>💻 GitHub Fleet Repositories ↗</span>
+        <span class="lang-th">💻 คลังซอร์สโค้ด GitHub Fleet ↗</span>
+        <span class="lang-en">💻 GitHub Fleet Repositories ↗</span>
       </a>
       <a href="#flagships" class="btn btn-secondary">
-        <span>สำรวจ 8 โครงสร้างเทคโนโลยี ↓</span>
+        <span class="lang-th">สำรวจ 8 โครงสร้างเทคโนโลยี ↓</span>
+        <span class="lang-en">Explore 8 Core Platforms ↓</span>
       </a>
     </div>
 
@@ -404,27 +458,45 @@
     <div class="metrics-bar">
       <div class="metric-item">
         <div class="metric-val"><span>8</span> Repos</div>
-        <div class="metric-lbl">Integrated Systems</div>
+        <div class="metric-lbl">
+          <span class="lang-th">ระบบบูรณาการร่วม</span>
+          <span class="lang-en">Integrated Systems</span>
+        </div>
       </div>
       <div class="metric-item">
         <div class="metric-val"><span>439</span> / 439</div>
-        <div class="metric-lbl">Automated Tests Passed</div>
+        <div class="metric-lbl">
+          <span class="lang-th">ผ่านการทดสอบอัตโนมัติ</span>
+          <span class="lang-en">Automated Tests Passed</span>
+        </div>
       </div>
       <div class="metric-item">
         <div class="metric-val"><span>FIPS</span> 203/204</div>
-        <div class="metric-lbl">Quantum-Safe Lattice</div>
+        <div class="metric-lbl">
+          <span class="lang-th">ทนทานภัยคุกคามควอนตัม</span>
+          <span class="lang-en">Quantum-Safe Lattice</span>
+        </div>
       </div>
       <div class="metric-item">
         <div class="metric-val"><span>100%</span> Clean</div>
-        <div class="metric-lbl">Zero-Mockup Guarantee</div>
+        <div class="metric-lbl">
+          <span class="lang-th">การันตีปราศจาก Mockup</span>
+          <span class="lang-en">Zero-Mockup Guarantee</span>
+        </div>
       </div>
     </div>
   </header>
 
   <!-- FLAGSHIP PRODUCTS (ALL CARDS INTERACTIVE & CLICKABLE) -->
   <main class="container" id="flagships">
-    <h2 class="section-title">สถาปัตยกรรม 8 แพลตฟอร์มหลักในระบบนิเวศ</h2>
-    <p class="section-desc">คลิกที่แต่ละ Repository เพื่อเข้าชมซอร์สโค้ด สถาปัตยกรรม Clean Architecture และรายงานผลทดสอบอัตโนมัติบน GitHub</p>
+    <h2 class="section-title">
+      <span class="lang-th">สถาปัตยกรรม 8 แพลตฟอร์มหลักในระบบนิเวศ</span>
+      <span class="lang-en">The 8 Sovereign Flagship Platforms</span>
+    </h2>
+    <p class="section-desc">
+      <span class="lang-th">คลิกที่แต่ละ Repository เพื่อเข้าชมซอร์สโค้ด สถาปัตยกรรม Clean Architecture และรายงานผลทดสอบอัตโนมัติบน GitHub</span>
+      <span class="lang-en">Click on any repository card to inspect production source code, Clean Architecture models, and automated test telemetry on GitHub</span>
+    </p>
 
     <div class="fleet-grid">
       
@@ -435,16 +507,31 @@
           <span>tum-agentic-workos</span>
           <span class="arrow">↗</span>
         </h3>
-        <p class="card-body">ระบบปฏิบัติการบริหารจัดการแรงงาน AI อัจฉริยะผสานงานจัดซื้อ ERP จับคู่ 3-Way Match และเชื่อมต่อ SAP S/4HANA</p>
+        <p class="card-body">
+          <span class="lang-th">ระบบปฏิบัติการบริหารจัดการแรงงาน AI อัจฉริยะผสานงานจัดซื้อ ERP จับคู่ 3-Way Match และเชื่อมต่อ SAP S/4HANA</span>
+          <span class="lang-en">Autonomous AI workforce operating system and agentic ERP — automated 3-Way Match, Thai GAAP GL, and SAP S/4HANA integration.</span>
+        </p>
         <ul class="card-features">
           <li>Kahn's Topological DAG &amp; Human-in-the-Loop Gate</li>
-          <li>Thai GAAP Double-entry GL with VAT 7% &amp; WHT 3%</li>
-          <li>Treasury Cash Flow &amp; Liquidity Forecast (90 Days)</li>
-          <li>NIST FIPS 204 ML-DSA-65 Quantum Sealed Vouchers</li>
+          <li>
+            <span class="lang-th">บัญชีคู่ Thai GAAP พร้อมภาษี VAT 7% &amp; หัก ณ ที่จ่าย 3%</span>
+            <span class="lang-en">Thai GAAP Double-entry GL with VAT 7% &amp; WHT 3%</span>
+          </li>
+          <li>
+            <span class="lang-th">พยากรณ์กระแสเงินสดและสภาพคล่อง Treasury 90 วัน</span>
+            <span class="lang-en">Treasury Cash Flow &amp; Liquidity Forecast (90 Days)</span>
+          </li>
+          <li>
+            <span class="lang-th">ใบสำคัญลงนามควอนตัม NIST FIPS 204 ML-DSA-65</span>
+            <span class="lang-en">NIST FIPS 204 ML-DSA-65 Quantum Sealed Vouchers</span>
+          </li>
         </ul>
         <div class="card-footer">
           <span>47 Tests Passing</span>
-          <span class="card-action">Inspect Code ↗</span>
+          <span class="card-action">
+            <span class="lang-th">ดูซอร์สโค้ด ↗</span>
+            <span class="lang-en">Inspect Code ↗</span>
+          </span>
         </div>
       </a>
 
@@ -455,16 +542,31 @@
           <span>tum-cybermesh</span>
           <span class="arrow">↗</span>
         </h3>
-        <p class="card-body">ระบบคลาวด์ความมั่นคงปลอดภัยไซเบอร์ ตรวจจับภัยคุกคามด้วย Sigma Rules และระบบตอบโต้อัตโนมัติ SOAR ภายใต้ 30s SLA</p>
+        <p class="card-body">
+          <span class="lang-th">ระบบคลาวด์ความมั่นคงปลอดภัยไซเบอร์ ตรวจจับภัยคุกคามด้วย Sigma Rules และระบบตอบโต้อัตโนมัติ SOAR ภายใต้ 30s SLA</span>
+          <span class="lang-en">National defense cloud &amp; autonomous XSIAM — real-time Sigma Rule detection and automated SOAR containment under a 30s SLA.</span>
+        </p>
         <ul class="card-features">
           <li>Partitioned In-Memory Lakehouse RingBuffer</li>
-          <li>Automated Ransomware &amp; LSASS BAS Simulation</li>
-          <li>DoD 30s Containment SLA SOAR Engine</li>
-          <li>Post-Quantum Signed Forensic Audit Receipts</li>
+          <li>
+            <span class="lang-th">จำลองการโจมตีอัตโนมัติ Ransomware &amp; LSASS BAS</span>
+            <span class="lang-en">Automated Ransomware &amp; LSASS BAS Simulation</span>
+          </li>
+          <li>
+            <span class="lang-th">SOAR กักกันภัยคุกคามตามเกณฑ์ DoD 30s SLA</span>
+            <span class="lang-en">DoD 30s Containment SLA SOAR Engine</span>
+          </li>
+          <li>
+            <span class="lang-th">ใบเสร็จตรวจสอบทางนิติวิทยาศาสตร์ลงนามด้วย PQC</span>
+            <span class="lang-en">Post-Quantum Signed Forensic Audit Receipts</span>
+          </li>
         </ul>
         <div class="card-footer">
           <span>34 Tests Passing</span>
-          <span class="card-action">Inspect Code ↗</span>
+          <span class="card-action">
+            <span class="lang-th">ดูซอร์สโค้ด ↗</span>
+            <span class="lang-en">Inspect Code ↗</span>
+          </span>
         </div>
       </a>
 
@@ -475,16 +577,34 @@
           <span>tum-trust-fabric</span>
           <span class="arrow">↗</span>
         </h3>
-        <p class="card-body">โครงสร้างพื้นฐานอัตลักษณ์ดิจิทัลแห่งชาติ ช่องทางตรวจคนเข้าเมืองอัจฉริยะ Walk-Through และระบบรับรองเอกสารทางกฎหมาย</p>
+        <p class="card-body">
+          <span class="lang-th">โครงสร้างพื้นฐานอัตลักษณ์ดิจิทัลแห่งชาติ ช่องทางตรวจคนเข้าเมืองอัจฉริยะ Walk-Through และระบบรับรองเอกสารทางกฎหมาย</span>
+          <span class="lang-en">National sovereign digital identity &amp; legal notary — Walk-Through border control gates and legally binding electronic certification.</span>
+        </p>
         <ul class="card-features">
-          <li>W3C DID:TUM &amp; ZK Pedersen Proof of Age/Solvency</li>
-          <li>3D Biometric Disparity (&ge;0.82) Anti-Spoofing</li>
-          <li>พ.ร.บ. ธุรกรรมอิเล็กทรอนิกส์ ม.26, 28 Legal Notary</li>
-          <li>RFC 3161 Sovereign Time-Stamp Authority (TSA)</li>
+          <li>
+            <span class="lang-th">W3C DID:TUM &amp; ZK Pedersen พิสูจน์อายุ/สถานะการเงิน</span>
+            <span class="lang-en">W3C DID:TUM &amp; ZK Pedersen Proof of Age/Solvency</span>
+          </li>
+          <li>
+            <span class="lang-th">ตรวจจับใบหน้าจริง 3D Biometric Disparity (&ge;0.82)</span>
+            <span class="lang-en">3D Biometric Disparity (&ge;0.82) Anti-Spoofing</span>
+          </li>
+          <li>
+            <span class="lang-th">รับรองเอกสารตาม พ.ร.บ. ธุรกรรมอิเล็กทรอนิกส์ ม.26, 28</span>
+            <span class="lang-en">Electronic Transactions Act Sec. 26/28 Legal Notary</span>
+          </li>
+          <li>
+            <span class="lang-th">ระบบประทับเวลาระดับชาติ RFC 3161 TSA</span>
+            <span class="lang-en">RFC 3161 Sovereign Time-Stamp Authority (TSA)</span>
+          </li>
         </ul>
         <div class="card-footer">
           <span>53 Tests Passing</span>
-          <span class="card-action">Inspect Code ↗</span>
+          <span class="card-action">
+            <span class="lang-th">ดูซอร์สโค้ด ↗</span>
+            <span class="lang-en">Inspect Code ↗</span>
+          </span>
         </div>
       </a>
 
@@ -495,16 +615,31 @@
           <span>tum-central-director</span>
           <span class="arrow">↗</span>
         </h3>
-        <p class="card-body">ศูนย์บัญชาการควบคุมระบบนิเวศ ระบบ Monaco ADE, Sentinel Interceptor สกัดกั้นคำสั่งอันตราย และ Sovereign Event Mesh</p>
+        <p class="card-body">
+          <span class="lang-th">ศูนย์บัญชาการควบคุมระบบนิเวศ ระบบ Monaco ADE, Sentinel Interceptor สกัดกั้นคำสั่งอันตราย และ Sovereign Event Mesh</span>
+          <span class="lang-en">Mission control &amp; sovereign ADE — Monaco IDE, Sentinel prompt injection firewall, and Cross-Fleet Event Mesh telemetry.</span>
+        </p>
         <ul class="card-features">
           <li>Real-time Cross-Fleet Event Mesh Bus</li>
-          <li>Sentinel Prompt Injection &amp; Execution Firewall</li>
-          <li>FleetMeshHub 8-Repository Telemetry Router</li>
-          <li>Delegated Agent Credential (DAC) Issuer</li>
+          <li>
+            <span class="lang-th">Sentinel ไฟร์วอลล์สกัดกั้นคำสั่งอันตราย Prompt Injection</span>
+            <span class="lang-en">Sentinel Prompt Injection &amp; Execution Firewall</span>
+          </li>
+          <li>
+            <span class="lang-th">FleetMeshHub ศูนย์รวมข้อมูลเทเลเมทรี 8 Repositories</span>
+            <span class="lang-en">FleetMeshHub 8-Repository Telemetry Router</span>
+          </li>
+          <li>
+            <span class="lang-th">ระบบออกบัตรประจำตัวตัวแทน Delegated Agent Credential (DAC)</span>
+            <span class="lang-en">Delegated Agent Credential (DAC) Issuer</span>
+          </li>
         </ul>
         <div class="card-footer">
           <span>38 Tests Passing</span>
-          <span class="card-action">Inspect Code ↗</span>
+          <span class="card-action">
+            <span class="lang-th">ดูซอร์สโค้ด ↗</span>
+            <span class="lang-en">Inspect Code ↗</span>
+          </span>
         </div>
       </a>
 
@@ -515,16 +650,34 @@
           <span>tum-socs</span>
           <span class="arrow">↗</span>
         </h3>
-        <p class="card-body">แพลตฟอร์ม OpenSIEM กลาง พัฒนาบน ASP.NET Core 8 Clean Architecture รองรับ Ingestion ความเร็วสูงพร้อม Web Console React 18</p>
+        <p class="card-body">
+          <span class="lang-th">แพลตฟอร์ม OpenSIEM กลาง พัฒนาบน ASP.NET Core 8 Clean Architecture รองรับ Ingestion ความเร็วสูงพร้อม Web Console React 18</span>
+          <span class="lang-en">High-throughput OpenSIEM platform built on ASP.NET Core 8 Clean Architecture with high-speed ingestion and React 18 Web Console.</span>
+        </p>
         <ul class="card-features">
-          <li>ASP.NET Core 8 High-Throughput Pipeline</li>
-          <li>Sigma Rule Ingestion &amp; Incident Dispatcher</li>
-          <li>React 18 Single Page Architecture UI</li>
-          <li>Enterprise SecurityHeaders Middleware</li>
+          <li>
+            <span class="lang-th">ไปป์ไลน์ประมวลผลความเร็วสูง ASP.NET Core 8</span>
+            <span class="lang-en">ASP.NET Core 8 High-Throughput Pipeline</span>
+          </li>
+          <li>
+            <span class="lang-th">ระบบนำเข้า Sigma Rules และกระจายแจ้งเตือนภัยคุกคาม</span>
+            <span class="lang-en">Sigma Rule Ingestion &amp; Incident Dispatcher</span>
+          </li>
+          <li>
+            <span class="lang-th">ส่วนประสานงานผู้ใช้ SPA บน React 18 ทันสมัย</span>
+            <span class="lang-en">React 18 Single Page Architecture UI</span>
+          </li>
+          <li>
+            <span class="lang-th">มิดเดิลแวร์ความปลอดภัย Enterprise SecurityHeaders</span>
+            <span class="lang-en">Enterprise SecurityHeaders Middleware</span>
+          </li>
         </ul>
         <div class="card-footer">
           <span>58 Tests Passing</span>
-          <span class="card-action">Inspect Code ↗</span>
+          <span class="card-action">
+            <span class="lang-th">ดูซอร์สโค้ด ↗</span>
+            <span class="lang-en">Inspect Code ↗</span>
+          </span>
         </div>
       </a>
 
@@ -535,16 +688,34 @@
           <span>tum-quantum</span>
           <span class="arrow">↗</span>
         </h3>
-        <p class="card-body">แกนกลางคำนวณคณิตศาสตร์โครงตาข่ายระดับชาติ (Lattice Math) ตามมาตรฐานสากล NIST FIPS 203 และ FIPS 204 Native .NET 8</p>
+        <p class="card-body">
+          <span class="lang-th">แกนกลางคำนวณคณิตศาสตร์โครงตาข่ายระดับชาติ (Lattice Math) ตามมาตรฐานสากล NIST FIPS 203 และ FIPS 204 Native .NET 8</span>
+          <span class="lang-en">National lattice mathematics core engine implementing global standards NIST FIPS 203 and FIPS 204 in native .NET 8.</span>
+        </p>
         <ul class="card-features">
-          <li>NIST FIPS 203 ML-KEM-768 Key Encapsulation</li>
-          <li>NIST FIPS 204 ML-DSA-65/87 Digital Signatures</li>
-          <li>Lattice Seed Derivation &amp; SHAKE-256 Vector Math</li>
-          <li>High-Speed Microservice with Zero External Deps</li>
+          <li>
+            <span class="lang-th">การแลกเปลี่ยนกุญแจเข้ารหัส NIST FIPS 203 ML-KEM-768</span>
+            <span class="lang-en">NIST FIPS 203 ML-KEM-768 Key Encapsulation</span>
+          </li>
+          <li>
+            <span class="lang-th">ลายมือชื่อดิจิทัล NIST FIPS 204 ML-DSA-65/87</span>
+            <span class="lang-en">NIST FIPS 204 ML-DSA-65/87 Digital Signatures</span>
+          </li>
+          <li>
+            <span class="lang-th">อนุพันธ์ Lattice Seed &amp; คณิตศาสตร์เวกเตอร์ SHAKE-256</span>
+            <span class="lang-en">Lattice Seed Derivation &amp; SHAKE-256 Vector Math</span>
+          </li>
+          <li>
+            <span class="lang-th">ไมโครเซอร์วิสความเร็วสูง ปราศจาก Dependency ภายนอก</span>
+            <span class="lang-en">High-Speed Microservice with Zero External Deps</span>
+          </li>
         </ul>
         <div class="card-footer">
           <span>42 Tests Passing</span>
-          <span class="card-action">Inspect Code ↗</span>
+          <span class="card-action">
+            <span class="lang-th">ดูซอร์สโค้ด ↗</span>
+            <span class="lang-en">Inspect Code ↗</span>
+          </span>
         </div>
       </a>
 
@@ -555,16 +726,34 @@
           <span>tum-trust-security</span>
           <span class="arrow">↗</span>
         </h3>
-        <p class="card-body">ไลบรารีเชื่อมต่ออุปกรณ์ความปลอดภัยระดับฮาร์ดแวร์ ชิปบัตรประชาชนไทย DOPA, ตัวอ่านพาสปอร์ต ICAO 9303 และ PKCS#11 HSM</p>
+        <p class="card-body">
+          <span class="lang-th">ไลบรารีเชื่อมต่ออุปกรณ์ความปลอดภัยระดับฮาร์ดแวร์ ชิปบัตรประชาชนไทย DOPA, ตัวอ่านพาสปอร์ต ICAO 9303 และ PKCS#11 HSM</span>
+          <span class="lang-en">Hardware security abstraction library interfacing Thai DOPA citizen smart cards, ICAO Doc 9303 e-Passports, and PKCS#11 HSMs.</span>
+        </p>
         <ul class="card-features">
-          <li>DOPA Thai Smart Card APDU Protocol</li>
-          <li>ICAO Doc 9303 TD1/TD2/TD3 MRZ Engine</li>
-          <li>Hardware Security Module (HSM) PKCS#11 HAL</li>
-          <li>Sovereign Identity Assertion Primitives</li>
+          <li>
+            <span class="lang-th">โพรโทคอลสื่อสาร DOPA Thai Smart Card APDU</span>
+            <span class="lang-en">DOPA Thai Smart Card APDU Protocol</span>
+          </li>
+          <li>
+            <span class="lang-th">เอนจินประมวลผล ICAO Doc 9303 TD1/TD2/TD3 MRZ</span>
+            <span class="lang-en">ICAO Doc 9303 TD1/TD2/TD3 MRZ Engine</span>
+          </li>
+          <li>
+            <span class="lang-th">ตัวเชื่อมต่อ Hardware Security Module (HSM) PKCS#11 HAL</span>
+            <span class="lang-en">Hardware Security Module (HSM) PKCS#11 HAL</span>
+          </li>
+          <li>
+            <span class="lang-th">โครงสร้างพื้นฐานยืนยันอัตลักษณ์อธิปไตยดิจิทัล</span>
+            <span class="lang-en">Sovereign Identity Assertion Primitives</span>
+          </li>
         </ul>
         <div class="card-footer">
           <span>159 Tests Passing</span>
-          <span class="card-action">Inspect Code ↗</span>
+          <span class="card-action">
+            <span class="lang-th">ดูซอร์สโค้ด ↗</span>
+            <span class="lang-en">Inspect Code ↗</span>
+          </span>
         </div>
       </a>
 
@@ -575,16 +764,34 @@
           <span>tum-group-holdings</span>
           <span class="arrow">↗</span>
         </h3>
-        <p class="card-body">ศูนย์กลางธรรมาภิบาลและการกำกับดูแลสถาปัตยกรรม EWG Charter, รายงาน Sprint 1-8, และชุดทดสอบ E2E ข้าม 8 แพลตฟอร์ม</p>
+        <p class="card-body">
+          <span class="lang-th">ศูนย์กลางธรรมาภิบาลและการกำกับดูแลสถาปัตยกรรม EWG Charter, รายงาน Sprint 1-8, และชุดทดสอบ E2E ข้าม 8 แพลตฟอร์ม</span>
+          <span class="lang-en">Central enterprise governance, EWG charters, Sprint 1–8 milestones, and end-to-end integration test harness across 8 platforms.</span>
+        </p>
         <ul class="card-features">
-          <li>Continuous SDLC Governance Engine</li>
-          <li>Fleet-Wide Pure Node.js E2E Verifier</li>
-          <li>Third-Party Independent Audit Framework</li>
-          <li>Fleet Root Docker Compose &amp; CI/CD Pipelines</li>
+          <li>
+            <span class="lang-th">เอนจินกำกับดูแล Continuous SDLC Automation</span>
+            <span class="lang-en">Continuous SDLC Governance Engine</span>
+          </li>
+          <li>
+            <span class="lang-th">ชุดทดสอบ E2E ข้ามระบบนิเวศ Node.js แท้ 100%</span>
+            <span class="lang-en">Fleet-Wide Pure Node.js E2E Verifier</span>
+          </li>
+          <li>
+            <span class="lang-th">กรอบการตรวจสอบรับรองมาตรฐานสากลจากผู้เชี่ยวชาญอิสระ</span>
+            <span class="lang-en">Third-Party Independent Audit Framework</span>
+          </li>
+          <li>
+            <span class="lang-th">Docker Compose รวมทั้งระบบและ GitHub Actions CI/CD</span>
+            <span class="lang-en">Fleet Root Docker Compose &amp; CI/CD Pipelines</span>
+          </li>
         </ul>
         <div class="card-footer">
           <span>8 E2E Steps Green</span>
-          <span class="card-action">Inspect Code ↗</span>
+          <span class="card-action">
+            <span class="lang-th">ดูซอร์สโค้ด ↗</span>
+            <span class="lang-en">Inspect Code ↗</span>
+          </span>
         </div>
       </a>
 
@@ -594,13 +801,51 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p style="margin-bottom: 8px;"><strong>TUM Group Holdings</strong> — Sovereign Technology Ecosystem</p>
+      <p style="margin-bottom: 8px;">
+        <span class="lang-th"><strong>TUM Group Holdings</strong> — ระบบนิเวศเทคโนโลยีระดับอธิปไตย (Sovereign Tech Ecosystem)</span>
+        <span class="lang-en"><strong>TUM Group Holdings</strong> — Sovereign Technology Ecosystem</span>
+      </p>
       <p style="font-size: 0.8rem; opacity: 0.7;">
-        Approved by Khun Pasit (Chairman of the Board) &amp; Executive Architecture Council.<br>
-        Built on Clean Architecture, Post-Quantum Cryptography, and Zero-Mockup Guarantee.
+        <span class="lang-th">
+          อนุมัติโดย คุณภาษิต (ประธานกรรมการบริหาร) &amp; สภาสถาปัตยกรรมองค์กร<br>
+          พัฒนาบนพื้นฐาน Clean Architecture, การเข้ารหัสยุคหลังควอนตัม และการันตีปราศจาก Mockup 100%
+        </span>
+        <span class="lang-en">
+          Approved by Khun Pasit (Chairman of the Board) &amp; Executive Architecture Council.<br>
+          Built on Clean Architecture, Post-Quantum Cryptography, and Zero-Mockup Guarantee.
+        </span>
       </p>
     </div>
   </footer>
+
+  <!-- LIGHTWEIGHT CLIENT-SIDE I18N CONTROLLER -->
+  <script>
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      localStorage.setItem('tum_portal_lang', lang);
+      var thBtn = document.getElementById('lang-th-btn');
+      var enBtn = document.getElementById('lang-en-btn');
+      if (thBtn && enBtn) {
+        if (lang === 'th') {
+          thBtn.classList.add('active');
+          enBtn.classList.remove('active');
+        } else {
+          enBtn.classList.add('active');
+          thBtn.classList.remove('active');
+        }
+      }
+    }
+
+    // Auto-detect or restore saved language
+    (function initLanguage() {
+      var saved = localStorage.getItem('tum_portal_lang');
+      if (!saved) {
+        var userLang = navigator.language || navigator.userLanguage || 'th';
+        saved = userLang.toLowerCase().startsWith('th') ? 'th' : 'en';
+      }
+      setLanguage(saved);
+    })();
+  </script>
 
 </body>
 </html>
