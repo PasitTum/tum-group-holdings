@@ -30,11 +30,11 @@ This dossier lists the **exhaustive inventory of external credentials, domain as
 
 | Ref # | Category | Asset / Blocker Description | Required Action Owner | Est. Budget / Cost | Lead Time | Blocker Severity |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **BLK-01** | Domain & DNS | Corporate Domain Acquisition (`tumgroup.com`, etc.) | CEO / IT Admin | $150 – $3,500 | 24 Hours | `CRITICAL 🔴` |
-| **BLK-02** | DNS & CDN | Cloudflare Enterprise + DNSSEC Setup | IT Admin / CFO Card | $250 / mo | 4 Hours | `CRITICAL 🔴` |
+| **BLK-01** | Domain & Edge | Cloudflare Pages Zero-Cost Domain (`tumgroup.pages.dev`) | CEO / IT Admin | $0 (Free Tier) | 10 Minutes | `READY 🟢` |
+| **BLK-02** | DNS & Edge CDN | Cloudflare Pages Global Anycast CDN + Auto SSL | IT Admin / Self-Serve | $0 (Free Tier) | 5 Minutes | `READY 🟢` |
 | **BLK-03** | Social Handles | LinkedIn Company Page & Executive Verification | CEO / CMO | $0 | 2 Hours | `CRITICAL 🔴` |
-| **BLK-04** | Social Handles | X (Twitter) Corporate Verified Organization (@TUMGroupHQ) | CEO / Corporate Card | $200 / mo | 48 Hours | `HIGH 🟠` |
-| **BLK-05** | Community | GitHub Enterprise Org (`github.com/tum-holdings`) | CTO / CEO Card | $210 / mo | 1 Hour | `CRITICAL 🔴` |
+| **BLK-04** | Social Handles | X (Twitter) Corporate Profile (@TUMGroupHQ) | CEO / Self-Serve | $0 | 1 Hour | `HIGH 🟠` |
+| **BLK-05** | Community | GitHub Free Organization (`github.com/tum-holdings`) | CTO / Admin | $0 (Free Tier) | 10 Minutes | `READY 🟢` |
 | **BLK-06** | Developer Seed | HackerNews Official Launch Account & Karma Seeding | Lead Dev (Human) | $0 | 3 Days | `HIGH 🟠` |
 | **BLK-07** | Community | Discord Community Server Vanity URL & Phone 2FA | Community Lead | $0 – $35 / mo | 2 Hours | `MEDIUM 🟡` |
 | **BLK-08** | Cloud Billing | AWS / Azure GovCloud Sovereign Tenant Setup | CEO / CFO Signature | Variable ($5k pool)| 5 Days | `CRITICAL 🔴` |

@@ -1,75 +1,96 @@
-# คู่มือปฏิบัติการของผู้บริหาร: การจดโดเมนเนมและตั้งค่า GitHub Organization ทางการ
-## Executive Operational Action Guide: Sovereign Domains, DNS & GitHub Setup
-**รหัสเอกสาร:** `TUM-EXEC-GUIDE-DOMAINS-GITHUB-2026`  
-**เป้าหมาย:** ชี้แจงขั้นตอนทีละสเต็ป (Step-by-Step) เพื่อให้ท่านประธานและทีมไอทีผู้บริหารสามารถปลดล็อก Blocker เร่งด่วน (Priority 1) ได้ทันทีในเวลาไม่เกิน 15-30 นาที
+# คู่มือปฏิบัติการของผู้บริหาร: การเปิดใช้งาน Cloudflare Pages ฟรี 100% และตั้งค่า GitHub Organization
+## Executive Operational Action Guide: Zero-Cost Cloudflare Pages & GitHub Setup
+**รหัสเอกสาร:** `TUM-EXEC-GUIDE-ZERO-COST-2026-V2`  
+**สถานะ:** ปรับปรุงตามข้อสั่งการของประธานกรรมการบริหาร (อัปเดตเป็นระบบฟรี $0 Zero-Cost)  
+**เป้าหมาย:** ชี้แจงขั้นตอนการตั้งค่าระบบโดเมนและคลาวด์ฟรี 100% บน Cloudflare Pages และ GitHub โดยไม่ต้องเสียค่าใช้จ่ายแม้แต่บาทเดียว
 
 ---
 
-## 1. การจดทะเบียนโดเมนเนมทางการผ่าน Cloudflare Registrar (ประมาณ 10 นาที)
+## 1. การวิเคราะห์ผลกระทบ: การใช้โดเมนฟรีมีผลอะไรหรือไม่? (Impact Assessment)
 
-### 1.1 รายชื่อโดเมนเนมเป้าหมายที่ต้องกดสั่งซื้อ:
-1. `tumgroup.com` — พอร์ทัลหลักของกลุ่มบริษัท (Global Corporate Portal)
-2. `tumworkos.com` — หน้าผลิตภัณฑ์ Autonomous AI WorkOS & ERP
-3. `tumsocs.com` — หน้าผลิตภัณฑ์ CyberMesh Defense Cloud & OpenSIEM
-4. `tumtrust.io` — หน้าโครงสร้างพื้นฐาน National Digital Identity & Legal Notary
+คำถามสำคัญของท่านประธาน: **"ถ้าปรับมาใช้ตัวฟรีของ Cloudflare จะมีผลอะไรมั้ย?"**  
+คณะทำงานขอสรุปผลเชิงเทคนิคและธุรกิจอย่างตรงไปตรงมา ดังนี้ครับ:
 
-### 1.2 ขั้นตอนการสั่งซื้อ:
-1. ล็อกอินเข้าสู่แดชบอร์ด **[Cloudflare Dashboard](https://dash.cloudflare.com/)**
-2. ไปที่เมนูซ้ายมือ: **Domain Registration** $\rightarrow$ **Register Domains**
-3. ค้นหาชื่อโดเมนเนมข้างต้นและกด **Purchase** (ระบบ Cloudflare จำหน่ายตามราคาทุนจริง ไม่มีค่า Markup รายปี)
-4. เลือกระยะเวลาถือครอง (แนะนำ 2-5 ปี) พร้อมเปิดฟังก์ชัน **WHOIS Privacy (ฟรี)** และ **Auto-Renew**
+### ✅ ผลดีและข้อได้เปรียบ (Positive Impacts):
+1. **ประหยัดค่าใช้จ่ายทันที 100% ($0 Zero-Cost):** ไม่ต้องรูดบัตรเครดิต ไม่มีความเสี่ยงค่าบริการแอบแฝง
+2. **ประสิทธิภาพและความปลอดภัยเทียบเท่าระดับ Enterprise 100%:** Cloudflare Pages รันบนโครงข่าย **Anycast Edge Network** เดียวกันกับลูกค้ารายใหญ่ มีเซิร์ฟเวอร์ในกรุงเทพฯ โหลดเร็วต่ำกว่า 10ms ป้องกันการถูกยิงล่ม (Unlimited DDoS Protection)
+3. **ได้ใบรับรองความปลอดภัย HTTPS / SSL อัตโนมัติ (DigiCert / Let's Encrypt):** ปลอดภัย ไร้กังวล เบราว์เซอร์ขึ้นกุญแจเขียว ไม่มีการแจ้งเตือนว่าเว็บไม่ปลอดภัย
+4. **ความน่าเชื่อถือสูงในวงการไอที (Tech Credibility):** ชุมชนนักพัฒนาและบริษัทเทคโนโลยีระดับโลกยอมรับโดเมน `*.pages.dev` และ `*.github.io` เป็นมาตรฐานสากลสำหรับการทำ Alpha, Beta, และ Open Source Showcase
+5. **ไร้รอยต่อในการอัปเกรดในอนาคต (Seamless Future Upgrade):** ในอนาคตหากต้องการซื้อโดเมน `.com` เมื่อไหร่ สามารถกดปุ่ม *"Custom Domain"* ผูกชื่อครอบได้ทันทีใน 1 นาที โดยระบบหลังบ้านและโค้ดไม่ต้องแก้ไขแม้แต่บรรทัดเดียว
 
----
-
-## 2. การตั้งค่าระเบียน DNS (DNS Records Architecture)
-
-เมื่อจดโดเมนเนมบน Cloudflare เรียบร้อย ให้ไปที่แท็บ **DNS** $\rightarrow$ **Records** และเพิ่มระเบียนดังต่อไปนี้:
-
-### ตารางระเบียน DNS สำหรับ `tumgroup.com`:
-| Type | Name / Host | Content / Target | Proxy Status | คำอธิบาย |
-| :---: | :---: | :---: | :---: | :--- |
-| **A** | `@` (Root) | `192.0.2.1` (หรือ IP เซิร์ฟเวอร์ Landing Page) | Proxied (ส้ม ☁️) | เว็บไซต์หลักของกลุ่มบริษัท |
-| **CNAME** | `www` | `tumgroup.com` | Proxied (ส้ม ☁️) | ซิงค์ www ไปยัง root |
-| **CNAME** | `developer` | `tum-developer-portal.pages.dev` | Proxied (ส้ม ☁️) | พอร์ทัลนักพัฒนาและเอกสาร API |
-| **CNAME** | `api` | `gateway.tumgroup.com` | Proxied (ส้ม ☁️) | ศูนย์รวม API Gateway กลาง |
-| **CNAME** | `director` | `director-cloud.tumgroup.com` | Proxied (ส้ม ☁️) | Sovereign AgentOS Control Plane |
-| **TXT** | `@` | `v=spf1 include:_spf.google.com ~all` | DNS Only | อีเมลองค์กรความปลอดภัย SPF |
-
-> **ข้อแนะนำความปลอดภัย:** เปิดใช้งานฟังก์ชัน **DNSSEC (One-Click Enable)** ใน Cloudflare เพื่อป้องกันการปลอมแปลง DNS ระดับสากล
+### ⚠️ ข้อจำกัดที่ต้องทราบ (Trade-offs / Limitations):
+1. **รูปแบบ URL จะมีนามสกุลแพลตฟอร์มติดอยู่:** เช่น จะแสดงเป็น `https://tumgroup.pages.dev` แทนที่จะเป็น `tumgroup.com`
+2. **ไม่สามารถทำ Custom Domain Email ได้:** ไม่สามารถสร้างอีเมลลงท้ายเฉพาะ เช่น `ceo@tumgroup.com` ได้ (ต้องใช้อีเมลทางการเดิม เช่น Gmail Workspace หรืออีเมลกลุ่มบริษัทเดิมไปก่อน)
+3. **ความเหมาะสมกับระยะนี้:** สำหรับระยะ **Internal Audit, Regulatory Sandbox กับ ETDA/สกมช., และ Private Stakeholder Demo** การใช้ `pages.dev` ถือว่า **"เหมาะสมและสมบูรณ์แบบ 100%"** ครับ
 
 ---
 
-## 3. การเปิดบัญชีองค์กร GitHub Enterprise Organization (ประมาณ 5 นาที)
+## 2. ขั้นตอนการเปิดใช้งาน Cloudflare Pages ฟรี 100% (ใช้เวลาประมาณ 5 นาที)
 
-### 3.1 ขั้นตอนการสร้างองค์กร:
-1. เข้าไปที่ **[GitHub New Organization](https://github.com/account/organizations/new)**
-2. ตั้งชื่อ Organization Account Name: **`tum-holdings`** (หรือ `tum-group-holdings`)
-3. ระบุ Contact Email ขององค์กร: (เช่น `admin@tumgroup.com` หรืออีเมลของท่านประธาน)
-4. เลือกแพ็กเกจ (เริ่มต้นด้วย Free หรือ Team เพื่อเปิดเป็น Public Open Source)
+Cloudflare ให้บริการโฮสติ้งและโดเมนฟรีภายใต้นามสกุล **`*.pages.dev`** ไม่จำกัด Bandwidth และฟรี SSL ตลอดชีพ:
 
-### 3.2 ขั้นตอนการโอนย้าย Repositories สู่องค์กรทางการ:
-ทีมวิศวกรรมได้เตรียมซอร์สโค้ดไว้สะอาด 100% พร้อมให้สั่งย้าย (Transfer) จากโปรไฟล์ส่วนตัวของท่านประธาน (`https://github.com/PasitTum/...`) เข้าสู่องค์กรใหม่ได้ในคลิกเดียว:
-1. เปิดหน้าแต่ละ Repository (เช่น `tum-agentic-workos`) $\rightarrow$ เข้า **Settings**
-2. เลื่อนลงล่างสุดไปที่ **Danger Zone** $\rightarrow$ กดปุ่ม **Transfer repository**
-3. ระบุเป้าหมาย: `tum-holdings` แล้วกดยืนยัน
+### 2.1 รายชื่อ Subdomain ฟรีที่เราจะได้รับ:
+* `tumgroup.pages.dev` — พอร์ทัลหลักของกลุ่มบริษัท (Global Corporate Portal)
+* `tumworkos.pages.dev` — หน้าคอนโซล AI WorkOS & ERP HUD
+* `tumsocs.pages.dev` — หน้าคอนโซล CyberMesh Defense Cloud HUD
+* `tumtrust.pages.dev` — หน้าคอนโซล National Digital Identity & Legal Notary
+* `developer-tum.pages.dev` — พอร์ทัลเอกสาร API และคู่มือนักพัฒนา
 
-### 3.3 การสร้าง Team และกำหนดสิทธิ์:
-- **`core-maintainers`:** สิทธิ์ Admin สำหรับผู้ดูแลสถาปัตยกรรมกลาง
-- **`marketing-gtm`:** สิทธิ์ Write สำหรับเอกสารประชาสัมพันธ์และ Portal
-- **`public-community`:** สิทธิ์ Read สำหรับนักพัฒนาภายนอก (เมื่อเปิด Public)
+### 2.2 ขั้นตอนการตั้งค่าใน Cloudflare Dashboard:
+1. เข้าเว็บไซต์ **[Cloudflare Dashboard](https://dash.cloudflare.com/)** และสมัคร/ล็อกอินบัญชีฟรี (ไม่ต้องกรอกบัตรเครดิต)
+2. เมนูซ้ายมือ: ไปที่ **Workers & Pages** $\rightarrow$ กดปุ่ม **Create application**
+3. เลือกแท็บ **Pages** $\rightarrow$ กดปุ่ม **Connect to Git**
+4. ล็อกอินผูกกับบัญชี GitHub ของท่านประธาน (`PasitTum`) และเลือก Repository เช่น `tum-group-holdings`
+5. ในช่อง Project Name: พิมพ์ชื่อ **`tumgroup`** (ระบบจะสร้างโดเมนฟรี `https://tumgroup.pages.dev` ให้ทันที)
+6. ในช่อง Framework Preset: เลือก `None` หรือระบุโฟลเดอร์ Web / Static
+7. กดปุ่ม **Save and Deploy** $\rightarrow$ เว็บไซต์จะออนไลน์สู่สายตาชาวโลกทันทีผ่านระบบ CDN ระดับโลก
 
 ---
 
-## 4. การเคลมชื่อบัญชีโซเชียลมีเดียทางการ (Social Media Brand Ownership)
+## 3. ทางเลือกสำรอง: การใช้ GitHub Pages ฟรี (ใช้เวลา 2 นาที)
 
-1. **LinkedIn Company Page:**
-   - เข้า [LinkedIn Company Create](https://www.linkedin.com/company/setup/new/)
-   - ตั้งชื่อหน้าเพจ: **TUM Group Holdings**
-   - URL: `linkedin.com/company/tum-group-holdings`
-   - ใส่โลโก้และคำอธิบายตามข้อความใน [`PUBLIC_LAUNCH_PRESS_RELEASE.md`](file:///D:/TUM/tum-group-holdings/Marketing/PUBLIC_LAUNCH_PRESS_RELEASE.md)
-2. **X (Twitter) Corporate Profile:**
-   - สมัครหรือเปลี่ยน Handle เป็น: **`@TUMGroupHQ`** หรือ **`@TUMHoldings`**
-   - ยื่นขอตราสัญลักษณ์องค์กรยืนยันตัวตน (Verified Organization)
+นอกเหนือจาก Cloudflare แล้ว GitHub ยังมีระบบโฮสติ้งและโดเมนฟรีที่เชื่อมต่อกับ Repository ของท่านประธานโดยตรง:
+* **URL ฟรีที่จะได้รับ:** `https://pasittum.github.io/tum-group-holdings` (หรือเมื่อเปิด Org จะได้ `https://tum-holdings.github.io`)
+* **วิธีการเปิดใช้ใน GitHub:**
+  1. เปิดหน้า Repository บน GitHub $\rightarrow$ เข้า **Settings**
+  2. เมนูซ้ายมือคลิก **Pages**
+  3. ใต้หัวข้อ **Build and deployment**:
+     - Source: เลือก **Deploy from a branch**
+     - Branch: เลือก **main** หรือ **feature/...** โฟลเดอร์ `/root` หรือ `/docs`
+  4. กดปุ่ม **Save** $\rightarrow$ ระบบจะออกใบรับรอง SSL และเปิด URL ให้ใช้งานทันที
+
+---
+
+## 4. การเปิดบัญชีองค์กร GitHub Organization ฟรี (ประมาณ 5 นาที)
+
+การสร้างองค์กรกลางบน GitHub สามารถทำได้ **ฟรี 100%** ไม่มีค่าใช้จ่าย:
+
+### 4.1 ขั้นตอนการสร้างองค์กรฟรี:
+1. เข้าไปที่ **[GitHub Create Organization](https://github.com/account/organizations/new)**
+2. เลือกแพ็กเกจ: **Free Plan ($0 USD / month)** (ได้ฟังก์ชัน Public Repositories, Unlimited Actions minutes สำหรับ Public Repos, และ GitHub Pages ฟรี)
+3. ตั้งชื่อ Organization: **`tum-holdings`** (หรือ `tum-group-holdings`)
+4. ระบุ Contact Email ของท่านประธาน
+5. กดยืนยันการสร้างองค์กร
+
+### 4.2 การย้าย Repositories เข้าสู่องค์กรใหม่:
+1. เข้าไปที่หน้า Repository แต่ละตัวบน GitHub (เช่น `tum-agentic-workos`) $\rightarrow$ เข้า **Settings**
+2. เลื่อนลงไปล่างสุดที่ **Danger Zone** $\rightarrow$ กดปุ่ม **Transfer**
+3. ระบุชื่อเป้าหมายเป็นองค์กรใหม่: `tum-holdings` แล้วกดยืนยัน
+
+---
+
+## 5. แผนผัง Roadmap จากตัวฟรีสู่ Custom Domain ในอนาคต
+
+```mermaid
+flowchart LR
+    FreeEdge["ระยะที่ 1 (วันนี้ - ฟรี $0)\n• https://tumgroup.pages.dev\n• https://tum-holdings.github.io\n✅ ได้ SSL อัตโนมัติ ปลอดภัย 100%\n✅ มี CDN กทม. โหลดไว < 10ms\n✅ ใช้ส่งให้ Auditor & พันธมิตรดูได้ทันที"]
+    
+    AddDomain["ระยะที่ 2 (อนาคต - เมื่อผ่าน Audit)\n• สั่งซื้อโดเมน tumgroup.com (~350 บาท/ปี)\n• กดปุ่ม 'Custom Domain' ใน Cloudflare Pages"]
+    
+    LiveProd["ระยะที่ 3 (Commercial GA)\n• เว็บไซต์เปลี่ยนเป็น https://tumgroup.com ทันที\n• ระบบหลังบ้านและโค้ดไม่ต้องแก้แม้แต่บรรทัดเดียว"]
+
+    FreeEdge --> AddDomain --> LiveProd
+```
 
 ---
 **จัดทำโดย:** คณะทำงานกลาง Enterprise Working Group (EWG)  
