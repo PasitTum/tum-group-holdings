@@ -79,8 +79,23 @@ const testSteps = [
     check: () => {
       const hub = 'D:/TUM/tum-central-director/src/main/fleet-mesh-hub.ts';
       const daemon = 'D:/TUM/tum-central-director/src/main/daemon.ts';
-      if (!fs.existsSync(hub) || !fs.existsSync(daemon)) throw new Error('Missing Director files');
-      return 'Found FleetMeshHub and Daemon Router';
+      const eventMesh = 'D:/TUM/tum-central-director/src/main/event-mesh.ts';
+      if (!fs.existsSync(hub) || !fs.existsSync(daemon) || !fs.existsSync(eventMesh)) throw new Error('Missing Director files');
+      return 'Found FleetMeshHub, Daemon Router, and FleetEventMesh';
+    }
+  },
+  {
+    name: 'Verifying Cross-Fleet Event Mesh & Policy Enforcers (Sprint 8 Mesh Pipeline)',
+    check: () => {
+      const wosListener = 'D:/TUM/tum-agentic-workos/dist/application/services/agent-containment-listener.service.js';
+      const meshBridge = 'D:/TUM/tum-cybermesh/dist/application/soar/soar-event-bridge.service.js';
+      const fabricPub1 = 'D:/TUM/tum-trust-fabric/dist/src/application/use-cases/corridor/CorridorEventPublisher.js';
+      const fabricPub2 = 'D:/TUM/tum-trust-fabric/dist/application/use-cases/corridor/CorridorEventPublisher.js';
+      const hasFabricPub = fs.existsSync(fabricPub1) || fs.existsSync(fabricPub2);
+      if (!fs.existsSync(wosListener) || !fs.existsSync(meshBridge) || !hasFabricPub) {
+        throw new Error('Missing Sprint 8 Cross-Fleet event components');
+      }
+      return 'Found AgentContainmentListener, SoarEventBridge, and CorridorEventPublisher';
     }
   }
 ];
