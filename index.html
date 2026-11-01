@@ -150,6 +150,74 @@
     }
 
     /* LANGUAGE SWITCHER */
+        /* FLOATING QUICK LANGUAGE TOGGLE */
+    .floating-lang-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.25);
+      backdrop-filter: blur(16px);
+      border-radius: 9999px;
+      padding: 5px;
+      gap: 4px;
+    }
+    .float-lang-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .float-lang-btn.active {
+      background: var(--primary);
+      color: #090d16;
+      box-shadow: 0 0 14px var(--primary-glow);
+    }
+    .float-lang-btn:hover:not(.active) {
+      color: #fff;
+    }
+
+    /* SECTION LANGUAGE BAR */
+    .section-lang-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin: -24px auto 48px;
+    }
+    .sec-lang-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 20px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .sec-lang-btn.active {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+    }
+    .sec-lang-btn:hover:not(.active) {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
     .lang-switch {
       display: inline-flex;
       background: rgba(255, 255, 255, 0.05);
@@ -540,7 +608,10 @@
       
       <!-- CARD 1: WorkOS -->
       <a href="https://github.com/PasitTum/tum-agentic-workos" target="_blank" rel="noopener noreferrer" class="card">
-        <div class="card-tag">ENTERPRISE WORKFORCE &amp; ERP</div>
+        <div class="card-tag">
+          <span class="lang-th">ระบบแรงงาน AI &amp; ERP องค์กร</span>
+          <span class="lang-en">ENTERPRISE WORKFORCE &amp; ERP</span>
+        </div>
         <h3 class="card-title">
           <span>tum-agentic-workos</span>
           <span class="arrow">↗</span>
@@ -550,7 +621,10 @@
           <span class="lang-en">Autonomous AI workforce operating system and agentic ERP — automated 3-Way Match, Thai GAAP GL, and SAP S/4HANA integration.</span>
         </p>
         <ul class="card-features">
-          <li>Kahn's Topological DAG &amp; Human-in-the-Loop Gate</li>
+          <li>
+            <span class="lang-th">การจัดลำดับงาน Kahn DAG พร้อมเกต Human-in-the-Loop</span>
+            <span class="lang-en">Kahn's Topological DAG &amp; Human-in-the-Loop Gate</span>
+          </li>
           <li>
             <span class="lang-th">บัญชีคู่ Thai GAAP พร้อมภาษี VAT 7% &amp; หัก ณ ที่จ่าย 3%</span>
             <span class="lang-en">Thai GAAP Double-entry GL with VAT 7% &amp; WHT 3%</span>
@@ -565,7 +639,10 @@
           </li>
         </ul>
         <div class="card-footer">
-          <span>47 Tests Passing</span>
+          <span>
+            <span class="lang-th">ผ่านการทดสอบ 47 รายการ</span>
+            <span class="lang-en">47 Tests Passing</span>
+          </span>
           <span class="card-action">
             <span class="lang-th">ดูซอร์สโค้ด ↗</span>
             <span class="lang-en">Inspect Code ↗</span>
@@ -575,7 +652,10 @@
 
       <!-- CARD 2: CyberMesh -->
       <a href="https://github.com/PasitTum/tum-cybermesh" target="_blank" rel="noopener noreferrer" class="card">
-        <div class="card-tag">DEFENSE CLOUD &amp; XSIAM</div>
+        <div class="card-tag">
+          <span class="lang-th">คลาวด์ความมั่นคงป้องกันประเทศ &amp; XSIAM</span>
+          <span class="lang-en">DEFENSE CLOUD &amp; XSIAM</span>
+        </div>
         <h3 class="card-title">
           <span>tum-cybermesh</span>
           <span class="arrow">↗</span>
@@ -585,7 +665,10 @@
           <span class="lang-en">National defense cloud &amp; autonomous XSIAM — real-time Sigma Rule detection and automated SOAR containment under a 30s SLA.</span>
         </p>
         <ul class="card-features">
-          <li>Partitioned In-Memory Lakehouse RingBuffer</li>
+          <li>
+            <span class="lang-th">ริงบัฟเฟอร์เลกเฮาส์ในหน่วยความจำแบ่งพาร์ติชันความเร็วสูง</span>
+            <span class="lang-en">Partitioned In-Memory Lakehouse RingBuffer</span>
+          </li>
           <li>
             <span class="lang-th">จำลองการโจมตีอัตโนมัติ Ransomware &amp; LSASS BAS</span>
             <span class="lang-en">Automated Ransomware &amp; LSASS BAS Simulation</span>
@@ -600,7 +683,10 @@
           </li>
         </ul>
         <div class="card-footer">
-          <span>34 Tests Passing</span>
+          <span>
+            <span class="lang-th">ผ่านการทดสอบ 34 รายการ</span>
+            <span class="lang-en">34 Tests Passing</span>
+          </span>
           <span class="card-action">
             <span class="lang-th">ดูซอร์สโค้ด ↗</span>
             <span class="lang-en">Inspect Code ↗</span>
@@ -610,7 +696,10 @@
 
       <!-- CARD 3: Trust Fabric -->
       <a href="https://github.com/PasitTum/tum-trust-fabric" target="_blank" rel="noopener noreferrer" class="card">
-        <div class="card-tag">NATIONAL IDENTITY &amp; NOTARY</div>
+        <div class="card-tag">
+          <span class="lang-th">อัตลักษณ์ดิจิทัลแห่งชาติ &amp; ระบบรับรอง</span>
+          <span class="lang-en">NATIONAL IDENTITY &amp; NOTARY</span>
+        </div>
         <h3 class="card-title">
           <span>tum-trust-fabric</span>
           <span class="arrow">↗</span>
@@ -638,7 +727,10 @@
           </li>
         </ul>
         <div class="card-footer">
-          <span>53 Tests Passing</span>
+          <span>
+            <span class="lang-th">ผ่านการทดสอบ 53 รายการ</span>
+            <span class="lang-en">53 Tests Passing</span>
+          </span>
           <span class="card-action">
             <span class="lang-th">ดูซอร์สโค้ด ↗</span>
             <span class="lang-en">Inspect Code ↗</span>
@@ -648,7 +740,10 @@
 
       <!-- CARD 4: Director -->
       <a href="https://github.com/PasitTum/tum-central-director" target="_blank" rel="noopener noreferrer" class="card">
-        <div class="card-tag">SOVEREIGN AGENTOS &amp; CONTROL</div>
+        <div class="card-tag">
+          <span class="lang-th">ระบบปฏิบัติการควบคุม AgentOS อธิปไตย</span>
+          <span class="lang-en">SOVEREIGN AGENTOS &amp; CONTROL</span>
+        </div>
         <h3 class="card-title">
           <span>tum-central-director</span>
           <span class="arrow">↗</span>
@@ -658,7 +753,10 @@
           <span class="lang-en">Mission control &amp; sovereign ADE — Monaco IDE, Sentinel prompt injection firewall, and Cross-Fleet Event Mesh telemetry.</span>
         </p>
         <ul class="card-features">
-          <li>Real-time Cross-Fleet Event Mesh Bus</li>
+          <li>
+            <span class="lang-th">บัสสื่อสาร Event Mesh แบบเรียลไทม์เชื่อมโยงข้าม 8 ระบบ</span>
+            <span class="lang-en">Real-time Cross-Fleet Event Mesh Bus</span>
+          </li>
           <li>
             <span class="lang-th">Sentinel ไฟร์วอลล์สกัดกั้นคำสั่งอันตราย Prompt Injection</span>
             <span class="lang-en">Sentinel Prompt Injection &amp; Execution Firewall</span>
@@ -673,7 +771,10 @@
           </li>
         </ul>
         <div class="card-footer">
-          <span>38 Tests Passing</span>
+          <span>
+            <span class="lang-th">ผ่านการทดสอบ 38 รายการ</span>
+            <span class="lang-en">38 Tests Passing</span>
+          </span>
           <span class="card-action">
             <span class="lang-th">ดูซอร์สโค้ด ↗</span>
             <span class="lang-en">Inspect Code ↗</span>
@@ -683,7 +784,10 @@
 
       <!-- CARD 5: Socs -->
       <a href="https://github.com/PasitTum/tum-socs" target="_blank" rel="noopener noreferrer" class="card">
-        <div class="card-tag">OPENSIEM &amp; SECURITY HUD</div>
+        <div class="card-tag">
+          <span class="lang-th">ระบบ OpenSIEM &amp; ศูนย์ตรวจจับภัยคุกคาม</span>
+          <span class="lang-en">OPENSIEM &amp; SECURITY HUD</span>
+        </div>
         <h3 class="card-title">
           <span>tum-socs</span>
           <span class="arrow">↗</span>
@@ -711,7 +815,10 @@
           </li>
         </ul>
         <div class="card-footer">
-          <span>58 Tests Passing</span>
+          <span>
+            <span class="lang-th">ผ่านการทดสอบ 58 รายการ</span>
+            <span class="lang-en">58 Tests Passing</span>
+          </span>
           <span class="card-action">
             <span class="lang-th">ดูซอร์สโค้ด ↗</span>
             <span class="lang-en">Inspect Code ↗</span>
@@ -721,7 +828,10 @@
 
       <!-- CARD 6: Quantum -->
       <a href="https://github.com/PasitTum/tum-quantum" target="_blank" rel="noopener noreferrer" class="card">
-        <div class="card-tag">POST-QUANTUM CORE LAB</div>
+        <div class="card-tag">
+          <span class="lang-th">ห้องปฏิบัติการวิทยาการรหัสลับยุคหลังควอนตัม</span>
+          <span class="lang-en">POST-QUANTUM CORE LAB</span>
+        </div>
         <h3 class="card-title">
           <span>tum-quantum</span>
           <span class="arrow">↗</span>
@@ -749,7 +859,10 @@
           </li>
         </ul>
         <div class="card-footer">
-          <span>42 Tests Passing</span>
+          <span>
+            <span class="lang-th">ผ่านการทดสอบ 42 รายการ</span>
+            <span class="lang-en">42 Tests Passing</span>
+          </span>
           <span class="card-action">
             <span class="lang-th">ดูซอร์สโค้ด ↗</span>
             <span class="lang-en">Inspect Code ↗</span>
@@ -759,7 +872,10 @@
 
       <!-- CARD 7: Trust Security -->
       <a href="https://github.com/PasitTum/tum-trust-security" target="_blank" rel="noopener noreferrer" class="card">
-        <div class="card-tag">HARDWARE HAL &amp; TRUST CORE</div>
+        <div class="card-tag">
+          <span class="lang-th">แกนกลางความปลอดภัยและฮาร์ดแวร์ชิปบัตร</span>
+          <span class="lang-en">HARDWARE HAL &amp; TRUST CORE</span>
+        </div>
         <h3 class="card-title">
           <span>tum-trust-security</span>
           <span class="arrow">↗</span>
@@ -787,7 +903,10 @@
           </li>
         </ul>
         <div class="card-footer">
-          <span>159 Tests Passing</span>
+          <span>
+            <span class="lang-th">ผ่านการทดสอบ 159 รายการ</span>
+            <span class="lang-en">159 Tests Passing</span>
+          </span>
           <span class="card-action">
             <span class="lang-th">ดูซอร์สโค้ด ↗</span>
             <span class="lang-en">Inspect Code ↗</span>
@@ -797,7 +916,10 @@
 
       <!-- CARD 8: Group Holdings -->
       <a href="https://github.com/PasitTum/tum-group-holdings" target="_blank" rel="noopener noreferrer" class="card">
-        <div class="card-tag">GOVERNANCE &amp; AUDIT ENGINE</div>
+        <div class="card-tag">
+          <span class="lang-th">ศูนย์กลางธรรมาภิบาล &amp; เอนจินตรวจประเมิน</span>
+          <span class="lang-en">GOVERNANCE &amp; AUDIT ENGINE</span>
+        </div>
         <h3 class="card-title">
           <span>tum-group-holdings</span>
           <span class="arrow">↗</span>
@@ -825,7 +947,10 @@
           </li>
         </ul>
         <div class="card-footer">
-          <span>8 E2E Steps Green</span>
+          <span>
+            <span class="lang-th">8 ขั้นตอน E2E ผ่านฉลุย</span>
+            <span class="lang-en">8 E2E Steps Green</span>
+          </span>
           <span class="card-action">
             <span class="lang-th">ดูซอร์สโค้ด ↗</span>
             <span class="lang-en">Inspect Code ↗</span>
