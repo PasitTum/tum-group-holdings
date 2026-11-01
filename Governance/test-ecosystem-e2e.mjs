@@ -39,34 +39,39 @@ const testSteps = [
     }
   },
   {
-    name: 'Verifying Autonomous WorkOS DAG & Accounting Engine (tum-agentic-workos)',
+    name: 'Verifying Autonomous WorkOS DAG, Accounting & Treasury Forecast Engine (tum-agentic-workos)',
     check: () => {
       const wf = 'D:/TUM/tum-agentic-workos/dist/application/services/workflow-orchestrator.service.js';
       const gl = 'D:/TUM/tum-agentic-workos/dist/application/services/general-ledger-sync.service.js';
-      if (!fs.existsSync(wf) || !fs.existsSync(gl)) throw new Error('Missing WorkOS compiled services');
-      return 'Found WorkflowOrchestrator and GeneralLedgerSync services';
+      const tf = 'D:/TUM/tum-agentic-workos/dist/application/services/cash-flow-forecaster.service.js';
+      if (!fs.existsSync(wf) || !fs.existsSync(gl) || !fs.existsSync(tf)) throw new Error('Missing WorkOS compiled services');
+      return 'Found WorkflowOrchestrator, GeneralLedgerSync, and CashFlowForecaster services';
     }
   },
   {
-    name: 'Verifying CyberMesh Correlation Engine & BAS Simulator (tum-cybermesh)',
+    name: 'Verifying CyberMesh Correlation Engine, BAS Simulator & SOAR Playbooks (tum-cybermesh)',
     check: () => {
       const corr = 'D:/TUM/tum-cybermesh/dist/application/correlation/correlation-engine.service.js';
       const sim = 'D:/TUM/tum-cybermesh/dist/application/simulation/attack-simulation.service.js';
-      if (!fs.existsSync(corr) || !fs.existsSync(sim)) throw new Error('Missing CyberMesh compiled modules');
-      return 'Found CorrelationEngine and AttackSimulation services';
+      const soar = 'D:/TUM/tum-cybermesh/dist/application/soar/soar-playbook.service.js';
+      if (!fs.existsSync(corr) || !fs.existsSync(sim) || !fs.existsSync(soar)) throw new Error('Missing CyberMesh compiled modules');
+      return 'Found CorrelationEngine, AttackSimulation, and SoarPlaybook services';
     }
   },
   {
-    name: 'Verifying National Trust Fabric Batch Corridor & Gateway (tum-trust-fabric)',
+    name: 'Verifying National Trust Fabric Batch Corridor, Gateway & Legal Quantum Notary (tum-trust-fabric)',
     check: () => {
       const c1 = 'D:/TUM/tum-trust-fabric/dist/src/application/use-cases/corridor/BatchCorridorLaneProcessor.js';
       const c2 = 'D:/TUM/tum-trust-fabric/dist/application/use-cases/corridor/BatchCorridorLaneProcessor.js';
       const g1 = 'D:/TUM/tum-trust-fabric/dist/src/application/use-cases/corridor/CrossBorderCorridorGateway.js';
       const g2 = 'D:/TUM/tum-trust-fabric/dist/application/use-cases/corridor/CrossBorderCorridorGateway.js';
+      const n1 = 'D:/TUM/tum-trust-fabric/dist/src/application/use-cases/notary/LegalQuantumNotaryService.js';
+      const n2 = 'D:/TUM/tum-trust-fabric/dist/application/use-cases/notary/LegalQuantumNotaryService.js';
       const hasCorridor = fs.existsSync(c1) || fs.existsSync(c2);
       const hasGateway = fs.existsSync(g1) || fs.existsSync(g2);
-      if (!hasCorridor || !hasGateway) throw new Error('Missing Trust Fabric modules');
-      return 'Found BatchCorridorLaneProcessor and CrossBorderCorridorGateway';
+      const hasNotary = fs.existsSync(n1) || fs.existsSync(n2);
+      if (!hasCorridor || !hasGateway || !hasNotary) throw new Error('Missing Trust Fabric modules');
+      return 'Found BatchCorridor, CrossBorderGateway, and LegalQuantumNotary';
     }
   },
   {
