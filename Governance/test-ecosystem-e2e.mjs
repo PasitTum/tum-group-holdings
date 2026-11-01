@@ -5,18 +5,24 @@
 
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const TUM_ROOT = process.env.TUM_ROOT || path.resolve(__dirname, '../..');
 
 console.log('======================================================================');
 console.log('   TUM GROUP HOLDINGS — FLEET-WIDE END-TO-END TRANSACTION TEST        ');
-console.log(`   Executed at: ${new Date().toISOString()}                           `);
+console.log(`   Workspace Root: ${TUM_ROOT}                                        `);
+console.log(`   Executed at:    ${new Date().toISOString()}                        `);
 console.log('======================================================================\n');
 
 const testSteps = [
   {
     name: 'Verifying Sovereign Trust HAL and Hardware Primitives (tum-trust-security)',
     check: () => {
-      const p1 = 'D:/TUM/tum-trust-security/01_TUM_Trust_Security/bin/Debug/net8.0/Tum.Trust.Security.dll';
-      const p2 = 'D:/TUM/tum-trust-security/bin/Debug/net8.0/Tum.Trust.Security.dll';
+      const p1 = path.join(TUM_ROOT, 'tum-trust-security', '01_TUM_Trust_Security', 'bin', 'Debug', 'net8.0', 'Tum.Trust.Security.dll');
+      const p2 = path.join(TUM_ROOT, 'tum-trust-security', 'bin', 'Debug', 'net8.0', 'Tum.Trust.Security.dll');
       if (!fs.existsSync(p1) && !fs.existsSync(p2)) throw new Error(`Missing Tum.Trust.Security.dll in ${p1} or ${p2}`);
       return 'Found Tum.Trust.Security.dll (Compiled .NET 8 binary)';
     }
@@ -24,7 +30,7 @@ const testSteps = [
   {
     name: 'Verifying Post-Quantum Lattice Engines (tum-quantum)',
     check: () => {
-      const p = 'D:/TUM/tum-quantum/bin/Debug/net8.0/Tum.Quantum.dll';
+      const p = path.join(TUM_ROOT, 'tum-quantum', 'bin', 'Debug', 'net8.0', 'Tum.Quantum.dll');
       if (!fs.existsSync(p)) throw new Error(`Missing ${p}`);
       return 'Found Tum.Quantum.dll (NIST FIPS 203/204 ML-KEM/ML-DSA)';
     }
@@ -32,8 +38,8 @@ const testSteps = [
   {
     name: 'Verifying Full OpenSIEM Pipeline & Web HUD (tum-socs)',
     check: () => {
-      const server = 'D:/TUM/tum-socs/Tum.Siem.Server/bin/Debug/net8.0/Tum.Siem.Server.dll';
-      const web = 'D:/TUM/tum-socs/Tum.Siem.Server/wwwroot/index.html';
+      const server = path.join(TUM_ROOT, 'tum-socs', 'Tum.Siem.Server', 'bin', 'Debug', 'net8.0', 'Tum.Siem.Server.dll');
+      const web = path.join(TUM_ROOT, 'tum-socs', 'Tum.Siem.Server', 'wwwroot', 'index.html');
       if (!fs.existsSync(server) || !fs.existsSync(web)) throw new Error('Missing SIEM server or wwwroot');
       return 'Found Tum.Siem.Server.dll and compiled React 18 UI bundle';
     }
@@ -41,9 +47,9 @@ const testSteps = [
   {
     name: 'Verifying Autonomous WorkOS DAG, Accounting & Treasury Forecast Engine (tum-agentic-workos)',
     check: () => {
-      const wf = 'D:/TUM/tum-agentic-workos/dist/application/services/workflow-orchestrator.service.js';
-      const gl = 'D:/TUM/tum-agentic-workos/dist/application/services/general-ledger-sync.service.js';
-      const tf = 'D:/TUM/tum-agentic-workos/dist/application/services/cash-flow-forecaster.service.js';
+      const wf = path.join(TUM_ROOT, 'tum-agentic-workos', 'dist', 'application', 'services', 'workflow-orchestrator.service.js');
+      const gl = path.join(TUM_ROOT, 'tum-agentic-workos', 'dist', 'application', 'services', 'general-ledger-sync.service.js');
+      const tf = path.join(TUM_ROOT, 'tum-agentic-workos', 'dist', 'application', 'services', 'cash-flow-forecaster.service.js');
       if (!fs.existsSync(wf) || !fs.existsSync(gl) || !fs.existsSync(tf)) throw new Error('Missing WorkOS compiled services');
       return 'Found WorkflowOrchestrator, GeneralLedgerSync, and CashFlowForecaster services';
     }
@@ -51,9 +57,9 @@ const testSteps = [
   {
     name: 'Verifying CyberMesh Correlation Engine, BAS Simulator & SOAR Playbooks (tum-cybermesh)',
     check: () => {
-      const corr = 'D:/TUM/tum-cybermesh/dist/application/correlation/correlation-engine.service.js';
-      const sim = 'D:/TUM/tum-cybermesh/dist/application/simulation/attack-simulation.service.js';
-      const soar = 'D:/TUM/tum-cybermesh/dist/application/soar/soar-playbook.service.js';
+      const corr = path.join(TUM_ROOT, 'tum-cybermesh', 'dist', 'application', 'correlation', 'correlation-engine.service.js');
+      const sim = path.join(TUM_ROOT, 'tum-cybermesh', 'dist', 'application', 'simulation', 'attack-simulation.service.js');
+      const soar = path.join(TUM_ROOT, 'tum-cybermesh', 'dist', 'application', 'soar', 'soar-playbook.service.js');
       if (!fs.existsSync(corr) || !fs.existsSync(sim) || !fs.existsSync(soar)) throw new Error('Missing CyberMesh compiled modules');
       return 'Found CorrelationEngine, AttackSimulation, and SoarPlaybook services';
     }
@@ -61,12 +67,12 @@ const testSteps = [
   {
     name: 'Verifying National Trust Fabric Batch Corridor, Gateway & Legal Quantum Notary (tum-trust-fabric)',
     check: () => {
-      const c1 = 'D:/TUM/tum-trust-fabric/dist/src/application/use-cases/corridor/BatchCorridorLaneProcessor.js';
-      const c2 = 'D:/TUM/tum-trust-fabric/dist/application/use-cases/corridor/BatchCorridorLaneProcessor.js';
-      const g1 = 'D:/TUM/tum-trust-fabric/dist/src/application/use-cases/corridor/CrossBorderCorridorGateway.js';
-      const g2 = 'D:/TUM/tum-trust-fabric/dist/application/use-cases/corridor/CrossBorderCorridorGateway.js';
-      const n1 = 'D:/TUM/tum-trust-fabric/dist/src/application/use-cases/notary/LegalQuantumNotaryService.js';
-      const n2 = 'D:/TUM/tum-trust-fabric/dist/application/use-cases/notary/LegalQuantumNotaryService.js';
+      const c1 = path.join(TUM_ROOT, 'tum-trust-fabric', 'dist', 'src', 'application', 'use-cases', 'corridor', 'BatchCorridorLaneProcessor.js');
+      const c2 = path.join(TUM_ROOT, 'tum-trust-fabric', 'dist', 'application', 'use-cases', 'corridor', 'BatchCorridorLaneProcessor.js');
+      const g1 = path.join(TUM_ROOT, 'tum-trust-fabric', 'dist', 'src', 'application', 'use-cases', 'corridor', 'CrossBorderCorridorGateway.js');
+      const g2 = path.join(TUM_ROOT, 'tum-trust-fabric', 'dist', 'application', 'use-cases', 'corridor', 'CrossBorderCorridorGateway.js');
+      const n1 = path.join(TUM_ROOT, 'tum-trust-fabric', 'dist', 'src', 'application', 'use-cases', 'notary', 'LegalQuantumNotaryService.js');
+      const n2 = path.join(TUM_ROOT, 'tum-trust-fabric', 'dist', 'application', 'use-cases', 'notary', 'LegalQuantumNotaryService.js');
       const hasCorridor = fs.existsSync(c1) || fs.existsSync(c2);
       const hasGateway = fs.existsSync(g1) || fs.existsSync(g2);
       const hasNotary = fs.existsSync(n1) || fs.existsSync(n2);
@@ -77,9 +83,9 @@ const testSteps = [
   {
     name: 'Verifying Sovereign Director FleetMeshHub & 8-Repo Router (tum-central-director)',
     check: () => {
-      const hub = 'D:/TUM/tum-central-director/src/main/fleet-mesh-hub.ts';
-      const daemon = 'D:/TUM/tum-central-director/src/main/daemon.ts';
-      const eventMesh = 'D:/TUM/tum-central-director/src/main/event-mesh.ts';
+      const hub = path.join(TUM_ROOT, 'tum-central-director', 'src', 'main', 'fleet-mesh-hub.ts');
+      const daemon = path.join(TUM_ROOT, 'tum-central-director', 'src', 'main', 'daemon.ts');
+      const eventMesh = path.join(TUM_ROOT, 'tum-central-director', 'src', 'main', 'event-mesh.ts');
       if (!fs.existsSync(hub) || !fs.existsSync(daemon) || !fs.existsSync(eventMesh)) throw new Error('Missing Director files');
       return 'Found FleetMeshHub, Daemon Router, and FleetEventMesh';
     }
@@ -87,10 +93,10 @@ const testSteps = [
   {
     name: 'Verifying Cross-Fleet Event Mesh & Policy Enforcers (Sprint 8 Mesh Pipeline)',
     check: () => {
-      const wosListener = 'D:/TUM/tum-agentic-workos/dist/application/services/agent-containment-listener.service.js';
-      const meshBridge = 'D:/TUM/tum-cybermesh/dist/application/soar/soar-event-bridge.service.js';
-      const fabricPub1 = 'D:/TUM/tum-trust-fabric/dist/src/application/use-cases/corridor/CorridorEventPublisher.js';
-      const fabricPub2 = 'D:/TUM/tum-trust-fabric/dist/application/use-cases/corridor/CorridorEventPublisher.js';
+      const wosListener = path.join(TUM_ROOT, 'tum-agentic-workos', 'dist', 'application', 'services', 'agent-containment-listener.service.js');
+      const meshBridge = path.join(TUM_ROOT, 'tum-cybermesh', 'dist', 'application', 'soar', 'soar-event-bridge.service.js');
+      const fabricPub1 = path.join(TUM_ROOT, 'tum-trust-fabric', 'dist', 'src', 'application', 'use-cases', 'corridor', 'CorridorEventPublisher.js');
+      const fabricPub2 = path.join(TUM_ROOT, 'tum-trust-fabric', 'dist', 'application', 'use-cases', 'corridor', 'CorridorEventPublisher.js');
       const hasFabricPub = fs.existsSync(fabricPub1) || fs.existsSync(fabricPub2);
       if (!fs.existsSync(wosListener) || !fs.existsSync(meshBridge) || !hasFabricPub) {
         throw new Error('Missing Sprint 8 Cross-Fleet event components');

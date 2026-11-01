@@ -1,0 +1,27 @@
+name: TUM Group Holdings Enterprise Governance CI/CD
+
+on:
+  push:
+    branches: [ main, develop, 'feature/**', 'release/**' ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  validate-governance:
+    name: Validate Enterprise Governance & Charters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Governance Syntax & File Integrity Verification
+        run: |
+          node -e "console.log('Validating TUM Group Holdings Governance Artifacts...');"
+          node -c Governance/test-ecosystem-e2e.mjs
+          echo "Governance verifier syntax check passed cleanly."
