@@ -103,6 +103,34 @@ const testSteps = [
       }
       return 'Found AgentContainmentListener, SoarEventBridge, and CorridorEventPublisher';
     }
+  },
+  {
+    name: 'Verifying Sprint 9 Sovereign Artifacts (mDL, e-Tax XML, Receipts Ledger, HNDL, Playbooks)',
+    check: () => {
+      // 1. Trust Fabric mDL
+      const mdl1 = path.join(TUM_ROOT, 'tum-trust-fabric', 'dist', 'src', 'application', 'use-cases', 'mdl', 'VerifyMdlPresentationUseCase.js');
+      const mdl2 = path.join(TUM_ROOT, 'tum-trust-fabric', 'dist', 'application', 'use-cases', 'mdl', 'VerifyMdlPresentationUseCase.js');
+      if (!fs.existsSync(mdl1) && !fs.existsSync(mdl2)) throw new Error('Missing Trust Fabric mDL engine');
+
+      // 2. WorkOS e-Tax & Byzantine consensus
+      const etax = path.join(TUM_ROOT, 'tum-agentic-workos', 'dist', 'application', 'services', 'etax.service.js');
+      const bft = path.join(TUM_ROOT, 'tum-agentic-workos', 'dist', 'application', 'services', 'byzantine-consensus.service.js');
+      if (!fs.existsSync(etax) || !fs.existsSync(bft)) throw new Error('Missing WorkOS e-Tax or Byzantine consensus services');
+
+      // 3. TUMSocs Digital Receipts
+      const receiptSvc = path.join(TUM_ROOT, 'tum-socs', 'Tum.Siem.Server', 'Services', 'DigitalReceiptService.cs');
+      if (!fs.existsSync(receiptSvc)) throw new Error('Missing TUMSocs DigitalReceiptService');
+
+      // 4. TUMQuantum HNDL Simulator
+      const hndl = path.join(TUM_ROOT, 'tum-quantum', 'Engine', 'HndlQuantumAttackSimulator.cs');
+      if (!fs.existsSync(hndl)) throw new Error('Missing TUMQuantum HndlQuantumAttackSimulator');
+
+      // 5. Central Director Playbook Trigger
+      const playbook = path.join(TUM_ROOT, 'tum-central-director', 'src', 'main', 'playbook-orchestrator.ts');
+      if (!fs.existsSync(playbook)) throw new Error('Missing Central Director PlaybookOrchestrator');
+
+      return 'Found mDL Engine, e-Tax XML, Receipts Ledger, HNDL Simulator, and Playbook Trigger';
+    }
   }
 ];
 
