@@ -62,3 +62,28 @@
     ├── 02_CURRENT_SOTA_MARKET_CVE_GAP_REPORT.md        # รายงานวิเคราะห์ช่องโหว่ปัจจุบัน
     └── 03_FRONTIER_FUTURE_HORIZONS_AND_NEW_PRODUCTS.md # รายงานผลิตภัณฑ์แห่งอนาคต
 ```
+
+
+---
+
+## 3. Master Commercial Turnkey Fleet & Web Portal (`D:\TUM\setup-product`)
+
+TUM Group Holdings ได้รวบรวมและกำกับดูแลการส่งมอบผลิตภัณฑ์เชิงพาณิชย์ระดับกลุ่ม (Master Commercial Fleet) ครบทั้ง 7 ผลิตภัณฑ์ใน `D:\TUM\setup-product`:
+
+1. **TUM Trust Security** (`tum-trust-security`): Kiosk HAL Diagnostics Console (`.exe`), `.NET 8 AOT` Kiosk Service, ISO/IEC 19794-5 Section 7.2 Face Pose Gate
+2. **TUM Quantum** (`tum-quantum`): Turnkey Post-Quantum Reverse Proxy Gateway Docker Appliance, DudeCT Constant-Time Suite
+3. **TUM OpenSIEM** (`tum-socs`): Enterprise OpenSIEM Desktop App (`.exe`), All-in-One Docker Compose/Tar.gz, Helm v3, 50k EPS Soak Test
+4. **TUM Agentic WorkOS** (`tum-agentic-workos`): Enterprise ERP Console, Thai RD e-Tax XML Engine (ETDA v2.1), HITL Financial Gate (>50,000 THB)
+5. **TUM Sovereign CyberMesh** (`tum-cybermesh`): Windows/Linux Sensor Agent Daemon, Fortinet & Palo Alto SOAR Firewall Connectors
+6. **TUM National Trust Fabric** (`tum-trust-fabric`): Sovereign Corridor E-Gate Gateway Docker Appliance, ICAO PKD Master List & 24 CSCA Trust Anchors
+7. **TUM Central Director** (`tum-central-director`): Fleet Command Console Electron Operator IDE (`.exe`), Universal Fleet Watchdog
+
+### เว็บไซต์หลักเครือ TUM Group Holdings:
+- **Production URL:** `https://tumgroup.daywakler.workers.dev/`
+- **Source:** `index.html` ออกแบบตามมาตรฐาน **Hallmark Console Theme v2.0.0** (Dark Graphite, 0 Sloplint, Institutional Governance Matrix)
+
+### การตรวจสอบทั้งระบบ (Fleet Audit Runner):
+```powershell
+powershell -ExecutionPolicy Bypass -File D:\TUM\setup-product\test-master-audit.ps1 -VerboseLog
+```
+*(ผ่านการตรวจสอบ 7/7 บริษัท 100%)*
