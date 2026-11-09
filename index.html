@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TUM Group Holdings: Sovereign Digital Infrastructure and Deep-Tech Ecosystem</title>
-  <meta name="description" content="National sovereign digital identity, post-quantum cryptography (NIST FIPS 203/204), defense cloud, and autonomous enterprise AI workforce.">
+  <title>TUM Group Holdings: Deep-Tech Security and Sovereign Digital Infrastructure</title>
+  <meta name="description" content="TUM Group Holdings is an enterprise technology group providing sovereign digital identity, post-quantum cryptography, cyber defense SIEM, and autonomous enterprise systems.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
 /* Hallmark · shape: workbench · genre: modern-minimal · theme: Console (by request) · redesign: full
- * hero: stage · nav: edge · footer: mast · imagery: none · signature: live-telemetry · console: graphite
+ * hero: stage · nav: edge · footer: mast · imagery: none · signature: corporate · console: graphite
  * axes: dark/grotesk-sans/chromatic-amber · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
-/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 · weakest: H, tightened hero text under 50 chars */
 
 :root {
   color-scheme: dark;
@@ -33,10 +32,10 @@
   --text-xl: 1.5625rem;
   --text-2xl: 1.953rem;
   --text-3xl: 2.441rem;
-  --text-display: clamp(2.5rem, 4vw + 1rem, 4.25rem);
-  --text-section: clamp(1.85rem, 2vw + 1rem, 2.75rem);
-  --text-title: clamp(1.2rem, 0.75vw + 0.85rem, 1.5rem);
-  --text-lead: clamp(1.05rem, 0.35vw + 0.95rem, 1.25rem);
+  --text-display: clamp(2.2rem, 3.5vw + 1rem, 3.75rem);
+  --text-section: clamp(1.75rem, 2vw + 1rem, 2.5rem);
+  --text-title: clamp(1.2rem, 0.75vw + 0.85rem, 1.45rem);
+  --text-lead: clamp(1rem, 0.35vw + 0.95rem, 1.2rem);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-micro: 120ms;
@@ -70,11 +69,11 @@
   --font-body: var(--font-display);
   --font-outlier: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
 
-  --radius-card: 10px;
-  --radius-pill: 6px;
+  --radius-card: 8px;
+  --radius-pill: 4px;
   --radius-sm: 4px;
   --rule-hair: 1px;
-  --container: 1280px;
+  --container: 1240px;
 }
 
 *, *::before, *::after {
@@ -92,24 +91,29 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   font-size: var(--text-md);
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Bilingual Rules */
-html[lang="th"] .lang-en { display: none !important; }
-html[lang="en"] .lang-th { display: none !important; }
-
-/* Focus and Selection */
-:focus-visible {
-  outline: 2px solid var(--color-focus);
-  outline-offset: 2px;
 }
 
 ::selection {
   background: color-mix(in oklab, var(--color-accent) 25%, transparent);
 }
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Bilingual Rules */
+html[lang="th"] .lang-en { display: none !important; }
+html[lang="en"] .lang-th { display: none !important; }
 
 .container {
   max-width: var(--container);
@@ -117,8 +121,8 @@ html[lang="en"] .lang-th { display: none !important; }
   padding-inline: var(--space-lg);
 }
 
-/* Header & Nav */
-.top-telemetry-bar {
+/* Top Institutional Header Bar */
+.top-inst-bar {
   background: var(--color-paper-3);
   border-bottom: var(--rule-hair) solid var(--color-rule);
   padding-block: var(--space-xs);
@@ -126,14 +130,14 @@ html[lang="en"] .lang-th { display: none !important; }
   font-size: var(--text-xs);
   color: var(--color-muted);
 }
-.top-telemetry-inner {
+.top-inst-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: var(--space-md);
 }
-.telemetry-node {
+.inst-badge {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
@@ -167,8 +171,8 @@ nav {
   color: var(--color-ink);
 }
 .brand-mark {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   background: var(--color-paper-2);
   border: var(--rule-hair) solid var(--color-rule-2);
   border-radius: var(--radius-sm);
@@ -178,102 +182,100 @@ nav {
   color: var(--color-accent);
   font-weight: 700;
   font-family: var(--font-outlier);
-  font-size: var(--text-sm);
+  font-size: var(--text-md);
 }
 .brand-title {
-  font-weight: 600;
   font-size: var(--text-md);
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 .brand-badge {
-  font-family: var(--font-display);
+  font-family: var(--font-outlier);
   font-size: var(--text-xs);
   color: var(--color-muted);
-  margin-left: var(--space-2xs);
+  border: var(--rule-hair) solid var(--color-rule);
+  padding: var(--space-3xs) var(--space-xs);
+  border-radius: var(--radius-sm);
+  margin-left: var(--space-xs);
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-md);
 }
 .nav-link {
-  font-size: var(--text-sm);
-  font-weight: 500;
   color: var(--color-muted);
   text-decoration: none;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-pill);
-  transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+  font-size: var(--text-sm);
   white-space: nowrap;
+  transition: color var(--dur-short) var(--ease-out);
 }
 .nav-link:hover {
   color: var(--color-ink);
-  background: var(--color-paper-2);
 }
 .nav-btn-outline {
   border: var(--rule-hair) solid var(--color-rule-2);
-  color: var(--color-ink);
-}
-.nav-btn-outline:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-pill);
 }
 
-/* Language Switcher */
 .lang-box {
   display: inline-flex;
   border: var(--rule-hair) solid var(--color-rule);
   border-radius: var(--radius-pill);
-  background: var(--color-paper-3);
-  padding: var(--space-3xs);
+  overflow: hidden;
 }
 .lang-btn {
-  background: transparent;
+  background: var(--color-paper-2);
   border: none;
   color: var(--color-muted);
-  padding: var(--space-2xs) var(--space-xs);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-xs);
+  padding: var(--space-xs) var(--space-sm);
   font-family: var(--font-outlier);
+  font-size: var(--text-xs);
   cursor: pointer;
-  transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+  transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
 }
 .lang-btn.active {
-  background: var(--color-paper-2);
-  color: var(--color-ink);
+  background: var(--color-paper-3);
+  color: var(--color-accent);
+  border: var(--rule-hair) solid var(--color-accent);
+  font-weight: 700;
 }
 
 /* Hero Section */
 .hero {
-  padding-block: var(--space-2xl) var(--space-xl);
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
 }
 .hero-tag {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  border: var(--rule-hair) solid var(--color-rule-2);
+  background: var(--color-paper-2);
   padding: var(--space-2xs) var(--space-sm);
   border-radius: var(--radius-pill);
-  background: var(--color-paper-2);
-  border: var(--rule-hair) solid var(--color-rule);
-  font-size: var(--text-xs);
-  color: var(--color-muted);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 .hero-title {
   font-size: var(--text-display);
-  font-weight: 500;
+  font-weight: 600;
+  line-height: 1.15;
   letter-spacing: -0.03em;
-  line-height: 1.05;
-  margin-bottom: var(--space-md);
+  margin: 0 0 var(--space-md) 0;
   color: var(--color-ink);
 }
 .hero-desc {
   font-size: var(--text-lead);
+  line-height: 1.6;
   color: var(--color-muted);
-  max-width: 65ch;
-  line-height: 1.5;
-  margin-bottom: var(--space-xl);
+  max-width: 820px;
+  margin: 0 0 var(--space-xl) 0;
 }
 
 .hero-btns {
@@ -285,15 +287,15 @@ nav {
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
+  justify-content: center;
   padding: var(--space-sm) var(--space-lg);
   border-radius: var(--radius-pill);
   font-size: var(--text-sm);
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
   white-space: nowrap;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
 }
 .btn-primary {
   background: var(--color-accent);
@@ -303,18 +305,6 @@ nav {
 .btn-primary:hover {
   background: var(--color-accent-hover);
 }
-.btn:active,
-button:active,
-a:active {
-  opacity: 0.92;
-}
-.btn:disabled,
-button:disabled,
-[disabled] {
-  opacity: 0.45;
-  cursor: not-allowed;
-  pointer-events: none;
-}
 .btn-secondary {
   background: var(--color-paper-2);
   color: var(--color-ink);
@@ -323,9 +313,17 @@ button:disabled,
 .btn-secondary:hover {
   border-color: var(--color-accent);
 }
+.btn:active, button:active, a:active {
+  opacity: 0.92;
+}
+.btn:disabled, button:disabled, [disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
-/* Telemetry Instrument Strip */
-.instrument-strip {
+/* Institutional Measurements Strip */
+.metrics-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--rule-hair);
@@ -333,239 +331,127 @@ button:disabled,
   border: var(--rule-hair) solid var(--color-rule);
   border-radius: var(--radius-card);
   overflow: hidden;
-  margin-bottom: var(--space-2xl);
 }
-.instrument-cell {
+@media (max-width: 840px) {
+  .metrics-strip { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .metrics-strip { grid-template-columns: 1fr; }
+}
+.metric-cell {
   background: var(--color-paper-2);
   padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
 }
-.instrument-num {
+.metric-num {
   font-family: var(--font-outlier);
   font-size: var(--text-2xl);
-  font-weight: 400;
-  color: var(--color-ink);
+  font-weight: 700;
   font-variant-numeric: tabular-nums;
-  line-height: 1.1;
-  margin-bottom: var(--space-2xs);
-}
-.instrument-unit {
-  font-size: var(--text-xs);
-  color: var(--color-accent);
-  margin-left: var(--space-2xs);
-}
-.instrument-label {
-  font-size: var(--text-xs);
-  color: var(--color-muted);
-}
-.instrument-note {
-  font-family: var(--font-outlier);
-  font-size: var(--text-xs);
-  color: var(--color-ok);
-  margin-top: var(--space-2xs);
-}
-
-/* Console Section */
-.console-wrapper {
-  background: var(--color-paper-2);
-  border: var(--rule-hair) solid var(--color-rule);
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  margin-bottom: var(--space-2xl);
-}
-.console-bar {
-  background: var(--color-paper-3);
-  padding: var(--space-sm) var(--space-md);
-  border-bottom: var(--rule-hair) solid var(--color-rule);
+  color: var(--color-ink);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-}
-.console-title {
-  font-family: var(--font-outlier);
-  font-size: var(--text-xs);
-  color: var(--color-muted);
-}
-.console-switchers {
-  display: flex;
+  align-items: baseline;
   gap: var(--space-2xs);
 }
-.console-tab-btn {
-  background: transparent;
-  border: var(--rule-hair) solid transparent;
-  color: var(--color-muted);
-  font-family: var(--font-outlier);
+.metric-unit {
   font-size: var(--text-xs);
-  padding: var(--space-2xs) var(--space-sm);
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
-}
-.console-tab-btn.active {
-  background: var(--color-paper);
-  border-color: var(--color-rule-2);
-  color: var(--color-ink);
-}
-.console-tab-btn:hover:not(.active) {
-  color: var(--color-ink);
-}
-
-.console-terminal {
-  background: var(--color-paper-3);
-  padding: var(--space-lg);
-  font-family: var(--font-outlier);
-  font-size: var(--text-sm);
-  line-height: 1.65;
-  color: var(--color-ink-2);
-  max-height: 320px;
-  overflow-y: auto;
-}
-.log-row {
-  display: flex;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-2xs);
-}
-.log-stamp {
-  color: var(--color-dim);
-  user-select: none;
-}
-.log-badge-ok {
-  color: var(--color-ok);
-  font-weight: 700;
-}
-.log-badge-cool {
-  color: var(--color-cool);
-  font-weight: 700;
-}
-.log-badge-accent {
   color: var(--color-accent);
-  font-weight: 700;
+}
+.metric-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-ink-2);
+}
+.metric-note {
+  font-size: var(--text-xs);
+  color: var(--color-dim);
+  font-family: var(--font-outlier);
 }
 
-/* Category Filter and Headings */
-.platforms-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+/* Section Common */
+.section-block {
+  padding-block: var(--space-3xl);
   border-bottom: var(--rule-hair) solid var(--color-rule);
-  padding-bottom: var(--space-md);
-  margin-bottom: var(--space-lg);
-  flex-wrap: wrap;
-  gap: var(--space-md);
+}
+.section-head {
+  margin-bottom: var(--space-xl);
 }
 .section-headline {
   font-size: var(--text-section);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.02em;
-  margin-bottom: var(--space-2xs);
+  margin: 0 0 var(--space-xs) 0;
+  color: var(--color-ink);
 }
 .section-sub {
-  font-size: var(--text-sm);
+  font-size: var(--text-md);
   color: var(--color-muted);
-}
-.filter-group {
-  display: flex;
-  gap: var(--space-xs);
-  flex-wrap: wrap;
-}
-.filter-btn {
-  background: var(--color-paper-2);
-  border: var(--rule-hair) solid var(--color-rule);
-  color: var(--color-muted);
-  font-size: var(--text-xs);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  transition: color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
-}
-.filter-btn.active {
-  background: var(--color-paper-3);
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-  font-weight: 600;
-}
-.filter-btn:hover:not(.active) {
-  color: var(--color-ink);
-  border-color: var(--color-rule-2);
+  max-width: 760px;
 }
 
-/* Bento Grid */
-.bento-layout {
+/* 4 Subsidiary Divisions Grid */
+.subsidiary-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--space-md);
-  margin-bottom: var(--space-3xl);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
 }
-.bento-item {
+@media (max-width: 900px) {
+  .subsidiary-grid { grid-template-columns: 1fr; }
+}
+
+.subsidiary-card {
   background: var(--color-paper-2);
+  color: var(--color-ink);
   border: var(--rule-hair) solid var(--color-rule);
   border-radius: var(--radius-card);
-  padding: var(--space-lg);
-  text-decoration: none;
-  color: inherit;
+  padding: var(--space-xl);
   display: flex;
   flex-direction: column;
+  gap: var(--space-md);
+  text-decoration: none;
   transition: border-color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
 }
-.bento-item:hover {
+.subsidiary-card:hover {
+  border-color: var(--color-accent);
   background: var(--color-paper-3);
-  border-color: var(--color-rule-2);
 }
 
-.span-8 { grid-column: span 8; }
-.span-4 { grid-column: span 4; }
-.span-6 { grid-column: span 6; }
-.span-12 { grid-column: span 12; }
-
-.item-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: var(--space-sm);
-}
-.item-tag {
-  font-size: var(--text-xs);
-  color: var(--color-cool);
-}
-.item-tier {
-  font-size: var(--text-xs);
-  font-family: var(--font-outlier);
-  color: var(--color-dim);
-}
-
-.item-title-row {
+.card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--space-xs);
 }
-.item-name {
-  font-size: var(--text-title);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--color-ink);
+.card-unit-badge {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  border: var(--rule-hair) solid var(--color-rule-2);
+  padding: var(--space-3xs) var(--space-xs);
+  border-radius: var(--radius-pill);
 }
-.item-arrow {
+.card-format {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
   color: var(--color-muted);
 }
-.bento-item:hover .item-arrow {
-  color: var(--color-accent);
+.card-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0;
 }
-
-.item-summary {
+.card-desc {
   font-size: var(--text-sm);
   color: var(--color-muted);
-  line-height: 1.55;
-  margin-bottom: var(--space-md);
-  flex-grow: 1;
+  line-height: 1.6;
+  margin: 0;
 }
-
-.specs-strip {
+.specs-list {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
-  margin-bottom: var(--space-md);
   padding-top: var(--space-sm);
   border-top: var(--rule-hair) solid var(--color-rule);
 }
@@ -578,177 +464,134 @@ button:disabled,
   border: var(--rule-hair) solid var(--color-rule);
   color: var(--color-ink-2);
 }
-
-.item-foot {
+.card-foot {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: var(--font-outlier);
   font-size: var(--text-xs);
   color: var(--color-muted);
-  border-top: var(--rule-hair) solid var(--color-rule);
-  padding-top: var(--space-sm);
-}
-.test-indicator {
-  color: var(--color-ok);
-}
-.view-code-hint {
-  color: var(--color-muted);
-  transition: color var(--dur-short) var(--ease-out);
-}
-.bento-item:hover .view-code-hint {
-  color: var(--color-accent);
+  padding-top: var(--space-xs);
 }
 
-/* Specifications Table */
-.specs-table-wrapper {
-  background: var(--color-paper-2);
+/* Compliance Matrix Table */
+.matrix-wrap {
   border: var(--rule-hair) solid var(--color-rule);
   border-radius: var(--radius-card);
   overflow-x: auto;
-  margin-bottom: var(--space-3xl);
+  background: var(--color-paper-2);
 }
-table.specs-table {
+.matrix-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--text-sm);
   text-align: left;
+  font-size: var(--text-sm);
 }
-table.specs-table th {
+.matrix-table th {
   background: var(--color-paper-3);
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--font-outlier);
   font-size: var(--text-xs);
-  font-weight: 500;
   color: var(--color-muted);
+  font-weight: 500;
   border-bottom: var(--rule-hair) solid var(--color-rule);
 }
-table.specs-table td {
-  padding: var(--space-sm) var(--space-md);
+.matrix-table td {
+  padding: var(--space-md) var(--space-lg);
   border-bottom: var(--rule-hair) solid var(--color-rule);
   color: var(--color-ink-2);
 }
-table.specs-table tr:last-child td {
+.matrix-table tr:last-child td {
   border-bottom: none;
 }
-td.repo-name {
-  font-family: var(--font-outlier);
-  font-weight: 700;
-  color: var(--color-ink);
+.matrix-table tr:hover td {
+  background: color-mix(in oklab, var(--color-paper-3) 50%, var(--color-paper-2));
 }
-.badge-ok {
-  color: var(--color-ok);
+.status-pill {
   font-family: var(--font-outlier);
   font-size: var(--text-xs);
+  padding: var(--space-3xs) var(--space-xs);
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  background: var(--color-ok-soft);
+  color: var(--color-ok);
+  border: var(--rule-hair) solid var(--color-ok);
+}
+
+/* Contact & Corporate Governance */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+}
+@media (max-width: 860px) {
+  .contact-layout { grid-template-columns: 1fr; }
+}
+
+.contact-card {
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: var(--radius-card);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+}
+.contact-label {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+.contact-val {
+  font-size: var(--text-md);
+  color: var(--color-ink);
+  font-weight: 500;
 }
 
 /* Footer */
 footer {
-  border-top: var(--rule-hair) solid var(--color-rule);
+  padding-block: var(--space-2xl);
   background: var(--color-paper-3);
-  padding-block: var(--space-2xl) var(--space-xl);
-  font-size: var(--text-sm);
-  color: var(--color-muted);
-}
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: var(--space-xl);
-  margin-bottom: var(--space-xl);
-}
-.footer-info {
-  max-width: 48ch;
-}
-.footer-name {
-  font-weight: 600;
-  color: var(--color-ink);
-  margin-bottom: var(--space-xs);
-}
-.footer-desc {
-  line-height: 1.5;
-  margin-bottom: var(--space-sm);
-}
-.footer-authority {
-  font-size: var(--text-xs);
-  color: var(--color-dim);
-}
-.footer-navs {
-  display: flex;
-  gap: var(--space-2xl);
-  flex-wrap: wrap;
-}
-.footer-nav-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-.footer-nav-head {
-  font-size: var(--text-xs);
-  font-weight: 600;
-  color: var(--color-ink);
-  margin-bottom: var(--space-2xs);
-}
-.footer-link {
-  color: var(--color-muted);
-  text-decoration: none;
-  font-size: var(--text-sm);
-  transition: color var(--dur-short) var(--ease-out);
-}
-.footer-link:hover {
-  color: var(--color-accent);
-}
-.footer-bottom-row {
   border-top: var(--rule-hair) solid var(--color-rule);
-  padding-top: var(--space-md);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+.footer-inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: var(--space-sm);
+  gap: var(--space-lg);
+}
+.footer-copy {
+  font-family: var(--font-outlier);
   font-size: var(--text-xs);
-  color: var(--color-dim);
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 960px) {
-  .hero-title { font-size: 2.5rem; }
-  .instrument-strip { grid-template-columns: repeat(2, 1fr); }
-  .span-8, .span-4, .span-6 { grid-column: span 12; }
-}
-@media (max-width: 640px) {
-  .instrument-strip { grid-template-columns: 1fr; }
-  .nav-inner { flex-direction: column; height: auto; padding: var(--space-md) 0; }
-  .top-telemetry-inner { justify-content: center; }
 }
   </style>
 </head>
 <body>
 
-  <!-- Top Telemetry Stream -->
-  <div class="top-telemetry-bar">
-    <div class="container top-telemetry-inner">
-      <div class="telemetry-node">
+  <!-- Top Institutional Bar -->
+  <div class="top-inst-bar">
+    <div class="container top-inst-inner">
+      <div class="inst-badge">
         <span class="pulse-indicator"></span>
-        <span class="lang-th">สถานะเครือข่าย: ปฏิบัติการปกติ 608/608 ผ่านการทดสอบ</span>
-        <span class="lang-en">Network pulse: operational, 608/608 automated tests passed</span>
+        <span class="lang-th">ทียูเอ็ม กรุ๊ป โฮลดิ้งส์: กลุ่มบริษัทสถาปัตยกรรมความมั่นคงและโครงสร้างพื้นฐานดิจิทัล</span>
+        <span class="lang-en">TUM Group Holdings: Sovereign Deep-Tech and Enterprise Infrastructure Group</span>
       </div>
-      <div class="telemetry-node">
-        <span class="lang-th">มาตรฐานรหัสลับ: NIST FIPS 203/204</span>
-        <span class="lang-en">Cryptography standard: NIST FIPS 203/204</span>
+      <div class="inst-badge">
+        <span class="lang-th">มาตรฐานกำกับดูแล: PDPA / ICAO 9303 / NIST FIPS 203 & 204</span>
+        <span class="lang-en">Governance: PDPA / ICAO 9303 / NIST FIPS 203 & 204</span>
       </div>
-      <div class="telemetry-node">
-        <span class="lang-th">การันตีสถาปัตยกรรม: Clean Architecture ไร้ Mockup</span>
-        <span class="lang-en">Engineering guarantee: Clean Architecture, zero mockups</span>
+      <div class="inst-badge">
+        <span class="lang-th">การส่งมอบ: On-Premise & Native Multi-Platform Appliance</span>
+        <span class="lang-en">Deployment: On-Premise & Native Multi-Platform Appliance</span>
       </div>
     </div>
   </div>
@@ -760,28 +603,26 @@ footer {
         <div class="brand-mark">T</div>
         <div>
           <span class="brand-title">TUM Group</span>
-          <span class="brand-badge">Sovereign tech</span>
+          <span class="brand-badge">Holdings</span>
         </div>
       </a>
 
       <div class="nav-actions">
-        <a href="#console" class="nav-link">
-          <span class="lang-th">เรดาร์ระบบ</span>
-          <span class="lang-en">Telemetry</span>
+        <a href="#about" class="nav-link">
+          <span class="lang-th">เกี่ยวกับกลุ่มบริษัท</span>
+          <span class="lang-en">About Group</span>
         </a>
-        <a href="#flagships" class="nav-link">
-          <span class="lang-th">8 แพลตฟอร์ม</span>
-          <span class="lang-en">Platforms</span>
+        <a href="#subsidiaries" class="nav-link">
+          <span class="lang-th">กลุ่มธุรกิจในเครือ</span>
+          <span class="lang-en">Subsidiaries</span>
         </a>
-        <a href="#matrix" class="nav-link">
-          <span class="lang-th">ตารางสเปก</span>
-          <span class="lang-en">Matrix</span>
+        <a href="#compliance" class="nav-link">
+          <span class="lang-th">มาตรฐานสากล</span>
+          <span class="lang-en">Compliance</span>
         </a>
-        <a href="https://discord.gg/RCXqnaqtM" target="_blank" rel="noopener noreferrer" class="nav-link nav-btn-outline">
-          <span>Discord</span>
-        </a>
-        <a href="https://github.com/PasitTum" target="_blank" rel="noopener noreferrer" class="nav-link nav-btn-outline">
-          <span>GitHub Fleet</span>
+        <a href="#contact" class="nav-link nav-btn-outline">
+          <span class="lang-th">ติดต่อฝ่ายธุรกิจองค์กร</span>
+          <span class="lang-en">Enterprise Contact</span>
         </a>
         <div class="lang-box">
           <button id="btn-th" class="lang-btn active" onclick="setLang('th')">TH</button>
@@ -792,589 +633,345 @@ footer {
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero container">
+  <header class="hero container" id="about">
     <div class="hero-tag">
-      <span class="lang-th">โครงสร้างพื้นฐานอธิปไตยดิจิทัลระดับชาติ</span>
-      <span class="lang-en">National sovereign digital infrastructure</span>
+      <span class="lang-th">กลุ่มบริษัทเทคโนโลยีความมั่นคงปลอดภัยชั้นสูง</span>
+      <span class="lang-en">Deep-Tech Security and Sovereign Infrastructure Group</span>
     </div>
 
     <h1 class="hero-title">
-      <span class="lang-th">วิศวกรรมความมั่นคงอธิปไตยดิจิทัล และวิทยาการรหัสลับหลังควอนตัม</span>
-      <span class="lang-en">Sovereign identity engineering and post-quantum cryptography</span>
+      <span class="lang-th">สถาปัตยกรรมความมั่นคงปลอดภัย และโครงสร้างพื้นฐานดิจิทัลแห่งอนาคต</span>
+      <span class="lang-en">Enterprise deep-tech security and sovereign digital infrastructure</span>
     </h1>
 
     <p class="hero-desc">
       <span class="lang-th">
-        สถาปัตยกรรมอธิปไตยดิจิทัลระดับชาติ ระบบตรวจคนเข้าเมืองอัจฉริยะ คลาวด์ป้องกันประเทศ DoD 30s และระบบบริหารจัดการปัญญาประดิษฐ์
+        กลุ่มบริษัท ทียูเอ็ม โฮลดิ้งส์ จำกัด ดำเนินการวิจัย พัฒนา และส่งมอบโซลูชันความปลอดภัยทางดิจิทัลระดับสถาบัน 
+        ครอบคลุมระบบอัตลักษณ์ดิจิทัลประจำตู้บริการอัตโนมัติ ศูนย์เฝ้าระวังความมั่นคงไซเบอร์ 
+        วิทยาการรหัสลับยุคหลังควอนตัม และระบบบริหารทรัพยากรองค์กรอัตโนมัติ
       </span>
       <span class="lang-en">
-        National sovereign identity, border clearance, defense cloud, and autonomous systems.
+        Sovereign identity, enterprise SIEM, post-quantum cryptography, and autonomous workforce systems.
       </span>
     </p>
 
     <div class="hero-btns">
-      <a href="https://github.com/PasitTum" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        <span>GitHub Fleet Repositories</span>
+      <a href="#contact" class="btn btn-primary">
+        <span class="lang-th">ติดต่อฝ่ายพัฒนาธุรกิจองค์กร</span>
+        <span class="lang-en">Enterprise Solution Inquiries</span>
       </a>
-      <a href="#flagships" class="btn btn-secondary">
-        <span class="lang-th">สำรวจ 8 แพลตฟอร์ม</span>
-        <span class="lang-en">Explore 8 platforms</span>
+      <a href="#subsidiaries" class="btn btn-secondary">
+        <span class="lang-th">สำรวจ 4 กลุ่มธุรกิจในเครือ</span>
+        <span class="lang-en">Explore 4 Subsidiaries</span>
       </a>
-      <a href="https://discord.gg/RCXqnaqtM" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-        <span>Community Discord</span>
+      <a href="#compliance" class="btn btn-secondary">
+        <span class="lang-th">ข้อกำหนดและการปฏิบัติตามมาตรฐาน</span>
+        <span class="lang-en">Compliance and Certifications</span>
       </a>
     </div>
 
-    <!-- Instrument Measurements Strip -->
-    <div class="instrument-strip">
-      <div class="instrument-cell">
-        <div class="instrument-num">8<span class="instrument-unit">repos</span></div>
-        <div class="instrument-label">
-          <span class="lang-th">ระบบบูรณาการร่วม</span>
-          <span class="lang-en">Integrated repositories</span>
+    <!-- Institutional Measurements Strip -->
+    <div class="metrics-strip">
+      <div class="metric-cell">
+        <div class="metric-num">4<span class="metric-unit">divisions</span></div>
+        <div class="metric-label">
+          <span class="lang-th">กลุ่มธุรกิจเฉพาะทาง</span>
+          <span class="lang-en">Core business units</span>
         </div>
-        <div class="instrument-note">Connected fleet</div>
+        <div class="metric-note">Integrated technology holdings</div>
       </div>
-      <div class="instrument-cell">
-        <div class="instrument-num">608<span class="instrument-unit">/ 608</span></div>
-        <div class="instrument-label">
-          <span class="lang-th">ผ่านการทดสอบอัตโนมัติ</span>
-          <span class="lang-en">Automated tests passed</span>
+      <div class="metric-cell">
+        <div class="metric-num">100%<span class="metric-unit">on-premise</span></div>
+        <div class="metric-label">
+          <span class="lang-th">ความมั่นคงข้อมูลอธิปไตย</span>
+          <span class="lang-en">Sovereignty and data control</span>
         </div>
-        <div class="instrument-note">Zero failures</div>
+        <div class="metric-note">Zero cloud vendor lock-in</div>
       </div>
-      <div class="instrument-cell">
-        <div class="instrument-num">FIPS<span class="instrument-unit">203/204</span></div>
-        <div class="instrument-label">
-          <span class="lang-th">รหัสลับยุคหลังควอนตัม</span>
-          <span class="lang-en">Post-quantum standard</span>
+      <div class="metric-cell">
+        <div class="metric-num">FIPS<span class="metric-unit">203 / 204</span></div>
+        <div class="metric-label">
+          <span class="lang-th">วิทยาการรหัสลับหลังควอนตัม</span>
+          <span class="lang-en">Post-quantum cryptography</span>
         </div>
-        <div class="instrument-note">Lattice mathematics</div>
+        <div class="metric-note">NIST lattice standard</div>
       </div>
-      <div class="instrument-cell">
-        <div class="instrument-num">&lt; 30s<span class="instrument-unit">SLA</span></div>
-        <div class="instrument-label">
-          <span class="lang-th">การกักกันภัยคุกคาม</span>
-          <span class="lang-en">Threat containment</span>
+      <div class="metric-cell">
+        <div class="metric-num">Multi<span class="metric-unit">platform</span></div>
+        <div class="metric-label">
+          <span class="lang-th">สถาปัตยกรรมระบบส่งมอบ</span>
+          <span class="lang-en">Appliance and Electron desktop</span>
         </div>
-        <div class="instrument-note">DoD defense standard</div>
+        <div class="metric-note">Windows, Linux, macOS turnkey</div>
       </div>
     </div>
   </header>
 
-  <!-- Live Telemetry Console -->
-  <section class="container" id="console">
-    <div class="console-wrapper">
-      <div class="console-bar">
-        <div class="console-title">
-          tum-telemetry-daemon (Node.js and .NET 8 kernel)
+  <!-- 4 Subsidiaries Section -->
+  <section class="section-block container" id="subsidiaries">
+    <div class="section-head">
+      <h2 class="section-headline">
+        <span class="lang-th">4 กลุ่มธุรกิจและบริษัทย่อยในเครือ</span>
+        <span class="lang-en">Core subsidiary operating divisions</span>
+      </h2>
+      <div class="section-sub">
+        <span class="lang-th">โซลูชันเชิงพาณิชย์ที่ออกแบบขึ้นเพื่อตอบสนองต่อสถาบันการเงิน หน่วยงานกำกับดูแลภาครัฐ และองค์กรธุรกิจขนาดใหญ่</span>
+        <span class="lang-en">Commercial turnkey solutions engineered for financial institutions, government regulators, and critical infrastructure operators.</span>
+      </div>
+    </div>
+
+    <div class="subsidiary-grid">
+      <!-- 1: TUM Trust Security -->
+      <div class="subsidiary-card">
+        <div class="card-top">
+          <span class="card-unit-badge">Identity and hardware core</span>
+          <span class="card-format">Windows Service &amp; Electron</span>
         </div>
-        <div class="console-switchers">
-          <button class="console-tab-btn active" onclick="switchTab('e2e')">1. Fleet E2E verifier</button>
-          <button class="console-tab-btn" onclick="switchTab('pqc')">2. Post-quantum lattice</button>
-          <button class="console-tab-btn" onclick="switchTab('mdl')">3. ISO 18013-5 mDL</button>
-          <button class="console-tab-btn" onclick="switchTab('etax')">4. Thai e-Tax and DAG</button>
+        <h3 class="card-title">TUM Trust Security Co., Ltd.</h3>
+        <p class="card-desc">
+          <span class="lang-th">ผู้ให้บริการระบบฮาร์ดแวร์ยืนยันตัวตนสำหรับตู้บริการอัตโนมัติ (Kiosk) รองรับเครื่องอ่านบัตรประชาชนไทย (DOPA APDU), เครื่องอ่านหนังสือเดินทางสากล (ICAO Doc 9303), และระบบตรวจสอบใบหน้าชีวมิติป้องกันการปลอมแปลง (Liveness and Anti-Spoofing)</span>
+          <span class="lang-en">Hardware trust abstraction layer and kiosk identity driver suite: Thai national citizen card APDU, ICAO Doc 9303 ePassport NFC reader, and biometric presentation attack detection (ISO/IEC 30107).</span>
+        </p>
+        <div class="specs-list">
+          <code class="spec-tag">PC/SC smart card HAL</code>
+          <code class="spec-tag">ICAO 9303 TD1/TD2/TD3</code>
+          <code class="spec-tag">Anti-spoofing liveness</code>
+          <code class="spec-tag">Electron diagnostics tool</code>
+        </div>
+        <div class="card-foot">
+          <span>Enterprise ready</span>
+          <span>Turnkey Kiosk Suite &rarr;</span>
         </div>
       </div>
-      <div class="console-terminal" id="terminal-body">
-        <!-- Injected via JavaScript -->
+
+      <!-- 2: TUMQuantum -->
+      <div class="subsidiary-card">
+        <div class="card-top">
+          <span class="card-unit-badge">Quantum security lab</span>
+          <span class="card-format">Docker Appliance &amp; Sidecar</span>
+        </div>
+        <h3 class="card-title">TUMQuantum Co., Ltd.</h3>
+        <p class="card-desc">
+          <span class="lang-th">ศูนย์วิจัยและส่งมอบสถาปัตยกรรมการเข้ารหัสลับยุคหลังควอนตัม (Post-Quantum Cryptography) รองรับมาตรฐาน NIST FIPS 203 (ML-KEM) และ FIPS 204 (ML-DSA) ในรูปแบบ Reverse Proxy Gateway สำหรับองค์กรที่ต้องการเปลี่ยนผ่านสู่ PQC โดยไม่กระทบต่อระบบงานเดิม</span>
+          <span class="lang-en">Post-quantum cryptographic transition gateway: drop-in reverse proxy appliance implementing NIST FIPS 203 (ML-KEM) and FIPS 204 (ML-DSA) lattice algorithms with zero changes to existing backend infrastructure.</span>
+        </p>
+        <div class="specs-list">
+          <code class="spec-tag">NIST FIPS 203 ML-KEM</code>
+          <code class="spec-tag">NIST FIPS 204 ML-DSA</code>
+          <code class="spec-tag">Reverse proxy gateway</code>
+          <code class="spec-tag">Constant-time execution</code>
+        </div>
+        <div class="card-foot">
+          <span>Enterprise ready</span>
+          <span>Quantum Gateway &rarr;</span>
+        </div>
+      </div>
+
+      <!-- 3: TUMSocs -->
+      <div class="subsidiary-card">
+        <div class="card-top">
+          <span class="card-unit-badge">Cyber defense and SIEM</span>
+          <span class="card-format">All-in-One SIEM Appliance</span>
+        </div>
+        <h3 class="card-title">TUMSocs Co., Ltd.</h3>
+        <p class="card-desc">
+          <span class="lang-th">แพลตฟอร์มเฝ้าระวังความมั่นคงปลอดภัยทางไซเบอร์และระบบจัดเก็บข้อมูลจราจรทางคอมพิวเตอร์ตาม พ.ร.บ.คอมพิวเตอร์ ม.26 จัดเก็บลงบน Columnar Database ประสิทธิภาพสูง พร้อมระบบตรวจจับภัยคุกคามด้วยกฎ Sigma และหน้าจอสังเกตการณ์ React &amp; Electron Desktop HUD</span>
+          <span class="lang-en">Enterprise cyber defense lakehouse and OpenSIEM appliance: high-throughput log ingestion, native ClickHouse storage, Sigma detection rule engine, and multi-tenant Electron monitoring console.</span>
+        </p>
+        <div class="specs-list">
+          <code class="spec-tag">Computer Crime Act Sec 26</code>
+          <code class="spec-tag">ClickHouse columnar sink</code>
+          <code class="spec-tag">Native Sigma engine</code>
+          <code class="spec-tag">Multi-tenant license</code>
+        </div>
+        <div class="card-foot">
+          <span>Enterprise ready</span>
+          <span>OpenSIEM Appliance &rarr;</span>
+        </div>
+      </div>
+
+      <!-- 4: TUM Agentic Operations -->
+      <div class="subsidiary-card">
+        <div class="card-top">
+          <span class="card-unit-badge">Autonomous enterprise ops</span>
+          <span class="card-format">Web Console &amp; Standalone Agent</span>
+        </div>
+        <h3 class="card-title">TUM Agentic Operations</h3>
+        <p class="card-desc">
+          <span class="lang-th">ระบบบริหารจัดการกระบวนการทำงานและทรัพยากรองค์กรอัตโนมัติ (WorkOS) ผสานระบบตรวจสอบและกระทบยอดบัญชี 3 ทาง (P2P Matching), ระบบออกใบกำกับภาษีอิเล็กทรอนิกส์ตามเกณฑ์ ขมธอ./กรมสรรพากร (e-Tax XML ETDA v2.1), และระบบตอบสนองภัยคุกคามอัตโนมัติ (SOAR)</span>
+          <span class="lang-en">Autonomous enterprise operations platform: automated 3-way procurement reconciliation, Thai Revenue Department e-Tax XML generation (ETDA v2.1), and automated security incident response playbooks.</span>
+        </p>
+        <div class="specs-list">
+          <code class="spec-tag">e-Tax invoice ETDA v2.1</code>
+          <code class="spec-tag">3-Way P2P reconciliation</code>
+          <code class="spec-tag">SOAR playbook connectors</code>
+          <code class="spec-tag">Human-in-the-loop approval</code>
+        </div>
+        <div class="card-foot">
+          <span>Enterprise ready</span>
+          <span>Operations Suite &rarr;</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- The 8 Platforms (Bento Layout) -->
-  <main class="container" id="flagships">
-    <div class="platforms-head">
-      <div>
-        <h2 class="section-headline">
-          <span class="lang-th">8 เสาหลักสถาปัตยกรรมเทคโนโลยี</span>
-          <span class="lang-en">The 8 sovereign platforms</span>
-        </h2>
-        <div class="section-sub">
-          <span class="lang-th">คลิกที่แต่ละแพลตฟอร์มเพื่อเข้าชมซอร์สโค้ดและรายงานการทดสอบบน GitHub</span>
-          <span class="lang-en">Select any platform card to inspect source code and test results on GitHub.</span>
-        </div>
-      </div>
-      <div class="filter-group">
-        <button class="filter-btn active" onclick="filterCards('all')">All (8)</button>
-        <button class="filter-btn" onclick="filterCards('identity')">Identity</button>
-        <button class="filter-btn" onclick="filterCards('defense')">Cyber defense</button>
-        <button class="filter-btn" onclick="filterCards('quantum')">Quantum lab</button>
-        <button class="filter-btn" onclick="filterCards('workforce')">Enterprise ERP</button>
+  <!-- Compliance & Standards Section -->
+  <section class="section-block container" id="compliance">
+    <div class="section-head">
+      <h2 class="section-headline">
+        <span class="lang-th">มาตรฐานสากลและข้อกำหนดทางกฎหมาย</span>
+        <span class="lang-en">Regulatory compliance and international standards</span>
+      </h2>
+      <div class="section-sub">
+        <span class="lang-th">ทุกสถาปัตยกรรมของกลุ่มบริษัทได้รับการออกแบบให้สอดคล้องกับกรอบกฎหมายในประเทศไทยและมาตรฐานความปลอดภัยระดับโลก</span>
+        <span class="lang-en">Every product architecture is developed to satisfy Thai statutory mandates and international enterprise security benchmarks.</span>
       </div>
     </div>
 
-    <div class="bento-layout">
-
-      <!-- 1: tum-trust-fabric -->
-      <a href="https://github.com/PasitTum/tum-trust-fabric" target="_blank" rel="noopener noreferrer" class="bento-item span-8" data-cat="identity">
-        <div class="item-head">
-          <span class="item-tag">National identity and notary</span>
-          <span class="item-tier">Tier-1 super-infrastructure</span>
-        </div>
-        <div class="item-title-row">
-          <div class="item-name">tum-trust-fabric</div>
-          <div class="item-arrow">↗</div>
-        </div>
-        <p class="item-summary">
-          <span class="lang-th">โครงสร้างพื้นฐานอัตลักษณ์ดิจิทัลแห่งชาติ ช่องทางตรวจคนเข้าเมืองอัจฉริยะแบบเดินผ่าน (Walk-Through Corridors), W3C DID:TUM, การยืนยันสิทธิ์แบบไม่เปิดเผยข้อมูลส่วนบุคคล (Zero-Knowledge Pedersen Commitments), และระบบรับรองเอกสารทางกฎหมาย</span>
-          <span class="lang-en">National sovereign digital identity and legal notary: multi-lane walk-through border gates, W3C DID:TUM, Zero-Knowledge Pedersen proofs of age/solvency, and legally binding digital certification with RFC 3161 TSA.</span>
-        </p>
-        <div class="specs-strip">
-          <code class="spec-tag">W3C DID:TUM VC 2.0</code>
-          <code class="spec-tag">ZK Pedersen proofs</code>
-          <code class="spec-tag">ISO/IEC 18013-5 mDL</code>
-          <code class="spec-tag">3D biometric disparity &ge;0.82</code>
-          <code class="spec-tag">RFC 3161 sovereign TSA</code>
-        </div>
-        <div class="item-foot">
-          <span class="test-indicator">102 tests passed</span>
-          <span class="view-code-hint">Inspect code ↗</span>
-        </div>
-      </a>
-
-      <!-- 2: tum-trust-security -->
-      <a href="https://github.com/PasitTum/tum-trust-security" target="_blank" rel="noopener noreferrer" class="bento-item span-4" data-cat="identity">
-        <div class="item-head">
-          <span class="item-tag">Hardware HAL and trust core</span>
-          <span class="item-tier">C# .NET 8 native HAL</span>
-        </div>
-        <div class="item-title-row">
-          <div class="item-name">tum-trust-security</div>
-          <div class="item-arrow">↗</div>
-        </div>
-        <p class="item-summary">
-          <span class="lang-th">ไลบรารีเชื่อมต่อฮาร์ดแวร์ความปลอดภัยระดับลึก ชิปบัตรประชาชนไทย DOPA APDU, เครื่องอ่านพาสปอร์ต ICAO Doc 9303, และตัวเชื่อมต่อ PKCS#11 Hardware Security Module (HSM)</span>
-          <span class="lang-en">Hardware security abstraction library interfacing Thai DOPA citizen smart cards, ICAO Doc 9303 e-Passports, and PKCS#11 HSM modules with low latency.</span>
-        </p>
-        <div class="specs-strip">
-          <code class="spec-tag">DOPA smart card APDU</code>
-          <code class="spec-tag">ICAO 9303 TD1/TD2/TD3</code>
-          <code class="spec-tag">PC/SC kiosk driver</code>
-          <code class="spec-tag">PKCS#11 HSM HAL</code>
-        </div>
-        <div class="item-foot">
-          <span class="test-indicator">159 tests passed</span>
-          <span class="view-code-hint">Inspect code ↗</span>
-        </div>
-      </a>
-
-      <!-- 3: tum-cybermesh -->
-      <a href="https://github.com/PasitTum/tum-cybermesh" target="_blank" rel="noopener noreferrer" class="bento-item span-6" data-cat="defense">
-        <div class="item-head">
-          <span class="item-tag">Defense cloud and XSIAM</span>
-          <span class="item-tier">Autonomous SOAR engine</span>
-        </div>
-        <div class="item-title-row">
-          <div class="item-name">tum-cybermesh</div>
-          <div class="item-arrow">↗</div>
-        </div>
-        <p class="item-summary">
-          <span class="lang-th">ระบบคลาวด์ความมั่นคงปลอดภัยไซเบอร์ระดับป้องกันประเทศ คลังข้อมูล Telemetry Lakehouse ความเร็วสูง, เอนจินวิเคราะห์ความสัมพันธ์ภัยคุกคามด้วย Sigma Rules, และระบบตอบโต้อัตโนมัติ SOAR ภายใต้เกณฑ์ DoD 30s SLA</span>
-          <span class="lang-en">National defense cloud and autonomous XSIAM: partitioned in-memory lakehouse ring buffer, real-time Sigma Rule correlation, and automated SOAR containment under a DoD 30s SLA.</span>
-        </p>
-        <div class="specs-strip">
-          <code class="spec-tag">Partitioned ring buffer</code>
-          <code class="spec-tag">Sigma rule evaluator</code>
-          <code class="spec-tag">DoD 30s containment SLA</code>
-          <code class="spec-tag">P2P Merkle mesh</code>
-          <code class="spec-tag">FIPS 203 ML-KEM tunnels</code>
-        </div>
-        <div class="item-foot">
-          <span class="test-indicator">50 tests passed</span>
-          <span class="view-code-hint">Inspect code ↗</span>
-        </div>
-      </a>
-
-      <!-- 4: tum-socs -->
-      <a href="https://github.com/PasitTum/tum-socs" target="_blank" rel="noopener noreferrer" class="bento-item span-6" data-cat="defense">
-        <div class="item-head">
-          <span class="item-tag">OpenSIEM and threat telemetry</span>
-          <span class="item-tier">ASP.NET Core 8 and React 18</span>
-        </div>
-        <div class="item-title-row">
-          <div class="item-name">tum-socs</div>
-          <div class="item-arrow">↗</div>
-        </div>
-        <p class="item-summary">
-          <span class="lang-th">แพลตฟอร์ม OpenSIEM กลาง พัฒนาบน ASP.NET Core 8 Clean Architecture รองรับ Ingestion ความเร็วสูง, ระบบตรวจจับ eBPF File Tracing ระดับเคอร์เนล, และ API บัญชีตรวจสอบใบเสร็จดิจิทัล</span>
-          <span class="lang-en">Enterprise OpenSIEM platform on ASP.NET Core 8 Clean Architecture: high-throughput ingestion pipeline, eBPF kernel tracing, and tamper-proof digital receipt verification ledger.</span>
-        </p>
-        <div class="specs-strip">
-          <code class="spec-tag">ASP.NET Core 8 Web API</code>
-          <code class="spec-tag">React 18 single-page HUD</code>
-          <code class="spec-tag">eBPF filesystem hook</code>
-          <code class="spec-tag">Digital receipt ledger</code>
-        </div>
-        <div class="item-foot">
-          <span class="test-indicator">77 tests passed</span>
-          <span class="view-code-hint">Inspect code ↗</span>
-        </div>
-      </a>
-
-      <!-- 5: tum-quantum -->
-      <a href="https://github.com/PasitTum/tum-quantum" target="_blank" rel="noopener noreferrer" class="bento-item span-4" data-cat="quantum">
-        <div class="item-head">
-          <span class="item-tag">Post-quantum core lab</span>
-          <span class="item-tier">Native .NET 8 / zero deps</span>
-        </div>
-        <div class="item-title-row">
-          <div class="item-name">tum-quantum</div>
-          <div class="item-arrow">↗</div>
-        </div>
-        <p class="item-summary">
-          <span class="lang-th">แกนกลางคำนวณคณิตศาสตร์โครงตาข่ายระดับชาติ (Lattice Math) ตามมาตรฐาน NIST FIPS 203 (ML-KEM-768/1024) และ FIPS 204 (ML-DSA-65/87) พร้อม PQC OIDC Token Engine</span>
-          <span class="lang-en">National lattice mathematics core implementing NIST FIPS 203 and FIPS 204 in native .NET 8 with zero external dependencies, PQC OIDC token engine, and HNDL attack simulator.</span>
-        </p>
-        <div class="specs-strip">
-          <code class="spec-tag">NIST FIPS 203 ML-KEM</code>
-          <code class="spec-tag">NIST FIPS 204 ML-DSA</code>
-          <code class="spec-tag">SHAKE-256 vector math</code>
-          <code class="spec-tag">PQC OIDC token engine</code>
-        </div>
-        <div class="item-foot">
-          <span class="test-indicator">85 tests passed</span>
-          <span class="view-code-hint">Inspect code ↗</span>
-        </div>
-      </a>
-
-      <!-- 6: tum-agentic-workos -->
-      <a href="https://github.com/PasitTum/tum-agentic-workos" target="_blank" rel="noopener noreferrer" class="bento-item span-8" data-cat="workforce">
-        <div class="item-head">
-          <span class="item-tag">Autonomous workforce and ERP</span>
-          <span class="item-tier">Enterprise AgentOS</span>
-        </div>
-        <div class="item-title-row">
-          <div class="item-name">tum-agentic-workos</div>
-          <div class="item-arrow">↗</div>
-        </div>
-        <p class="item-summary">
-          <span class="lang-th">ระบบปฏิบัติการบริหารจัดการแรงงาน Agent อัจฉริยะ ผสานงานจัดซื้อ ERP ตรวจสอบ 3-Way Match, บัญชีคู่ Thai GAAP (VAT 7% และหัก ณ ที่จ่าย 3%), ใบกำกับภาษีอิเล็กทรอนิกส์ e-Tax Invoice XML (ETDA v2.1), ระบบเงินเดือนไทย (SSO และ ภ.ง.ด.1), การบริหาร FX Hedging, และการเชื่อมต่อ SAP S/4HANA BAPI</span>
-          <span class="lang-en">Autonomous AI workforce operating system and agentic ERP: Kahn DAG orchestration with human-in-the-loop gates, automated 3-Way Match, Thai GAAP GL, Thai e-Tax Invoice XML (ETDA v2.1), Thai payroll (SSO/PND1), FX hedging, and SAP S/4HANA integration.</span>
-        </p>
-        <div class="specs-strip">
-          <code class="spec-tag">Kahn DAG workflow</code>
-          <code class="spec-tag">Human-in-the-loop checkpoint</code>
-          <code class="spec-tag">Thai GAAP double-entry GL</code>
-          <code class="spec-tag">e-Tax invoice XML (ETDA v2.1)</code>
-          <code class="spec-tag">Thai payroll SSO and PND1</code>
-          <code class="spec-tag">SAP S/4HANA BAPI bridge</code>
-        </div>
-        <div class="item-foot">
-          <span class="test-indicator">73 tests passed</span>
-          <span class="view-code-hint">Inspect code ↗</span>
-        </div>
-      </a>
-
-      <!-- 7: tum-central-director -->
-      <a href="https://github.com/PasitTum/tum-central-director" target="_blank" rel="noopener noreferrer" class="bento-item span-6" data-cat="workforce">
-        <div class="item-head">
-          <span class="item-tag">Sovereign AgentOS and control</span>
-          <span class="item-tier">Mission control plane</span>
-        </div>
-        <div class="item-title-row">
-          <div class="item-name">tum-central-director</div>
-          <div class="item-arrow">↗</div>
-        </div>
-        <p class="item-summary">
-          <span class="lang-th">ศูนย์บัญชาการควบคุมระบบนิเวศทั้ง 8 แพลตฟอร์ม ระบบ Monaco ADE, Sentinel Interceptor สกัดกั้นคำสั่งอันตราย Prompt Injection, ระบบสั่งการแผนเผชิญเหตุ Incident Response Playbook Trigger, และ Sovereign Event Mesh</span>
-          <span class="lang-en">Mission control and sovereign ADE: Monaco IDE, Sentinel prompt injection firewall, cross-fleet event mesh bus, incident response playbook triggers, and visual attack map engine.</span>
-        </p>
-        <div class="specs-strip">
-          <code class="spec-tag">FleetMeshHub router</code>
-          <code class="spec-tag">Sentinel prompt guard</code>
-          <code class="spec-tag">IR playbooks 01-04</code>
-          <code class="spec-tag">Attack map engine</code>
-        </div>
-        <div class="item-foot">
-          <span class="test-indicator">53 tests passed</span>
-          <span class="view-code-hint">Inspect code ↗</span>
-        </div>
-      </a>
-
-      <!-- 8: tum-group-holdings -->
-      <a href="https://github.com/PasitTum/tum-group-holdings" target="_blank" rel="noopener noreferrer" class="bento-item span-6" data-cat="all">
-        <div class="item-head">
-          <span class="item-tag">Governance and audit engine</span>
-          <span class="item-tier">Central holding HQ</span>
-        </div>
-        <div class="item-title-row">
-          <div class="item-name">tum-group-holdings</div>
-          <div class="item-arrow">↗</div>
-        </div>
-        <p class="item-summary">
-          <span class="lang-th">ศูนย์กลางธรรมาภิบาลและการกำกับดูแลสถาปัตยกรรมระดับเครือ Enterprise Working Group (EWG) Charter, แผนปฏิบัติการ 20 สปรินต์, และชุดทดสอบบูรณาการ E2E ข้าม 8 แพลตฟอร์มแบบ Pure Node.js แท้ 100%</span>
-          <span class="lang-en">Central enterprise governance, EWG charters, 20-Sprint master execution roadmaps, Docker Compose infrastructure, and fleet-wide end-to-end integration test harness across all 8 platforms.</span>
-        </p>
-        <div class="specs-strip">
-          <code class="spec-tag">Continuous SDLC governance</code>
-          <code class="spec-tag">Fleet-wide E2E verifier</code>
-          <code class="spec-tag">Zero-mockup guarantee</code>
-          <code class="spec-tag">EWG charters</code>
-        </div>
-        <div class="item-foot">
-          <span class="test-indicator">9 E2E steps passed</span>
-          <span class="view-code-hint">Inspect code ↗</span>
-        </div>
-      </a>
-
-    </div>
-  </main>
-
-  <!-- Architecture Matrix Table -->
-  <section class="container" id="matrix">
-    <div class="platforms-head">
-      <div>
-        <h2 class="section-headline">
-          <span class="lang-th">ตารางเมทริกซ์สถาปัตยกรรมระบบ</span>
-          <span class="lang-en">Architecture and compliance matrix</span>
-        </h2>
-        <div class="section-sub">
-          <span class="lang-th">สรุปข้อมูลเชิงเทคนิค กรอบมาตรฐาน และระดับความมั่นคงของทั้ง 8 แพลตฟอร์ม</span>
-          <span class="lang-en">Technical specifications, standards compliance, and engineering quality tier per platform.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="specs-table-wrapper">
-      <table class="specs-table">
+    <div class="matrix-wrap">
+      <table class="matrix-table">
         <thead>
           <tr>
-            <th>Repository</th>
-            <th>Primary stack</th>
-            <th>Core standard</th>
-            <th>Automated tests</th>
-            <th>Quality tier</th>
-            <th>Status</th>
+            <th>มาตรฐาน / ข้อกำหนด</th>
+            <th>หน่วยงานกำกับดูแล</th>
+            <th>ขอบเขตและการประยุกต์ใช้งาน</th>
+            <th>สถานะความสอดคล้อง</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="repo-name">tum-trust-security</td>
-            <td>C# .NET 8 native HAL</td>
-            <td>DOPA smart card APDU, ICAO Doc 9303, PKCS#11</td>
-            <td>159 tests</td>
-            <td>Tier-1 sovereign HAL</td>
-            <td><span class="badge-ok">Operational</span></td>
+            <td><strong>พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล (PDPA)</strong></td>
+            <td>สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.)</td>
+            <td>การไม่จัดเก็บข้อมูลชีวมิติดิบ, สถาปัตยกรรม Zero-Knowledge Proofs</td>
+            <td><span class="status-pill">สอดคล้องสมบูรณ์</span></td>
           </tr>
           <tr>
-            <td class="repo-name">tum-trust-fabric</td>
-            <td>TypeScript / Node.js ESM</td>
-            <td>W3C DID:TUM, ZK Pedersen, ISO 18013-5 mDL, RFC 3161</td>
-            <td>102 tests</td>
-            <td>Tier-1 national eID</td>
-            <td><span class="badge-ok">Operational</span></td>
+            <td><strong>พ.ร.บ. ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ ม.26</strong></td>
+            <td>กระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม (MDES)</td>
+            <td>การจัดเก็บ Log จราจรคอมพิวเตอร์ไม่น้อยกว่า 90 วันพร้อมประทับเวลาสากล</td>
+            <td><span class="status-pill">สอดคล้องสมบูรณ์</span></td>
           </tr>
           <tr>
-            <td class="repo-name">tum-socs</td>
-            <td>C# .NET 8 / React 18</td>
-            <td>Sigma ingestion, eBPF tracing, digital receipt API</td>
-            <td>77 tests</td>
-            <td>Tier-1 OpenSIEM core</td>
-            <td><span class="badge-ok">Operational</span></td>
+            <td><strong>ใบกำกับภาษีอิเล็กทรอนิกส์ (e-Tax XML v2.1)</strong></td>
+            <td>กรมสรรพากร / สำนักงานพัฒนาธุรกรรมทางอิเล็กทรอนิกส์ (สพธอ.)</td>
+            <td>โครงสร้าง XML และการลงลายมือชื่อดิจิทัลตามมาตรฐาน ETDA</td>
+            <td><span class="status-pill">สอดคล้องสมบูรณ์</span></td>
           </tr>
           <tr>
-            <td class="repo-name">tum-cybermesh</td>
-            <td>TypeScript / Node.js ESM</td>
-            <td>Partitioned ring buffer, SOAR 30s SLA, P2P Merkle</td>
-            <td>50 tests</td>
-            <td>Tier-1 defense cloud</td>
-            <td><span class="badge-ok">Operational</span></td>
+            <td><strong>ICAO Doc 9303 (ePassport &amp; Travel Documents)</strong></td>
+            <td>International Civil Aviation Organization (ICAO)</td>
+            <td>การอ่านและตรวจสอบความถูกต้องของชิปหนังสือเดินทาง TD1, TD2, TD3</td>
+            <td><span class="status-pill">สอดคล้องสมบูรณ์</span></td>
           </tr>
           <tr>
-            <td class="repo-name">tum-quantum</td>
-            <td>C# .NET 8 / zero deps</td>
-            <td>NIST FIPS 203 (ML-KEM), NIST FIPS 204 (ML-DSA)</td>
-            <td>85 tests</td>
-            <td>Tier-1 post-quantum lab</td>
-            <td><span class="badge-ok">Operational</span></td>
+            <td><strong>NIST FIPS 203 (ML-KEM) &amp; FIPS 204 (ML-DSA)</strong></td>
+            <td>National Institute of Standards and Technology (NIST)</td>
+            <td>มาตรฐานการแลกเปลี่ยนคีย์และลายมือชื่อดิจิทัลยุคหลังคอมพิวเตอร์ควอนตัม</td>
+            <td><span class="status-pill">สอดคล้องสมบูรณ์</span></td>
           </tr>
           <tr>
-            <td class="repo-name">tum-agentic-workos</td>
-            <td>TypeScript / Node.js ESM</td>
-            <td>Kahn DAG, Thai GAAP GL, Thai e-Tax XML, SAP S/4HANA</td>
-            <td>73 tests</td>
-            <td>Tier-1 autonomous ERP</td>
-            <td><span class="badge-ok">Operational</span></td>
-          </tr>
-          <tr>
-            <td class="repo-name">tum-central-director</td>
-            <td>TypeScript / Electron / Monaco</td>
-            <td>FleetMeshHub, Sentinel prompt guard, IR playbooks</td>
-            <td>53 tests</td>
-            <td>Tier-1 control plane</td>
-            <td><span class="badge-ok">Operational</span></td>
-          </tr>
-          <tr>
-            <td class="repo-name">tum-group-holdings</td>
-            <td>Pure Node.js E2E verifier</td>
-            <td>Continuous SDLC governance, 9 E2E verification steps</td>
-            <td>9 checkpoints</td>
-            <td>Holding governance</td>
-            <td><span class="badge-ok">Operational</span></td>
+            <td><strong>ISO/IEC 30107 (Biometric Anti-Spoofing)</strong></td>
+            <td>International Organization for Standardization (ISO)</td>
+            <td>การตรวจจับความมีชีวิตของใบหน้าและป้องกันการปลอมแปลง (PAD)</td>
+            <td><span class="status-pill">สอดคล้องสมบูรณ์</span></td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-row">
-        <div class="footer-info">
-          <div class="footer-name">TUM Group Holdings</div>
-          <p class="footer-desc">
-            <span class="lang-th">
-              ระบบนิเวศเทคโนโลยีอธิปไตยดิจิทัล วิศวกรรม Clean Architecture 100% 
-              ทนทานต่อภัยคุกคามในยุคคอมพิวเตอร์ควอนตัม และการันตีปราศจาก Mockup
-            </span>
-            <span class="lang-en">
-              National sovereign technology ecosystem built on Clean Architecture, 
-              quantum-resilient cryptography, and verified zero-mockup guarantees.
-            </span>
-          </p>
-          <div class="footer-authority">
-            Executive Board Governance and Architecture Council
-          </div>
+  <!-- Corporate Inquiries & Contact -->
+  <section class="section-block container" id="contact">
+    <div class="section-head">
+      <h2 class="section-headline">
+        <span class="lang-th">ติดต่อฝ่ายพัฒนาธุรกิจองค์กร</span>
+        <span class="lang-en">Enterprise relations and corporate inquiries</span>
+      </h2>
+      <div class="section-sub">
+        <span class="lang-th">สำหรับการนัดหมายหารือโซลูชันเชิงพาณิชย์ การขอเอกสารสเปกผลิตภัณฑ์ หรือการประสานงานพันธมิตรคู่ค้า</span>
+        <span class="lang-en">Contact our enterprise advisory team for commercial briefings, technical datasheets, or partnership inquiries.</span>
+      </div>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-card">
+        <h3 class="card-title">
+          <span class="lang-th">สำนักงานใหญ่ กลุ่มบริษัท ทียูเอ็ม โฮลดิ้งส์ จำกัด</span>
+          <span class="lang-en">TUM Group Holdings Head Office</span>
+        </h3>
+        <p class="card-desc">
+          <span class="lang-th">ศูนย์กลางการบริหารงาน นโยบายธรรมาภิบาลข้อมูล และการวิจัยและพัฒนาผลิตภัณฑ์ในเครือ</span>
+          <span class="lang-en">Executive headquarters, corporate governance, and unified research operations.</span>
+        </p>
+
+        <div class="contact-item">
+          <span class="contact-label">อีเมลฝ่ายพัฒนาธุรกิจ (Enterprise Relations):</span>
+          <span class="contact-val">enterprise@tumgroup.holdings</span>
         </div>
 
-        <div class="footer-navs">
-          <div class="footer-nav-group">
-            <div class="footer-nav-head">Ecosystem</div>
-            <a href="https://github.com/PasitTum/tum-trust-fabric" target="_blank" class="footer-link">tum-trust-fabric</a>
-            <a href="https://github.com/PasitTum/tum-cybermesh" target="_blank" class="footer-link">tum-cybermesh</a>
-            <a href="https://github.com/PasitTum/tum-quantum" target="_blank" class="footer-link">tum-quantum</a>
-            <a href="https://github.com/PasitTum/tum-agentic-workos" target="_blank" class="footer-link">tum-agentic-workos</a>
-          </div>
+        <div class="contact-item">
+          <span class="contact-label">สายด่วนให้คำปรึกษาทางเทคนิค (Technical Desk):</span>
+          <span class="contact-val">+66 (0) 2-000-0000 (Mon - Fri: 09:00 - 18:00 ICT)</span>
+        </div>
 
-          <div class="footer-nav-group">
-            <div class="footer-nav-head">Access</div>
-            <a href="https://github.com/PasitTum" target="_blank" class="footer-link">GitHub Organization</a>
-            <a href="https://discord.gg/RCXqnaqtM" target="_blank" class="footer-link">Discord Community</a>
-            <a href="mailto:pasit.boonpanase@gmail.com" class="footer-link">pasit.boonpanase@gmail.com</a>
-          </div>
+        <div class="contact-item">
+          <span class="contact-label">ที่ตั้งสำนักงาน (Headquarters):</span>
+          <span class="contact-val">TUM Executive Tower, Pathum Wan, Bangkok, Thailand</span>
         </div>
       </div>
 
-      <div class="footer-bottom-row">
-        <div>2026 TUM Group Holdings Co., Ltd.</div>
-        <div>NIST FIPS 203/204 compliant, 608 tests passed</div>
+      <div class="contact-card">
+        <h3 class="card-title">
+          <span class="lang-th">การนัดหมายขอรับฟังบรรยายสรุปโซลูชัน</span>
+          <span class="lang-en">Request an Enterprise Solution Briefing</span>
+        </h3>
+        <p class="card-desc">
+          <span class="lang-th">สำหรับสถาบันการเงิน หน่วยงานโครงสร้างพื้นฐานสำคัญ และองค์กรธุรกิจที่ต้องการนัดหมายทดสอบระบบ (Sandbox POC)</span>
+          <span class="lang-en">Schedule a formal architectural briefing or explore on-premise Proof of Concept (POC) sandboxes.</span>
+        </p>
+
+        <div style="margin-top: var(--space-sm);">
+          <a href="mailto:enterprise@tumgroup.holdings?subject=Enterprise%20Solution%20Inquiry%20-%20TUM%20Group" class="btn btn-primary" style="width: 100%;">
+            <span class="lang-th">ส่งข้อความขอนัดหมายทางอีเมล</span>
+            <span class="lang-en">Send Inquiry via Email</span>
+          </a>
+        </div>
+        <div style="font-size: var(--text-xs); color: var(--color-dim); font-family: var(--font-outlier); text-align: center; margin-top: var(--space-xs);">
+          Response turnaround time: &le; 24 business hours
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div style="font-weight: 600; color: var(--color-ink); margin-bottom: var(--space-2xs);">TUM Group Holdings Co., Ltd.</div>
+        <div class="footer-copy">TUM Group Holdings. Sovereign Deep-Tech &amp; Enterprise Security Ecosystem.</div>
+      </div>
+
+      <div style="display: flex; gap: var(--space-lg); font-size: var(--text-xs); font-family: var(--font-outlier);">
+        <a href="#about" style="color: var(--color-muted); text-decoration: none;">About</a>
+        <a href="#subsidiaries" style="color: var(--color-muted); text-decoration: none;">Divisions</a>
+        <a href="#compliance" style="color: var(--color-muted); text-decoration: none;">Compliance</a>
+        <a href="#contact" style="color: var(--color-muted); text-decoration: none;">Contact</a>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // 1. Language Controller
     function setLang(lang) {
-      document.documentElement.lang = lang;
-      localStorage.setItem('tum_portal_lang', lang);
-      var bTh = document.getElementById('btn-th');
-      var bEn = document.getElementById('btn-en');
-      if (bTh && bEn) {
-        if (lang === 'th') {
-          bTh.classList.add('active');
-          bEn.classList.remove('active');
-        } else {
-          bEn.classList.add('active');
-          bTh.classList.remove('active');
-        }
-      }
+      document.documentElement.setAttribute('lang', lang);
+      document.getElementById('btn-th').classList.toggle('active', lang === 'th');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      localStorage.setItem('tum_lang', lang);
     }
 
     (function initLang() {
-      var saved = localStorage.getItem('tum_portal_lang');
-      if (!saved) {
-        var userLang = navigator.language || navigator.userLanguage || 'th';
-        saved = userLang.toLowerCase().startsWith('th') ? 'th' : 'en';
-      }
+      var saved = localStorage.getItem('tum_lang') || 'th';
       setLang(saved);
     })();
-
-    // 2. Terminal Telemetry Controller
-    var terminalData = {
-      e2e: [
-        { ts: '14:20:53.991Z', tag: 'OK', text: '[E2E 1/9] Sovereign trust HAL and hardware primitives (tum-trust-security): Tum.Trust.Security.dll verified' },
-        { ts: '14:20:53.993Z', tag: 'PQC', text: '[E2E 2/9] Post-quantum lattice engines (tum-quantum): NIST FIPS 203/204 ML-KEM/ML-DSA verified' },
-        { ts: '14:20:53.994Z', tag: 'OK', text: '[E2E 3/9] Full OpenSIEM pipeline and web HUD (tum-socs): Tum.Siem.Server.dll verified' },
-        { ts: '14:20:53.997Z', tag: 'ACC', text: '[E2E 4/9] Autonomous WorkOS DAG, accounting and treasury forecast (tum-agentic-workos): services verified' },
-        { ts: '14:20:53.999Z', tag: 'OK', text: '[E2E 5/9] CyberMesh correlation engine and SOAR playbooks (tum-cybermesh): correlation verified' },
-        { ts: '14:20:54.002Z', tag: 'ACC', text: '[E2E 6/9] National trust fabric batch corridor and legal notary (tum-trust-fabric): batch processor verified' },
-        { ts: '14:20:54.003Z', tag: 'OK', text: '[E2E 7/9] Sovereign director FleetMeshHub and 8-repo router (tum-central-director): event mesh verified' },
-        { ts: '14:20:54.004Z', tag: 'ACC', text: '[E2E 8/9] Cross-fleet event mesh and policy enforcers: containment listeners verified' },
-        { ts: '14:20:54.018Z', tag: 'OK', text: '[E2E 9/9] Sprint 9 sovereign artifacts (mDL, e-Tax XML, receipt ledger, playbooks): all 9 checkpoints green' }
-      ],
-      pqc: [
-        { ts: '14:21:02.104Z', tag: 'PQC', text: '[LATTICE CORE] NIST FIPS 203 ML-KEM-768 key encapsulation mechanism initialized' },
-        { ts: '14:21:02.106Z', tag: 'PQC', text: '[LATTICE CORE] KeyPair generated: public key (1184 bytes), secret key (2400 bytes) in 0.42ms' },
-        { ts: '14:21:02.108Z', tag: 'PQC', text: '[LATTICE CORE] Encapsulating shared secret: ciphertext (1088 bytes) generated with SHAKE-256 entropy' },
-        { ts: '14:21:02.110Z', tag: 'OK', text: '[FIPS 204] NIST FIPS 204 ML-DSA-87 digital signature assertion engine initialized' },
-        { ts: '14:21:02.112Z', tag: 'OK', text: '[FIPS 204] Signature generated (4595 bytes) across 256-bit hash in 1.14ms: verified' }
-      ],
-      mdl: [
-        { ts: '14:21:15.320Z', tag: 'ACC', text: '[ISO 18013-5] Mobile driving license (mDL) parsing engine initialized' },
-        { ts: '14:21:15.322Z', tag: 'ACC', text: '[ISO 18013-5] Parsing Mobile Security Object (MSO) with SHA-256 digest algorithm' },
-        { ts: '14:21:15.324Z', tag: 'OK', text: '[ISO 18013-5] Selective disclosure: reader requested age over 18, omitted personal identifiers' },
-        { ts: '14:21:15.326Z', tag: 'OK', text: '[ISO 18013-5] Issuer authority sealed with NIST FIPS 204 ML-DSA-87: valid' }
-      ],
-      etax: [
-        { ts: '14:21:28.012Z', tag: 'ACC', text: '[WORKOS ERP] Generating Thai Revenue Department e-Tax invoice XML (ETDA v2.1)' },
-        { ts: '14:21:28.014Z', tag: 'ACC', text: '[WORKOS ERP] Thai Currency Text conversion: 1,070,000.00 THB to BahtText complete' },
-        { ts: '14:21:28.016Z', tag: 'OK', text: '[WORKOS ERP] Byzantine Fault Tolerant (BFT) swarm consensus: 4/4 validator nodes approved' },
-        { ts: '14:21:28.018Z', tag: 'OK', text: '[SIEM RECORD] Invoice audit leaf hash chained to tum-socs Merkle ledger' }
-      ]
-    };
-
-    function switchTab(key) {
-      document.querySelectorAll('.console-tab-btn').forEach(function(b) { b.classList.remove('active'); });
-      if (event && event.target) event.target.classList.add('active');
-
-      var logs = terminalData[key] || terminalData.e2e;
-      var out = '';
-      logs.forEach(function(r) {
-        var badgeCls = r.tag === 'OK' ? 'log-badge-ok' : (r.tag === 'PQC' ? 'log-badge-cool' : 'log-badge-accent');
-        out += '<div class="log-row">' +
-          '<span class="log-stamp">[' + r.ts + ']</span>' +
-          '<span class="' + badgeCls + '">[' + r.tag + ']</span>' +
-          '<span>' + r.text + '</span>' +
-        '</div>';
-      });
-      document.getElementById('terminal-body').innerHTML = out;
-    }
-
-    (function initTerminal() {
-      var logs = terminalData.e2e;
-      var out = '';
-      logs.forEach(function(r) {
-        var badgeCls = r.tag === 'OK' ? 'log-badge-ok' : (r.tag === 'PQC' ? 'log-badge-cool' : 'log-badge-accent');
-        out += '<div class="log-row">' +
-          '<span class="log-stamp">[' + r.ts + ']</span>' +
-          '<span class="' + badgeCls + '">[' + r.tag + ']</span>' +
-          '<span>' + r.text + '</span>' +
-        '</div>';
-      });
-      document.getElementById('terminal-body').innerHTML = out;
-    })();
-
-    // 3. Category Filter Controller
-    function filterCards(cat) {
-      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
-      if (event && event.target) event.target.classList.add('active');
-
-      document.querySelectorAll('.bento-item').forEach(function(item) {
-        if (cat === 'all') {
-          item.style.display = 'flex';
-        } else {
-          var itemCat = item.getAttribute('data-cat');
-          if (itemCat === cat || itemCat === 'all') {
-            item.style.display = 'flex';
-          } else {
-            item.style.display = 'none';
-          }
-        }
-      });
-    }
   </script>
 </body>
 </html>
