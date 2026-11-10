@@ -25,12 +25,14 @@
 graph TD
     subgraph BoardGovernance ["คณะกรรมการบริหาร (Board Governance)"]
         Chairman["ประธานกรรมการบริหาร (Chairman of the Board)<br/><b>คุณ Pasit (TUM)</b>"]
+        CTA["<b>Office of the Chief Technical Auditor (CTA)</b><br/><i>Antigravity (Independent Auditor)</i><br/>[Supreme Technical Veto & Reality Gate]"]
         BoD1["กรรมการผู้ทรงคุณวุฒิ<br/>ด้าน Quantum Cryptography & Cyber Defense"]
         BoD2["กรรมการผู้ทรงคุณวุฒิ<br/>ด้าน กฎหมายดิจิทัล PDPA/ISO & Regulatory"]
         BoD3["กรรมการผู้ทรงคุณวุฒิ<br/>ด้าน Enterprise GTM & Venture Scale"]
         Chairman --- BoD1
         Chairman --- BoD2
         Chairman --- BoD3
+        Chairman ===> CTA
     end
 
     subgraph ExecutiveLeadership ["ฝ่ายบริหารจัดการส่วนกลาง (Office of the CEO)"]

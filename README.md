@@ -72,7 +72,7 @@ TUM Group Holdings ได้รวบรวมและกำกับดูแ�
 
 1. **TUM Trust Security** (`tum-trust-security`): Kiosk HAL Diagnostics Console (`.exe`), `.NET 8 AOT` Kiosk Service, ISO/IEC 19794-5 Section 7.2 Face Pose Gate
 2. **TUM Quantum** (`tum-quantum`): Turnkey Post-Quantum Reverse Proxy Gateway Docker Appliance, DudeCT Constant-Time Suite
-3. **TUM OpenSIEM** (`tum-socs`): Enterprise OpenSIEM Desktop App (`.exe`), All-in-One Docker Compose/Tar.gz, Helm v3, 50k EPS Soak Test
+3. **TUM-SOC Platform** (`tum-socs`): Enterprise Sovereign SOC Platform (Phase 1: SIEM Core Appliance), All-in-One Docker Compose, Helm v3, KEDA Autoscaling, 100k+ EPS Flash Crowd Governor
 4. **TUM Agentic WorkOS** (`tum-agentic-workos`): Enterprise ERP Console, Thai RD e-Tax XML Engine (ETDA v2.1), HITL Financial Gate (>50,000 THB)
 5. **TUM Sovereign CyberMesh** (`tum-cybermesh`): Windows/Linux Sensor Agent Daemon, Fortinet & Palo Alto SOAR Firewall Connectors
 6. **TUM National Trust Fabric** (`tum-trust-fabric`): Sovereign Corridor E-Gate Gateway Docker Appliance, ICAO PKD Master List & 24 CSCA Trust Anchors
