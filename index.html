@@ -474,6 +474,117 @@ nav {
   padding-top: var(--space-xs);
 }
 
+/* SIEM 6-Pillar Feature Grid */
+.siem-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+@media (max-width: 980px) {
+  .siem-feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .siem-feature-grid { grid-template-columns: 1fr; }
+}
+
+.siem-feature-card {
+  background: var(--color-paper-2);
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: var(--radius-card);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transition: border-color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+}
+.siem-feature-card:hover {
+  border-color: var(--color-accent);
+  background: var(--color-paper-3);
+}
+.siem-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.siem-card-num {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  background: var(--color-paper);
+  border: var(--rule-hair) solid var(--color-rule-2);
+  padding: var(--space-3xs) var(--space-xs);
+  border-radius: var(--radius-pill);
+}
+.siem-card-title {
+  font-size: var(--text-title);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0;
+}
+.siem-card-body {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Strategic Roadmap Strip */
+.roadmap-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+}
+@media (max-width: 768px) {
+  .roadmap-strip { grid-template-columns: 1fr; }
+}
+.roadmap-phase-card {
+  background: var(--color-paper-2);
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: var(--radius-card);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  position: relative;
+}
+.roadmap-phase-card.active {
+  border-color: var(--color-accent);
+  background: color-mix(in oklab, var(--color-accent-soft) 25%, var(--color-paper-2));
+}
+.phase-badge {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: var(--space-3xs) var(--space-xs);
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+.phase-badge.current {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-weight: 700;
+}
+.phase-badge.planned {
+  background: var(--color-paper-3);
+  color: var(--color-dim);
+  border: var(--rule-hair) solid var(--color-rule);
+}
+.phase-title {
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0;
+}
+.phase-desc {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* Compliance Matrix Table */
 .matrix-wrap {
   border: var(--rule-hair) solid var(--color-rule);
@@ -616,6 +727,10 @@ footer {
           <span class="lang-th">กลุ่มธุรกิจในเครือ</span>
           <span class="lang-en">Subsidiaries</span>
         </a>
+        <a href="#siem-platform" class="nav-link" style="color: var(--color-accent); font-weight: 500;">
+          <span class="lang-th">แพลตฟอร์ม SIEM</span>
+          <span class="lang-en">SIEM Platform</span>
+        </a>
         <a href="#compliance" class="nav-link">
           <span class="lang-th">มาตรฐานสากล</span>
           <span class="lang-en">Compliance</span>
@@ -647,18 +762,19 @@ footer {
     <p class="hero-desc">
       <span class="lang-th">
         กลุ่มบริษัท ทียูเอ็ม โฮลดิ้งส์ จำกัด ดำเนินการวิจัย พัฒนา และส่งมอบโซลูชันความปลอดภัยทางดิจิทัลระดับสถาบัน 
-        ครอบคลุมระบบอัตลักษณ์ดิจิทัลประจำตู้บริการอัตโนมัติ ศูนย์ปฏิบัติการความมั่นคงไซเบอร์ (TUM-SOC Platform &amp; SIEM Core) 
-        วิทยาการรหัสลับยุคหลังควอนตัม และระบบบริหารทรัพยากรองค์กรอัตโนมัติ
+        โดยมีเรือธงหลักคือ แพลตฟอร์มบริหารจัดการข้อมูลจราจรและความมั่นคงไซเบอร์ระดับองค์กร (TUM-SIEM Platform) 
+        ผสานระบบอัตลักษณ์ดิจิทัลประจำตู้บริการอัตโนมัติ วิทยาการรหัสลับยุคหลังควอนตัม และระบบบริหารทรัพยากรองค์กรอัตโนมัติ
       </span>
       <span class="lang-en">
-        Sovereign identity, enterprise SOC &amp; SIEM core, post-quantum cryptography, and autonomous workforce systems.
+        Sovereign deep-tech group delivering institutional security: Flagship Sovereign SIEM Platform, 
+        kiosk identity verification, post-quantum cryptography, and autonomous enterprise systems.
       </span>
     </p>
 
     <div class="hero-btns">
-      <a href="#contact" class="btn btn-primary">
-        <span class="lang-th">ติดต่อฝ่ายพัฒนาธุรกิจองค์กร</span>
-        <span class="lang-en">Enterprise Solution Inquiries</span>
+      <a href="#siem-platform" class="btn btn-primary">
+        <span class="lang-th">สำรวจแพลตฟอร์ม TUM-SIEM</span>
+        <span class="lang-en">Explore TUM-SIEM Platform</span>
       </a>
       <a href="#subsidiaries" class="btn btn-secondary">
         <span class="lang-th">สำรวจ 4 กลุ่มธุรกิจในเครือ</span>
@@ -673,12 +789,20 @@ footer {
     <!-- Institutional Measurements Strip -->
     <div class="metrics-strip">
       <div class="metric-cell">
-        <div class="metric-num">4<span class="metric-unit">divisions</span></div>
+        <div class="metric-num">50k-100k<span class="metric-unit">EPS</span></div>
         <div class="metric-label">
-          <span class="lang-th">กลุ่มธุรกิจเฉพาะทาง</span>
-          <span class="lang-en">Core business units</span>
+          <span class="lang-th">ความเร็วรับส่งข้อมูลจราจร</span>
+          <span class="lang-en">High-throughput ingestion</span>
         </div>
-        <div class="metric-note">Integrated technology holdings</div>
+        <div class="metric-note">Disruptor multi-core ring buffer</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-num">Sec 26<span class="metric-unit">CCA</span></div>
+        <div class="metric-label">
+          <span class="lang-th">พ.ร.บ.คอมพิวเตอร์ฯ และ PDPA</span>
+          <span class="lang-en">Statutory compliance &amp; PDPA</span>
+        </div>
+        <div class="metric-note">90-day WORM &amp; Merkle SHA-256</div>
       </div>
       <div class="metric-cell">
         <div class="metric-num">100%<span class="metric-unit">on-premise</span></div>
@@ -695,14 +819,6 @@ footer {
           <span class="lang-en">Post-quantum cryptography</span>
         </div>
         <div class="metric-note">NIST lattice standard</div>
-      </div>
-      <div class="metric-cell">
-        <div class="metric-num">Multi<span class="metric-unit">platform</span></div>
-        <div class="metric-label">
-          <span class="lang-th">สถาปัตยกรรมระบบส่งมอบ</span>
-          <span class="lang-en">Appliance and Electron desktop</span>
-        </div>
-        <div class="metric-note">Windows, Linux, macOS turnkey</div>
       </div>
     </div>
   </header>
@@ -768,27 +884,28 @@ footer {
       </div>
 
       <!-- 3: TUMSocs -->
-      <div class="subsidiary-card">
+      <div class="subsidiary-card" style="border-color: var(--color-accent); background: color-mix(in oklab, var(--color-accent-soft) 12%, var(--color-paper-2));">
         <div class="card-top">
-          <span class="card-unit-badge">Sovereign SOC &amp; SIEM Core</span>
-          <span class="card-format">TUM-SOC Enterprise Platform</span>
+          <span class="card-unit-badge" style="background: var(--color-accent); color: var(--color-accent-ink); font-weight: 700;">เรือธงอันดับแรก &bull; Primary Flagship</span>
+          <span class="card-format">TUM-SIEM Enterprise Platform</span>
         </div>
-        <h3 class="card-title">TUMSocs Co., Ltd.</h3>
+        <h3 class="card-title">TUMSocs Co., Ltd. (TUM-SIEM)</h3>
         <p class="card-desc">
-          <span class="lang-th">ศูนย์ปฏิบัติการความมั่นคงปลอดภัยไซเบอร์ (TUM-SOC Platform) โดยมีรากฐานด่านแรกคือ Sovereign SIEM รับและจัดเก็บข้อมูลจราจรทางคอมพิวเตอร์ตาม พ.ร.บ.คอมพิวเตอร์ฯ ม.26 และ PDPA บน ClickHouse พร้อมระบบตรวจจับภัยคุกคาม SigmaHQ, ระบบสกัดทราฟฟิกถล่ม (Flash Crowd Governor 100k+ EPS), และตัวควบคุมโครงสร้างพื้นฐานคลาวด์ (Cloud &amp; K8s Orchestrator)</span>
-          <span class="lang-en">Full-spectrum Sovereign Security Operations Center (TUM-SOC Platform) with Phase 1 SIEM Core Foundation: high-throughput log ingestion, native ClickHouse columnar storage, SigmaHQ detection engine, Flash Crowd surge governor (&gt;100k EPS), and turnkey Cloud/K8s infrastructure orchestration.</span>
+          <span class="lang-th">แพลตฟอร์มบริหารจัดการข้อมูลความมั่นคงและจราจรคอมพิวเตอร์ระดับสถาบัน (Sovereign SIEM) ด่านแรกขององค์กร มุ่งเน้นการจัดเก็บตาม พ.ร.บ.คอมพิวเตอร์ฯ ม.26 และ PDPA บน ClickHouse ด้วยเทคโนโลยี Disruptor RingBuffer (50,000–100,000+ EPS), Inverted Index ตรวจจับ SigmaHQ, ระบบสกัดทราฟฟิกถล่ม Flash Crowd Governor และ Cloud/K8s Orchestrator</span>
+          <span class="lang-en">Enterprise Sovereign SIEM platform engineered as the primary defense foundation: high-throughput Disruptor RingBuffer (&gt;50k-100k EPS), ClickHouse columnar storage for Computer Crime Act Sec 26 &amp; PDPA compliance, Inverted Index SigmaHQ threat detection, and turnkey Cloud/K8s infrastructure orchestration.</span>
         </p>
         <div class="specs-list">
-          <code class="spec-tag">TUM-SOC Platform</code>
+          <code class="spec-tag" style="color: var(--color-accent); font-weight: 600;">Phase 1: SIEM Core</code>
           <code class="spec-tag">Computer Crime Act Sec 26</code>
-          <code class="spec-tag">Flash Crowd Governor (100k+ EPS)</code>
+          <code class="spec-tag">Disruptor RingBuffer (100k+ EPS)</code>
+          <code class="spec-tag">ClickHouse MergeTree Micro-Batch</code>
+          <code class="spec-tag">Inverted Index SigmaHQ</code>
+          <code class="spec-tag">Flash Crowd Governor (100k+ Concurrent)</code>
           <code class="spec-tag">Cloud &amp; K8s Orchestrator</code>
-          <code class="spec-tag">ClickHouse Columnar Sink</code>
-          <code class="spec-tag">Native SigmaHQ Engine</code>
         </div>
         <div class="card-foot">
-          <span>Enterprise ready</span>
-          <span>TUM-SOC Platform &rarr;</span>
+          <span style="color: var(--color-ok); font-weight: 600;">&#9679; Enterprise Production Ready</span>
+          <a href="#siem-platform" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">สำรวจสถาปัตยกรรม SIEM &rarr;</a>
         </div>
       </div>
 
@@ -813,6 +930,184 @@ footer {
           <span>Enterprise ready</span>
           <span>Operations Suite &rarr;</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flagship Section: Sovereign SIEM Platform -->
+  <section class="section-block container" id="siem-platform">
+    <div class="section-head">
+      <div class="hero-tag" style="margin-bottom: var(--space-sm);">
+        <span class="lang-th">เรือธงความมั่นคงปลอดภัยไซเบอร์ลำดับแรก &bull; พร้อมส่งมอบระดับองค์กร (Production-Ready)</span>
+        <span class="lang-en">Phase 1 Sovereign Defense Foundation &bull; Enterprise Production-Ready</span>
+      </div>
+      <h2 class="section-headline">
+        <span class="lang-th">TUM-SIEM: ศูนย์กลางการตรวจจับและบริหารจัดการข้อมูลจราจรคอมพิวเตอร์ระดับสถาบัน</span>
+        <span class="lang-en">TUM-SIEM: Sovereign Enterprise Security Information &amp; Event Management</span>
+      </h2>
+      <div class="section-sub">
+        <span class="lang-th">สถาปัตยกรรม SIEM อธิปไตยด่านแรก มุ่งเน้นประสิทธิภาพการจัดเก็บข้อมูลจราจรระดับชาติ (50,000–100,000+ EPS), สอดคล้องตาม พ.ร.บ.คอมพิวเตอร์ฯ ม.26 และ PDPA บน ClickHouse ด้วยกลไก Disruptor RingBuffer, การจัดทำดัชนีกฎตรวจจับ Inverted Index Sigma Engine, และระบบสกัดทราฟฟิกถล่ม Flash Crowd Governor</span>
+        <span class="lang-en">Our core primary flagship: ultra high-throughput log ingestion (&gt;50k-100k EPS), native ClickHouse columnar storage for statutory compliance, Inverted Index SigmaHQ detection engine, and resilient Flash Crowd surge protection.</span>
+      </div>
+    </div>
+
+    <!-- 6 Core SIEM Pillars -->
+    <div class="siem-feature-grid">
+      <!-- 1: Multi-Core Disruptor -->
+      <div class="siem-feature-card">
+        <div class="siem-card-header">
+          <span class="siem-card-num">PILLAR 01</span>
+          <span class="card-unit-badge">50k-100k+ EPS</span>
+        </div>
+        <h3 class="siem-card-title">
+          <span class="lang-th">Disruptor Multi-Core Parallelism</span>
+          <span class="lang-en">Disruptor Multi-Core Parallelism</span>
+        </h3>
+        <p class="siem-card-body">
+          <span class="lang-th">โครงสร้าง RingBuffer แบบ Zero-Lock ออกแบบสอดคล้องกับขนาด L1/L2/L3 Cache ของ CPU แบ่ง Partition ทราฟฟิกแยกตาม Cores (8–16 Cores x 6,250 EPS) ประมวลผลขนานกันโดยปราศจาก Lock Contention</span>
+          <span class="lang-en">Zero-lock L1/L2/L3 cache-aligned RingBuffer architecture partitioning stream across 8–16 CPU cores, achieving 50,000–100,000+ EPS sustained throughput with zero thread contention.</span>
+        </p>
+        <div class="specs-list">
+          <code class="spec-tag">Zero-Lock RingBuffer</code>
+          <code class="spec-tag">Cache-Aligned</code>
+          <code class="spec-tag">Mechanical Sympathy</code>
+        </div>
+      </div>
+
+      <!-- 2: ClickHouse Micro-Batching -->
+      <div class="siem-feature-card">
+        <div class="siem-card-header">
+          <span class="siem-card-num">PILLAR 02</span>
+          <span class="card-unit-badge">Columnar MergeTree</span>
+        </div>
+        <h3 class="siem-card-title">
+          <span class="lang-th">ClickHouse Micro-Batching</span>
+          <span class="lang-en">ClickHouse Micro-Batching</span>
+        </h3>
+        <p class="siem-card-body">
+          <span class="lang-th">พักข้อมูลใน RAM (5,000–10,000 รายการ ทุก 200 ms) ก่อนบันทึกลง ClickHouse ป้องกันปัญหา LSM-tree Compaction Storm และ Disk IOPS ตัน บีบอัดข้อมูลสูงถึง 10 เท่า ค้นหาย้อนหลังระดับพันล้านแถวในเสี้ยววินาที</span>
+          <span class="lang-en">Aggregates in-memory batches (5k-10k events / 200ms) before atomic insert, preventing disk I/O thrashing and compaction storms. Delivers 10x columnar compression and sub-second analytical queries.</span>
+        </p>
+        <div class="specs-list">
+          <code class="spec-tag">Micro-Batching (200ms)</code>
+          <code class="spec-tag">10x Compression</code>
+          <code class="spec-tag">Sub-Second Query</code>
+        </div>
+      </div>
+
+      <!-- 3: Inverted Index Sigma Engine -->
+      <div class="siem-feature-card">
+        <div class="siem-card-header">
+          <span class="siem-card-num">PILLAR 03</span>
+          <span class="card-unit-badge">O(k) Expression Trees</span>
+        </div>
+        <h3 class="siem-card-title">
+          <span class="lang-th">Inverted Index &amp; Anti-Evasion</span>
+          <span class="lang-en">Inverted Index &amp; Anti-Evasion</span>
+        </h3>
+        <p class="siem-card-body">
+          <span class="lang-th">จัดทำ Inverted Index แยกกลุ่มกฎตาม Logsource (ตรวจเฉพาะกฎ Web ~50 กฎ จาก 2,500 กฎ) เร็วขึ้น 40–50 เท่า พร้อม Universal Cross-Cutting Bucket และ Deep Heuristics ป้องกันการหลุดรอดและดักจับ Log ปลอมแปลง 100%</span>
+          <span class="lang-en">Indexes 2,500+ Sigma rules into category buckets, scanning only relevant rules in microseconds. Fortified by universal rules and structural heuristics to prevent evasive attack spoofing.</span>
+        </p>
+        <div class="specs-list">
+          <code class="spec-tag">Category Indexing</code>
+          <code class="spec-tag">Anti-Bypass Guard</code>
+          <code class="spec-tag">Universal Bucket</code>
+        </div>
+      </div>
+
+      <!-- 4: Flash Crowd Governor -->
+      <div class="siem-feature-card">
+        <div class="siem-card-header">
+          <span class="siem-card-num">PILLAR 04</span>
+          <span class="card-unit-badge">100k+ Concurrency</span>
+        </div>
+        <h3 class="siem-card-title">
+          <span class="lang-th">Flash Crowd Surge Governor</span>
+          <span class="lang-en">Flash Crowd Surge Governor</span>
+        </h3>
+        <p class="siem-card-body">
+          <span class="lang-th">ระบบควบคุมปริมาณทราฟฟิกช่วงวิกฤต (เช่น ระบบรับสมัครสอบ ก.พ. หรือบริการรัฐที่คนแห่เข้า 100k–300k คน) สุ่มตัวอย่าง Dynamic Sampling สำหรับทราฟฟิกขยะ/Polling แต่คงการจัดเก็บ Log สำคัญ (4xx/5xx, Auth, Admin, Security) เต็ม 100% เสมอ</span>
+          <span class="lang-en">Smart surge governor designed for extreme traffic events (100k-300k concurrent users). Dynamically samples benign polling noise while providing 100% forensic retention for all security, auth, and error logs.</span>
+        </p>
+        <div class="specs-list">
+          <code class="spec-tag">Dynamic 1:20/1:50 Sampling</code>
+          <code class="spec-tag">100% Security Retention</code>
+          <code class="spec-tag">Zero Packet Drop</code>
+        </div>
+      </div>
+
+      <!-- 5: Statutory Compliance -->
+      <div class="siem-feature-card">
+        <div class="siem-card-header">
+          <span class="siem-card-num">PILLAR 05</span>
+          <span class="card-unit-badge">Sec 26 &amp; PDPA</span>
+        </div>
+        <h3 class="siem-card-title">
+          <span class="lang-th">พ.ร.บ.คอมพิวเตอร์ฯ ม.26 &amp; PDPA</span>
+          <span class="lang-en">CCA Sec 26 &amp; PDPA Compliance</span>
+        </h3>
+        <p class="siem-card-body">
+          <span class="lang-th">จัดเก็บ Log จราจรคอมพิวเตอร์ไม่น้อยกว่า 90 วัน ประทับเวลาสากล NTP Stratum 1 พร้อมลงลายมือชื่อดิจิทัล SHA-256 Merkle Chain ตรวจจับการแก้ไข (WORM Seal) และระบบกรองข้อมูลส่วนบุคคล (PII Masking) อัตโนมัติ</span>
+          <span class="lang-en">Statutory 90-day retention under Thai Computer Crime Act Sec 26, NTP Stratum 1 time synchronization, cryptographic SHA-256 Merkle tamper-evident verification, and in-memory PDPA PII sanitization.</span>
+        </p>
+        <div class="specs-list">
+          <code class="spec-tag">90-Day Retention</code>
+          <code class="spec-tag">NTP Stratum 1</code>
+          <code class="spec-tag">SHA-256 Merkle Hash</code>
+          <code class="spec-tag">PII Masking</code>
+        </div>
+      </div>
+
+      <!-- 6: Turnkey Orchestrator -->
+      <div class="siem-feature-card">
+        <div class="siem-card-header">
+          <span class="siem-card-num">PILLAR 06</span>
+          <span class="card-unit-badge">Turnkey Deploy &amp; Host HUD</span>
+        </div>
+        <h3 class="siem-card-title">
+          <span class="lang-th">Infra Orchestrator &amp; Host Observer</span>
+          <span class="lang-en">Infra Orchestrator &amp; Host Observer</span>
+        </h3>
+        <p class="siem-card-body">
+          <span class="lang-th">ระบบสร้างชุดคำสั่งติดตั้ง Docker Compose / Kubernetes Helm อัตโนมัติ พร้อมตรวจวัดทรัพยากรระดับโฮสต์ (CPU, RAM, Disk IOPS, TCP Sockets) ประดุจ Zabbix และระบบรัน Load Test ประเมินความพร้อม (TUM-IRC-2026)</span>
+          <span class="lang-en">One-click Docker Compose and Kubernetes Helm generator, real-time host telemetry (CPU, RAM, Disk, Sockets), and automated high-throughput load testing with signed readiness certificates.</span>
+        </p>
+        <div class="specs-list">
+          <code class="spec-tag">Docker &amp; K8s Helm</code>
+          <code class="spec-tag">Host Observer</code>
+          <code class="spec-tag">Readiness Certificate</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strategic Evolution Roadmap Banner -->
+    <div class="roadmap-strip">
+      <div class="roadmap-phase-card active">
+        <div class="phase-badge current">&#10004; PHASE 1: ปัจจุบัน (CURRENT FOCUS)</div>
+        <h4 class="phase-title">Sovereign SIEM Enterprise Core</h4>
+        <p class="phase-desc">
+          <span class="lang-th">โฟกัส 100% ที่การจัดเก็บข้อมูลจราจรคอมพิวเตอร์, เสถียรภาพระดับชาติ 50k-100k+ EPS, การตรวจจับ SigmaHQ, และความสอดคล้องตามกฎหมาย พ.ร.บ.คอมฯ ม.26 &amp; PDPA (สถานะ: พร้อมส่งมอบและติดตั้งทันที)</span>
+          <span class="lang-en">100% focused on foundational log ingestion, national-scale 50k-100k+ EPS stability, SigmaHQ detection, and statutory Sec 26 &amp; PDPA compliance. (Status: Production Ready).</span>
+        </p>
+      </div>
+
+      <div class="roadmap-phase-card">
+        <div class="phase-badge planned">&#9203; PHASE 2: แผนงานในอนาคต (FUTURE)</div>
+        <h4 class="phase-title">SOAR &amp; Incident Playbook Engine</h4>
+        <p class="phase-desc">
+          <span class="lang-th">ระบบตอบสนองภัยคุกคามอัตโนมัติ (Automated Containment), การตัดการเชื่อมต่อเครือข่าย API-driven, และ Playbooks จัดการความเสี่ยงแบบ Human-in-the-loop</span>
+          <span class="lang-en">Automated security orchestration and response playbooks, API-driven network containment, and human-in-the-loop remediation workflows.</span>
+        </p>
+      </div>
+
+      <div class="roadmap-phase-card">
+        <div class="phase-badge planned">&#9203; PHASE 3: แผนงานในอนาคต (FUTURE)</div>
+        <h4 class="phase-title">Sovereign Cyber Range &amp; Wargaming</h4>
+        <p class="phase-desc">
+          <span class="lang-th">สนามจำลองสถานการณ์การโจมตีไซเบอร์เสมือนจริง, การฝึกซ้อมทีม Red/Blue Wargaming และการทดสอบรับมือภัยคุกคามระดับโครงสร้างพื้นฐานวิกฤต</span>
+          <span class="lang-en">Autonomous cyber range emulation, red-team/blue-team adversarial exercises, and critical infrastructure defense drills.</span>
+        </p>
       </div>
     </div>
   </section>
@@ -956,6 +1251,7 @@ footer {
       <div style="display: flex; gap: var(--space-lg); font-size: var(--text-xs); font-family: var(--font-outlier);">
         <a href="#about" style="color: var(--color-muted); text-decoration: none;">About</a>
         <a href="#subsidiaries" style="color: var(--color-muted); text-decoration: none;">Divisions</a>
+        <a href="#siem-platform" style="color: var(--color-accent); text-decoration: none;">SIEM Platform</a>
         <a href="#compliance" style="color: var(--color-muted); text-decoration: none;">Compliance</a>
         <a href="#contact" style="color: var(--color-muted); text-decoration: none;">Contact</a>
       </div>
