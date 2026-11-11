@@ -418,6 +418,47 @@ nav {
   background: var(--color-paper-3);
 }
 
+.subsidiary-card.flagship-hero {
+  border-color: var(--color-accent);
+  background: color-mix(in oklab, var(--color-accent-soft) 18%, var(--color-paper-2));
+  margin-bottom: var(--space-xl);
+}
+.subsidiary-card.flagship-hero:hover {
+  border-color: var(--color-accent-hover);
+  background: color-mix(in oklab, var(--color-accent-soft) 25%, var(--color-paper-2));
+}
+
+/* 3 Frontier R&D Incubation Labs Grid */
+.rnd-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+@media (max-width: 960px) {
+  .rnd-grid { grid-template-columns: 1fr; }
+}
+.rnd-card {
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+  border: var(--rule-hair) dashed var(--color-rule-2);
+  border-radius: var(--radius-card);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  text-decoration: none;
+  transition: border-color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+}
+.rnd-card:hover {
+  border-color: var(--color-cool);
+  background: var(--color-paper-3);
+}
+.card-unit-badge.rnd {
+  color: var(--color-cool);
+  border-color: var(--color-cool);
+  background: var(--color-cool-soft);
+}
+
 .card-top {
   display: flex;
   justify-content: space-between;
@@ -701,8 +742,8 @@ footer {
         <span class="lang-en">Reference Standards: PDPA / ICAO 9303 / NIST FIPS 203 & 204</span>
       </div>
       <div class="inst-badge">
-        <span class="lang-th">การส่งมอบ: On-Premise & Native Multi-Platform Appliance</span>
-        <span class="lang-en">Deployment: On-Premise & Native Multi-Platform Appliance</span>
+        <span class="lang-th">การส่งมอบ: TUM-SIEM Sovereign Appliance (พร้อมใช้งานจริง) &amp; Frontier R&amp;D Labs</span>
+        <span class="lang-en">Deployment: TUM-SIEM Appliance (Production) &amp; Frontier R&amp;D Labs</span>
       </div>
     </div>
   </div>
@@ -761,13 +802,11 @@ footer {
 
     <p class="hero-desc">
       <span class="lang-th">
-        กลุ่มบริษัท ทียูเอ็ม โฮลดิ้งส์ จำกัด ดำเนินการวิจัย พัฒนา และส่งมอบโซลูชันความปลอดภัยทางดิจิทัลระดับสถาบัน 
-        โดยมีเรือธงหลักคือ แพลตฟอร์มบริหารจัดการข้อมูลจราจรและความมั่นคงไซเบอร์ระดับองค์กร (TUM-SIEM Platform) 
-        ผสานระบบอัตลักษณ์ดิจิทัลประจำตู้บริการอัตโนมัติ วิทยาการรหัสลับยุคหลังควอนตัม และระบบบริหารทรัพยากรองค์กรอัตโนมัติ
+        กลุ่มบริษัท ทียูเอ็ม โฮลดิ้งส์ จำกัด มุ่งเน้นการส่งมอบ <strong>TUM-SIEM Platform</strong> เป็นศูนย์กลางการตรวจจับและจัดเก็บข้อมูลจราจรคอมพิวเตอร์ระดับสถาบันเป็นลำดับแรก 
+        พร้อมขับเคลื่อนโครงการวิจัยและพัฒนาเชิงลึก (Frontier R&amp;D Incubation) ด้านระบบอัตลักษณ์ตู้บริการ, วิทยาการรหัสลับหลังควอนตัม และระบบอัตโนมัติแห่งอนาคต
       </span>
       <span class="lang-en">
-        Sovereign deep-tech group delivering institutional security: Flagship Sovereign SIEM Platform, 
-        kiosk identity verification, post-quantum cryptography, and autonomous enterprise systems.
+        TUM Group Holdings delivers the sovereign <strong>TUM-SIEM Platform</strong> as our primary commercial foundation today, backed by an advanced deep-tech R&amp;D pipeline in kiosk identity, post-quantum cryptography, and autonomous enterprise systems.
       </span>
     </p>
 
@@ -777,8 +816,8 @@ footer {
         <span class="lang-en">Explore TUM-SIEM Platform</span>
       </a>
       <a href="#subsidiaries" class="btn btn-secondary">
-        <span class="lang-th">สำรวจ 4 กลุ่มธุรกิจในเครือ</span>
-        <span class="lang-en">Explore 4 Subsidiaries</span>
+        <span class="lang-th">โครงสร้างผลิตภัณฑ์และโครงการวิจัย</span>
+        <span class="lang-en">Products &amp; R&amp;D Pipeline</span>
       </a>
       <a href="#compliance" class="btn btn-secondary">
         <span class="lang-th">ข้อกำหนดและการปฏิบัติตามมาตรฐาน</span>
@@ -791,8 +830,8 @@ footer {
       <div class="metric-cell">
         <div class="metric-num">50k-100k<span class="metric-unit">EPS</span></div>
         <div class="metric-label">
-          <span class="lang-th">ความเร็วรับส่งข้อมูลจราจร</span>
-          <span class="lang-en">High-throughput ingestion</span>
+          <span class="lang-th">TUM-SIEM (เรือธงหลัก)</span>
+          <span class="lang-en">TUM-SIEM Flagship</span>
         </div>
         <div class="metric-note">Benchmark-verified (12 cores)</div>
       </div>
@@ -813,12 +852,12 @@ footer {
         <div class="metric-note">Bare-metal / self-hosted</div>
       </div>
       <div class="metric-cell">
-        <div class="metric-num">FIPS<span class="metric-unit">203 / 204</span></div>
+        <div class="metric-num">3<span class="metric-unit">labs</span></div>
         <div class="metric-label">
-          <span class="lang-th">วิทยาการรหัสลับหลังควอนตัม</span>
-          <span class="lang-en">Post-quantum cryptography</span>
+          <span class="lang-th">โครงการวิจัยและต่อยอด</span>
+          <span class="lang-en">Frontier R&amp;D Incubation</span>
         </div>
-        <div class="metric-note">NIST CAVP reference vectors</div>
+        <div class="metric-note">PQC, Identity, WorkOS Labs</div>
       </div>
     </div>
   </header>
@@ -827,108 +866,125 @@ footer {
   <section class="section-block container" id="subsidiaries">
     <div class="section-head">
       <h2 class="section-headline">
-        <span class="lang-th">4 กลุ่มธุรกิจและบริษัทย่อยในเครือ</span>
-        <span class="lang-en">Core subsidiary operating divisions</span>
+        <span class="lang-th">ผลิตภัณฑ์หลักเชิงพาณิชย์ และโครงการวิจัยนวัตกรรมเชิงลึก</span>
+        <span class="lang-en">Core Commercial Product &amp; Frontier R&amp;D Initiatives</span>
       </h2>
       <div class="section-sub">
-        <span class="lang-th">โซลูชันเชิงพาณิชย์ที่ออกแบบขึ้นเพื่อตอบสนองต่อสถาบันการเงิน หน่วยงานกำกับดูแลภาครัฐ และองค์กรธุรกิจขนาดใหญ่</span>
-        <span class="lang-en">Commercial turnkey solutions engineered for financial institutions, government regulators, and critical infrastructure operators.</span>
+        <span class="lang-th">กลุ่มบริษัทมุ่งเน้นการส่งมอบแพลตฟอร์ม TUM-SIEM สู่ตลาดองค์กรเป็นด่านแรก พร้อมขับเคลื่อนโครงการวิจัยและบ่มเพาะเทคโนโลยีเชิงลึก (Frontier R&amp;D &amp; Incubation) ในด้านอัตลักษณ์ ควอนตัม และระบบอัตโนมัติเพื่อการต่อยอดในอนาคต</span>
+        <span class="lang-en">Delivering the enterprise TUM-SIEM platform as our primary commercial foundation, alongside deep-tech incubation initiatives in sovereign identity, post-quantum cryptography, and autonomous systems.</span>
       </div>
     </div>
 
-    <div class="subsidiary-grid">
+    <!-- 1: Primary Commercial Product: TUM-SIEM -->
+    <div class="subsidiary-card flagship-hero">
+      <div class="card-top">
+        <span class="card-unit-badge" style="background: var(--color-accent); color: var(--color-accent-ink); font-weight: 700;">🟢 ผลิตภัณฑ์หลักเชิงพาณิชย์ &bull; Primary Commercial Product</span>
+        <span class="card-format">Phase 1: Production-Ready Platform</span>
+      </div>
+      <h3 class="card-title" style="font-size: var(--text-2xl);">TUMSocs Co., Ltd. &mdash; TUM-SIEM Enterprise Platform</h3>
+      <p class="card-desc" style="font-size: var(--text-md); color: var(--color-ink-2);">
+        <span class="lang-th">ศูนย์กลางการตรวจจับและบริหารจัดการข้อมูลจราจรคอมพิวเตอร์ระดับสถาบัน (Sovereign SIEM) ด่านแรกขององค์กร มุ่งเน้นการจัดเก็บตาม พ.ร.บ.คอมพิวเตอร์ฯ ม.26 และ PDPA บน ClickHouse ด้วยเทคโนโลยี Disruptor RingBuffer (50,000–100,000+ EPS Benchmark-verified), Inverted Index ตรวจจับ SigmaHQ, ระบบสกัดทราฟฟิกถล่ม Flash Crowd Governor และ Cloud/K8s Orchestrator</span>
+        <span class="lang-en">Enterprise Sovereign SIEM platform engineered as our primary commercial foundation: high-throughput Disruptor RingBuffer (&gt;50k-100k EPS benchmark-verified), ClickHouse columnar storage for Computer Crime Act Sec 26 &amp; PDPA compliance, Inverted Index SigmaHQ threat detection, and turnkey Cloud/K8s infrastructure orchestration.</span>
+      </p>
+      <div class="specs-list">
+        <code class="spec-tag" style="color: var(--color-accent); font-weight: 700;">Production Ready</code>
+        <code class="spec-tag">Computer Crime Act Sec 26</code>
+        <code class="spec-tag">Disruptor RingBuffer (100k+ EPS)</code>
+        <code class="spec-tag">ClickHouse MergeTree Micro-Batch</code>
+        <code class="spec-tag">Inverted Index SigmaHQ</code>
+        <code class="spec-tag">Flash Crowd Governor (100k+ Concurrent)</code>
+        <code class="spec-tag">Cloud &amp; K8s Orchestrator</code>
+      </div>
+      <div class="card-foot" style="font-size: var(--text-sm);">
+        <span style="color: var(--color-ok); font-weight: 600;">&#9679; สถานะ: พร้อมส่งมอบและติดตั้งใช้งานจริง (Enterprise Production Ready)</span>
+        <a href="#siem-platform" style="color: var(--color-accent); text-decoration: none; font-weight: 700; font-size: var(--text-md);">สำรวจสถาปัตยกรรม SIEM เพิ่มเติม &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Sub-header for R&D Labs -->
+    <div style="margin-block: var(--space-xl) var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); padding-top: var(--space-xl);">
+      <div style="display: flex; align-items: center; gap: var(--space-xs); margin-bottom: var(--space-2xs);">
+        <span class="card-unit-badge rnd">🔬 Frontier R&amp;D Incubation</span>
+        <span style="font-family: var(--font-outlier); font-size: var(--text-xs); color: var(--color-dim);">Laboratory Concepts &amp; Active Research</span>
+      </div>
+      <h3 style="font-size: var(--text-xl); font-weight: 600; color: var(--color-ink); margin: 0 0 var(--space-2xs) 0;">
+        <span class="lang-th">โครงการวิจัยและบ่มเพาะเทคโนโลยีเพื่อการต่อยอดในอนาคต (R&amp;D Pipeline)</span>
+        <span class="lang-en">Deep-Tech Research &amp; Future Incubation Pipeline</span>
+      </h3>
+      <p style="font-size: var(--text-sm); color: var(--color-muted); margin: 0; max-width: 820px;">
+        <span class="lang-th">แนวคิดทางนวัตกรรมและเทคโนโลยีขั้นสูงที่กลุ่มบริษัทกำลังทำการค้นคว้า วิจัยในห้องปฏิบัติการ และพัฒนาต่อยอด (ยังไม่ได้เปิดจำหน่ายเชิงพาณิชย์) เพื่อเตรียมความพร้อมสำหรับระบบนิเวศความมั่นคงในอนาคต</span>
+        <span class="lang-en">Advanced laboratory research initiatives, mathematical models, and conceptual prototypes currently under incubation for future ecosystem expansion.</span>
+      </p>
+    </div>
+
+    <!-- 3 Frontier R&D Incubation Labs Grid -->
+    <div class="rnd-grid">
       <!-- 1: TUM Trust Security -->
-      <div class="subsidiary-card">
+      <div class="rnd-card">
         <div class="card-top">
-          <span class="card-unit-badge">Identity and hardware core</span>
-          <span class="card-format">Windows Service &amp; Electron</span>
+          <span class="card-unit-badge rnd">🔬 R&amp;D Lab &bull; Identity</span>
+          <span class="card-format">Research &amp; Hardware POC</span>
         </div>
-        <h3 class="card-title">TUM Trust Security Co., Ltd.</h3>
+        <h4 class="card-title">TUM Trust Security</h4>
         <p class="card-desc">
-          <span class="lang-th">ผู้ให้บริการระบบฮาร์ดแวร์ยืนยันตัวตนสำหรับตู้บริการอัตโนมัติ (Kiosk) รองรับเครื่องอ่านบัตรประชาชนไทย (DOPA APDU), เครื่องอ่านหนังสือเดินทางสากล (ICAO Doc 9303), และระบบตรวจสอบใบหน้าชีวมิติป้องกันการปลอมแปลง (Liveness and Anti-Spoofing)</span>
-          <span class="lang-en">Hardware trust abstraction layer and kiosk identity driver suite: Thai national citizen card APDU, ICAO Doc 9303 ePassport NFC reader, and biometric presentation attack detection (ISO/IEC 30107).</span>
+          <span class="lang-th">โครงการวิจัยและบ่มเพาะเทคโนโลยี (R&amp;D Incubation) มุ่งศึกษาระบบยืนยันตัวตนสำหรับตู้บริการอัตโนมัติ (Kiosk) โดยทดสอบการเชื่อมต่อบัตรประชาชนไทย (DOPA APDU), พาสปอร์ตสากล (ICAO 9303) และอัลกอริทึมชีวมิติตรวจสอบใบหน้าป้องกันการปลอมแปลง (Liveness Testbed) เพื่อเตรียมความพร้อมในการต่อยอดในอนาคต</span>
+          <span class="lang-en">Frontier R&amp;D laboratory researching kiosk trust abstraction, Thai national smartcard APDU protocols, ICAO 9303 ePassport validation, and presentation attack detection (ISO/IEC 30107) for future ecosystem expansion.</span>
         </p>
         <div class="specs-list">
-          <code class="spec-tag">PC/SC smart card HAL</code>
-          <code class="spec-tag">ICAO 9303 TD1/TD2/TD3</code>
-          <code class="spec-tag">Anti-spoofing liveness</code>
-          <code class="spec-tag">Electron diagnostics tool</code>
+          <code class="spec-tag">🔬 Active R&amp;D Phase</code>
+          <code class="spec-tag">DOPA APDU Testbed</code>
+          <code class="spec-tag">ICAO 9303 Prototype</code>
+          <code class="spec-tag">Liveness PAD Research</code>
         </div>
         <div class="card-foot">
-          <span>Enterprise ready</span>
-          <span>Turnkey Kiosk Suite &rarr;</span>
+          <span style="color: var(--color-cool);">&#9679; อยู่ระหว่างการวิจัยและพัฒนาต่อยอด</span>
+          <span>Research Initiative &rarr;</span>
         </div>
       </div>
 
       <!-- 2: TUMQuantum -->
-      <div class="subsidiary-card">
+      <div class="rnd-card">
         <div class="card-top">
-          <span class="card-unit-badge">Quantum security lab</span>
-          <span class="card-format">Docker Appliance &amp; Sidecar</span>
+          <span class="card-unit-badge rnd">🔬 R&amp;D Lab &bull; Quantum PQC</span>
+          <span class="card-format">Cryptographic Lab</span>
         </div>
-        <h3 class="card-title">TUMQuantum Co., Ltd.</h3>
+        <h4 class="card-title">TUMQuantum</h4>
         <p class="card-desc">
-          <span class="lang-th">ศูนย์วิจัยและส่งมอบสถาปัตยกรรมการเข้ารหัสลับยุคหลังควอนตัม (Post-Quantum Cryptography) รองรับมาตรฐาน NIST FIPS 203 (ML-KEM) และ FIPS 204 (ML-DSA) ในรูปแบบ Reverse Proxy Gateway สำหรับองค์กรที่ต้องการเปลี่ยนผ่านสู่ PQC โดยไม่กระทบต่อระบบงานเดิม</span>
-          <span class="lang-en">Post-quantum cryptographic transition gateway: drop-in reverse proxy appliance implementing NIST FIPS 203 (ML-KEM) and FIPS 204 (ML-DSA) lattice algorithms with zero changes to existing backend infrastructure.</span>
+          <span class="lang-th">ห้องปฏิบัติการวิจัยและพัฒนาเชิงลึกด้านวิทยาการรหัสลับยุคหลังควอนตัม (PQC Research) กำลังทดลองและวิจัยแนวทางการนำอัลกอริทึม NIST FIPS 203 (ML-KEM) และ FIPS 204 (ML-DSA) มาประยุกต์ใช้เป็น Reverse Proxy Gateway เพื่อเตรียมความพร้อมต่อยอดในอนาคต</span>
+          <span class="lang-en">Frontier cryptographic research laboratory testing NIST FIPS 203/204 lattice algorithms on experimental reverse proxy prototypes, laying the mathematical foundation for future post-quantum transition.</span>
         </p>
         <div class="specs-list">
-          <code class="spec-tag">NIST FIPS 203 ML-KEM</code>
-          <code class="spec-tag">NIST FIPS 204 ML-DSA</code>
-          <code class="spec-tag">Reverse proxy gateway</code>
-          <code class="spec-tag">Constant-time execution</code>
+          <code class="spec-tag">🔬 Active R&amp;D Phase</code>
+          <code class="spec-tag">NIST FIPS 203/204 Testbed</code>
+          <code class="spec-tag">Lattice-Based Math</code>
+          <code class="spec-tag">Experimental Gateway</code>
         </div>
         <div class="card-foot">
-          <span>Enterprise ready</span>
-          <span>Quantum Gateway &rarr;</span>
+          <span style="color: var(--color-cool);">&#9679; โครงการวิจัยขั้นสูง</span>
+          <span>Cryptographic Lab &rarr;</span>
         </div>
       </div>
 
-      <!-- 3: TUMSocs -->
-      <div class="subsidiary-card" style="border-color: var(--color-accent); background: color-mix(in oklab, var(--color-accent-soft) 12%, var(--color-paper-2));">
+      <!-- 3: TUM Agentic Operations -->
+      <div class="rnd-card">
         <div class="card-top">
-          <span class="card-unit-badge" style="background: var(--color-accent); color: var(--color-accent-ink); font-weight: 700;">เรือธงอันดับแรก &bull; Primary Flagship</span>
-          <span class="card-format">TUM-SIEM Enterprise Platform</span>
+          <span class="card-unit-badge rnd">🔬 R&amp;D Lab &bull; WorkOS Ideas</span>
+          <span class="card-format">Conceptual Framework</span>
         </div>
-        <h3 class="card-title">TUMSocs Co., Ltd. (TUM-SIEM)</h3>
+        <h4 class="card-title">TUM Agentic Operations</h4>
         <p class="card-desc">
-          <span class="lang-th">แพลตฟอร์มบริหารจัดการข้อมูลความมั่นคงและจราจรคอมพิวเตอร์ระดับสถาบัน (Sovereign SIEM) ด่านแรกขององค์กร มุ่งเน้นการจัดเก็บตาม พ.ร.บ.คอมพิวเตอร์ฯ ม.26 และ PDPA บน ClickHouse ด้วยเทคโนโลยี Disruptor RingBuffer (50,000–100,000+ EPS), Inverted Index ตรวจจับ SigmaHQ, ระบบสกัดทราฟฟิกถล่ม Flash Crowd Governor และ Cloud/K8s Orchestrator</span>
-          <span class="lang-en">Enterprise Sovereign SIEM platform engineered as the primary defense foundation: high-throughput Disruptor RingBuffer (&gt;50k-100k EPS), ClickHouse columnar storage for Computer Crime Act Sec 26 &amp; PDPA compliance, Inverted Index SigmaHQ threat detection, and turnkey Cloud/K8s infrastructure orchestration.</span>
+          <span class="lang-th">แนวคิดและโครงการทดลองวิจัยระบบบริหารจัดการทรัพยากรองค์กรอัตโนมัติ (WorkOS Incubation) ศึกษาวิจัยการกระทบยอดบัญชี 3 ทางอัตโนมัติ, โครงสร้างข้อมูลใบกำกับภาษีอิเล็กทรอนิกส์ (e-Tax XML ETDA) และแนวคิดระบบตอบสนองภัยคุกคามอัตโนมัติ (SOAR) เพื่อเตรียมพัฒนาต่อยอดในเฟสถัดไป</span>
+          <span class="lang-en">Conceptual workflow incubation exploring autonomous enterprise reconciliation, e-Tax XML schema generation, and automated SOAR response frameworks currently in laboratory ideation and R&amp;D.</span>
         </p>
         <div class="specs-list">
-          <code class="spec-tag" style="color: var(--color-accent); font-weight: 600;">Phase 1: SIEM Core</code>
-          <code class="spec-tag">Computer Crime Act Sec 26</code>
-          <code class="spec-tag">Disruptor RingBuffer (100k+ EPS)</code>
-          <code class="spec-tag">ClickHouse MergeTree Micro-Batch</code>
-          <code class="spec-tag">Inverted Index SigmaHQ</code>
-          <code class="spec-tag">Flash Crowd Governor (100k+ Concurrent)</code>
-          <code class="spec-tag">Cloud &amp; K8s Orchestrator</code>
+          <code class="spec-tag">🔬 Active R&amp;D Phase</code>
+          <code class="spec-tag">WorkOS Idea Incubation</code>
+          <code class="spec-tag">e-Tax XML Study</code>
+          <code class="spec-tag">SOAR Conceptual Model</code>
         </div>
         <div class="card-foot">
-          <span style="color: var(--color-ok); font-weight: 600;">&#9679; Enterprise Production Ready</span>
-          <a href="#siem-platform" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">สำรวจสถาปัตยกรรม SIEM &rarr;</a>
-        </div>
-      </div>
-
-      <!-- 4: TUM Agentic Operations -->
-      <div class="subsidiary-card">
-        <div class="card-top">
-          <span class="card-unit-badge">Autonomous enterprise ops</span>
-          <span class="card-format">Web Console &amp; Standalone Agent</span>
-        </div>
-        <h3 class="card-title">TUM Agentic Operations</h3>
-        <p class="card-desc">
-          <span class="lang-th">ระบบบริหารจัดการกระบวนการทำงานและทรัพยากรองค์กรอัตโนมัติ (WorkOS) ผสานระบบตรวจสอบและกระทบยอดบัญชี 3 ทาง (P2P Matching), ระบบออกใบกำกับภาษีอิเล็กทรอนิกส์ตามเกณฑ์ ขมธอ./กรมสรรพากร (e-Tax XML ETDA v2.1), และระบบตอบสนองภัยคุกคามอัตโนมัติ (SOAR)</span>
-          <span class="lang-en">Autonomous enterprise operations platform: automated 3-way procurement reconciliation, Thai Revenue Department e-Tax XML generation (ETDA v2.1), and automated security incident response playbooks.</span>
-        </p>
-        <div class="specs-list">
-          <code class="spec-tag">e-Tax invoice ETDA v2.1</code>
-          <code class="spec-tag">3-Way P2P reconciliation</code>
-          <code class="spec-tag">SOAR playbook connectors</code>
-          <code class="spec-tag">Human-in-the-loop approval</code>
-        </div>
-        <div class="card-foot">
-          <span>Enterprise ready</span>
-          <span>Operations Suite &rarr;</span>
+          <span style="color: var(--color-cool);">&#9679; อยู่ระหว่างการทดลองและพัฒนาต่อยอด</span>
+          <span>Idea Incubation &rarr;</span>
         </div>
       </div>
     </div>
@@ -1139,38 +1195,38 @@ footer {
           <tr>
             <td><strong>พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล (PDPA)</strong></td>
             <td>สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.)</td>
-            <td>การไม่จัดเก็บข้อมูลชีวมิติดิบ, สถาปัตยกรรม Zero-Knowledge Proofs</td>
-            <td><span class="status-pill">สอดคล้องสมบูรณ์</span></td>
+            <td>TUM-SIEM: การตัดตอนและเซ็นเซอร์ข้อมูลส่วนบุคคลใน RAM (In-Memory PII Sanitizer)</td>
+            <td><span class="status-pill">พร้อมใช้งานจริง (Production)</span></td>
           </tr>
           <tr>
             <td><strong>พ.ร.บ. ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ ม.26</strong></td>
             <td>กระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม (MDES)</td>
-            <td>การจัดเก็บ Log จราจรคอมพิวเตอร์ไม่น้อยกว่า 90 วันพร้อมประทับเวลาสากล</td>
-            <td><span class="status-pill">สอดคล้องสมบูรณ์</span></td>
+            <td>TUM-SIEM: จัดเก็บ Log จราจร 90 วันบน ClickHouse พร้อมประทับตรา WORM &amp; Merkle Ledger</td>
+            <td><span class="status-pill">พร้อมใช้งานจริง (Production)</span></td>
           </tr>
           <tr>
             <td><strong>ใบกำกับภาษีอิเล็กทรอนิกส์ (e-Tax XML v2.1)</strong></td>
             <td>กรมสรรพากร / สำนักงานพัฒนาธุรกรรมทางอิเล็กทรอนิกส์ (สพธอ.)</td>
-            <td>โครงสร้าง XML และการลงลายมือชื่อดิจิทัลตามมาตรฐาน ETDA</td>
-            <td><span class="status-pill">สอดคล้องสมบูรณ์</span></td>
+            <td>โครงการวิจัย WorkOS Lab: การศึกษาวิจัยโครงสร้างข้อมูลและการลงลายมือชื่อดิจิทัล ETDA</td>
+            <td><span class="status-pill" style="background: var(--color-cool-soft); color: var(--color-cool); border-color: var(--color-cool);">🔬 โครงการวิจัย (R&amp;D Testbed)</span></td>
           </tr>
           <tr>
             <td><strong>ICAO Doc 9303 (ePassport &amp; Travel Documents)</strong></td>
             <td>International Civil Aviation Organization (ICAO)</td>
-            <td>การอ่านและตรวจสอบความถูกต้องของชิปหนังสือเดินทาง TD1, TD2, TD3</td>
-            <td><span class="status-pill">สอดคล้องตามสเปกสากล</span></td>
+            <td>โครงการวิจัย Kiosk Lab: การทดลองอ่านและตรวจสอบชิปหนังสือเดินทาง TD1, TD2, TD3</td>
+            <td><span class="status-pill" style="background: var(--color-cool-soft); color: var(--color-cool); border-color: var(--color-cool);">🔬 อยู่ในขั้นวิจัยต้นแบบ</span></td>
           </tr>
           <tr>
             <td><strong>NIST FIPS 203 (ML-KEM) &amp; FIPS 204 (ML-DSA)</strong></td>
             <td>National Institute of Standards and Technology (NIST)</td>
-            <td>มาตรฐานการแลกเปลี่ยนคีย์และลายมือชื่อดิจิทัลยุคหลังคอมพิวเตอร์ควอนตัม</td>
-            <td><span class="status-pill">สอดคล้องชุดทดสอบอ้างอิง CAVP</span></td>
+            <td>โครงการวิจัย PQC Lab: การทดสอบอัลกอริทึมแลกเปลี่ยนคีย์กับชุดทดสอบอ้างอิง NIST CAVP</td>
+            <td><span class="status-pill" style="background: var(--color-cool-soft); color: var(--color-cool); border-color: var(--color-cool);">🔬 สอดคล้องชุดทดสอบอ้างอิง CAVP</span></td>
           </tr>
           <tr>
             <td><strong>ISO/IEC 30107 (Biometric Anti-Spoofing)</strong></td>
             <td>International Organization for Standardization (ISO)</td>
-            <td>การตรวจจับความมีชีวิตของใบหน้าและป้องกันการปลอมแปลง (PAD)</td>
-            <td><span class="status-pill">สอดคล้องตามเกณฑ์สถาปัตยกรรม PAD</span></td>
+            <td>โครงการวิจัย Liveness Lab: การตรวจจับความมีชีวิตของใบหน้าและป้องกันการปลอมแปลง (PAD)</td>
+            <td><span class="status-pill" style="background: var(--color-cool-soft); color: var(--color-cool); border-color: var(--color-cool);">🔬 อยู่ในขั้นวิจัยทางสถาปัตยกรรม</span></td>
           </tr>
         </tbody>
       </table>
